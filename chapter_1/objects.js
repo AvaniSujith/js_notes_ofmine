@@ -95,4 +95,5 @@ console.log(Math.floor(numDemo));
 console.log(Math.ceil(numDemo));
 console.log(Math.trunc(numDemo));
 
-
+const randomNum = Math.random();
+console.log(randomNum);
