@@ -90,6 +90,7 @@ console.log(Math);
 console.log(Math.PI);
 
 const numDemo = 7.9890;
+
 console.log(Math.round(numDemo));
 console.log(Math.floor(numDemo));
 console.log(Math.ceil(numDemo));
@@ -97,3 +98,8 @@ console.log(Math.trunc(numDemo));
 
 const randomNum = Math.random();
 console.log(randomNum);
+console.log(Math.round(randomNum * 100));
+console.log(Math.ceil(randomNum * 1000));
+
+
+
