@@ -103,3 +103,22 @@ console.log(Math.ceil(randomNum * 1000));
 
 
 
+//primitve and refeernce type
+
+let scoreOne = 50;
+let scoreTwo = scoreOne;
+console.log(`scoreone is ${scoreOne}`, `scoretwo is ${scoreTwo}`);
+
+ scoreOne = 100;
+ console.log(`scoreone is ${scoreOne}`,`score two is ${scoreTwo}`);
+
+
+ //reference value
+
+ const userFirst = {name: 'hari', age:33};
+ const userNext = userFirst;
+
+ console.log(userFirst, userNext);
+
+ userFirst.name ='deepth';
+ console.log(userFirst, userNext);
