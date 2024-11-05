@@ -171,3 +171,35 @@ function haiWorld(){
 };
 haiWorld();
 haiWorld();
+
+function addition(a,b){
+    var sum = a + b;
+    return sum;
+    // console.log(sum);
+}
+
+
+// addition(2,6);
+console.log(addition(2,6));
+
+//global and local scope
+
+
+function fun1(){
+    
+}
+function fun2(){
+    var output = "";
+    if (typeof myGlobal != "undefined"){
+        output += "myGlobal: " + myGlobal;
+    }
+    if (typeof oopsGlobal != "undefined"){
+        output += " oopsGlobal: " + oopsGlobal;
+    }
+    console.log(output);
+}
+
+fun1();
+fun2();
+
+
