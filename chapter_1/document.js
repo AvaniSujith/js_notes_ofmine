@@ -97,8 +97,25 @@
 
 //changing styles
 
-const content = document.querySelector('p');
-console.log(content.classList);
-content.classList.add('error');
-content.classList.remove('error');
+// const content = document.querySelector('p');
+// console.log(content.classList);
+// content.classList.add('error');
+// content.classList.remove('error');
 
+//get error
+const paras = document.querySelectorAll('p');
+// paras.forEach(p=>{
+//     // console.log(p.innerText);
+//     console.log(p.textContent);
+// })
+paras.forEach(p=>{
+    if(p.textContent.includes('error')){
+        p.classList.add('error');
+    }
+    if(p.innerText.includes('success')){
+        p.classList.add('success');
+    }
+});
+ const title = document.querySelector('.title');
+ title.classList.toggle('test');
+ title.classList.toggle('test');
