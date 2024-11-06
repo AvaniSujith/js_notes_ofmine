@@ -183,10 +183,11 @@ function addition(a,b){
 console.log(addition(2,6));
 
 //global and local scope
-
+var myGlobal =10;
 
 function fun1(){
-    
+//    var oopsGlobal =5;
+oopsGlobal = 5;
 }
 function fun2(){
     var output = "";
@@ -201,5 +202,26 @@ function fun2(){
 
 fun1();
 fun2();
+
+//local scope
+
+function myLocal() {
+    var myVariable = 5;
+    console.log(myVariable);
+}
+myLocal();
+// console.log(myVariable);
+
+//Both precedence
+
+var myItem = 'pen';
+
+function Items(){
+    var myItem = 'pencil';
+    return myItem;
+}
+
+console.log(Items());
+console.log(myItem);
 
 
