@@ -259,3 +259,15 @@ var testArr = [1,2,3,4];
 console.log('before: '+ JSON.stringify(testArr));
 console.log(arrayManipulation(testArr, 5));
 console.log('after: '+ JSON.stringify(testArr));
+
+
+//boolean
+function trueOrFalse(isTrue){
+    if(isTrue){
+        return "Yes, true";
+    }
+    return "No, false";
+}
+
+console.log(trueOrFalse(true));
+
