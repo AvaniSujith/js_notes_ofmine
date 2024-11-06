@@ -225,3 +225,37 @@ console.log(Items());
 console.log(myItem);
 
 
+//return statement
+
+function additionOfFive(num){
+    return num + 5;
+}
+console.log(additionOfFive(10));
+
+
+// var sum = 0;
+// function sumOfTwo(){
+//     sum += 5;
+// }
+// console.log(sumOfTwo());
+
+var resultant = 0;
+function resulting(p){
+    return p += 3;
+}
+
+resultant = resulting;
+console.log(resultant(6));
+
+
+//Queue
+function arrayManipulation(arr, item){
+    arr.push(item);
+    return arr.shift();
+}
+
+var testArr = [1,2,3,4];
+
+console.log('before: '+ JSON.stringify(testArr));
+console.log(arrayManipulation(testArr, 5));
+console.log('after: '+ JSON.stringify(testArr));
