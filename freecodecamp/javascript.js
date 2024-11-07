@@ -511,3 +511,155 @@ cc(2); cc('k'); cc(10); cc('k'); cc('A');
 console.log(cc(4));
 
 
+//Objects
+var myCar = {
+    "model" : "eon",
+    "color" : "red",
+    "year" : "2011"
+
+ };
+ console.log(myCar);
+
+ var carModel = myCar.model;
+ console.log(carModel);
+
+ var menuItem ={
+    "the dessert" : "icecream",
+    "the main": "biriyani",
+    "the juice": "pineapple"
+ };
+
+ var desert = menuItem["the dessert"];
+ console.log(desert);
+
+ var nameOfPlayer = {
+    16 :"navin",
+    20: "hari",
+    30:"lia"
+ }
+
+ var player = 30;
+ var playerNum = nameOfPlayer[player];
+ console.log(playerNum);
+
+ var myCarDetail = {
+    "model" : "eon",
+    "color" : "red",
+    "year" : "2011"
+
+ };
+
+ myCarDetail.model = "ertiga";
+ console.log(myCarDetail.model);
+
+ myCarDetail.fuel = "petrol";
+ console.log(myCarDetail);
+
+ delete myCarDetail.year;
+ console.log(myCarDetail);
+
+
+ var obj = {
+    gift : "pony",
+    pet : "kitten",
+    
+
+ }
+
+ function checkObj(check){
+    if(obj.hasOwnProperty(check)){
+        return obj[check];
+    }else{
+        return "change me"
+    }
+ }
+ console.log(checkObj("name"));
+
+
+ var myStorage = {
+    "car": {
+        "inside":{
+            "glove box" : "maps",
+            "passenger seat" : "crumbs"
+        },
+        "outiside":{
+            "trunk": "Jack"
+        }
+    }
+ };
+
+ var gloveBoxContents = myStorage.car.inside["glove box"];
+ console.log(gloveBoxContents);
+
+
+ var myPlants = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulips",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+ ];
+
+//  var secondTree = myPlants[1].list[1];
+ var secondTree = myPlants[0].list[2];
+ console.log(secondTree);
+
+
+ var collection = {
+    "2548": {
+        "album" : "Slippery When Wet",
+        "artist" : "Bon Jovi",
+        "tracks": [
+            "let it rock",
+            "you give love"
+        ]
+    },
+    "2468": {
+        "album" : "1999",
+        "artist" : "Prince",
+        "tracks": [
+            "1999",
+            "Little red "
+        ]
+    },
+    "1234":{
+        "artist": "Robert Plamer",
+        "track":[ ]
+    },
+    "5439": {
+        "album" : "abba gold",
+        
+    },
+
+ };
+
+ var collectionCopy = JSON.parse(JSON.stringify(collection));
+ function updateRecords(id, prop, value)
+{
+    if(value == ""){
+        delete collection[id][prop];
+    }else if(prop === "tracks"){
+        collection[id][prop] = collection [id][prop] || [];
+        collection[id][prop].push(value);
+    }else{
+        collection[id][prop] = value;
+    }
+    return collection;
+}
+
+updateRecords(5439,"artist","arijit");
+console.log(updateRecords(5439,"artist","arijit"));
+// console.log(updateRecords(5439, "artist","abba"));
+
+
