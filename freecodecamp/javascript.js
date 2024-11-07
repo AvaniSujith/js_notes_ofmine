@@ -271,3 +271,141 @@ function trueOrFalse(isTrue){
 
 console.log(trueOrFalse(true));
 
+//Equality
+
+function equalitiy(val){
+    // if(val = 12)
+    // if(val == 12)
+    // if(val === "12")
+    // if(val != 12)
+    // if(val !== 12)
+        if(val !=="12")
+
+    {
+        return "yes, equal";
+    }
+    return "no";
+    
+}
+
+// console.log(equalitiy(3));
+console.log(equalitiy(12));
+
+
+// comparison
+
+function test(val){
+    if(val < 12){
+        return "less than 12";
+    }
+    if(val > 12){
+        return "greater than 12";
+    }
+    if(val == 12){
+        return "equal to 12";
+    }
+   
+}
+
+console.log(test(12));
+
+function testNext(value){
+    if(value <= 22){
+        return "less than 22/ =22";
+    }
+    if(value >= 22){
+        return "greater than 22/ = 22";
+    }
+    if(value = 22){
+        return "equal to 22";
+    }
+   
+}
+
+console.log(testNext("22"));
+
+//and /or operator
+
+function andCase(value){
+    if(value > 20 &&  value <30){
+        return "Things are okay";
+
+    }
+    return "Things are bad";
+}
+console.log(andCase(23));
+
+function orCase(value){
+    if(value == 20 || value > 20){
+        return "number is awesome";
+    }
+    return "error in fetching";
+}
+console.log(orCase(8));
+
+// if statement
+
+ function chooseOne(num){
+    if(num<5){
+        return "tiny";
+
+    }
+    else if(num<10){
+        return "small";
+    }
+    else if(num<15){
+        return "medium";
+    }
+    else if(num<20){
+        return "large";
+    }
+    else {
+        return "huge";
+    }
+    // else{
+    //     return ""
+    // }
+ }
+
+ console.log(chooseOne(17));
+
+
+
+ //golf
+
+var titlesOfEach = ['Hole-in-one!','Eagle','Birdie','Par','Bogey','Double Bogey','Go home!'];
+function golfGame(par,strokes){
+    if(strokes == 1){
+        // return "Hole-in-one!";
+        return titlesOfEach[0];
+    }
+    else if(strokes <= par - 2){
+        // return "Eagle";
+        return titlesOfEach[1];
+    }
+    else if(strokes == par - 1){
+        // return "Birdie";
+        return titlesOfEach[2];
+    }
+    else if(strokes == par){
+        // return "par";
+        return titlesOfEach[3];
+    }
+    else if(strokes == par +1){
+        // return "Bogey";
+        return titlesOfEach[4];
+    }
+    else if(strokes == par +2){
+        // return "Double Bogey";
+        return titlesOfEach[5];
+    }
+    else if(strokes == par +3){
+        // return "Go home";
+        return titlesOfEach[6];
+    }
+}
+console.log(golfGame(5,8));
+
+
+
+
