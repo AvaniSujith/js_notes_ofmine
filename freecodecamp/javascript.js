@@ -407,5 +407,107 @@ function golfGame(par,strokes){
 console.log(golfGame(5,8));
 
 
+//switch
+
+function switchCase(val){
+    switch(val){
+        case 1:
+            return "Alpha";
+            
+        case 2:
+            return "Beta";
+
+        case 3:
+            return "gamma";
+        case 4:
+            return "delta";
+        default:
+            return "no option";
+    }
+}
+
+console.log(switchCase(32));
+
+function chainToSwitch(val){
+    var answer = "";
+    switch(val){
+        case "bob":
+        //    return "Marley";
+        answer = "Marley";
+        break;
+        case 42:
+        //    return "The answer";
+        answer = "The answer";
+        break;
+        case 1:
+        //    return "There is no#1";
+        answer =  "There is no#1";
+        break;
+        case 99:
+        //    return "Missed me by ths much";
+        answer = "Missed me by ths much";
+        break;
+        case 7:
+        //    return "Ate nine";
+        answer = "Ate nine";
+        break;
+
+
+    }
+    return answer;
+}
+
+console.log(chainToSwitch('bob'));
+
+function isLess(a, b){
+    return a < b;
+    // if(a < b){
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+}
+console.log(isLess(100,15));
+
+function abTest(a,b){
+    if (a < 0 || b < 0){
+        return undefined;
+    }
+    return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b),2));
+}
+console.log(2,6);
+
+
+var count = 0;
+
+function cc(card){
+    switch(card){
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count ++;
+            break;
+        case 10:
+        case "j":
+        case "q":
+        case "k":
+        case "A":
+            count --;
+            break;
+        
+        
+    }
+
+    var holdbet = 'Hold';
+    if(count > 0){
+        holdbet = "Bet";
+    }
+    return count + " " + holdbet;
+}
+
+cc(2); cc('k'); cc(10); cc('k'); cc('A');
+console.log(cc(4));
 
 
