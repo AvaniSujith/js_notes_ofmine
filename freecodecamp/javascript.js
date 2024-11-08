@@ -662,4 +662,350 @@ updateRecords(5439,"artist","arijit");
 console.log(updateRecords(5439,"artist","arijit"));
 // console.log(updateRecords(5439, "artist","abba"));
 
+//while
 
+var testWhile = ['avani', 'hair', 'mahi'];
+var i = 0;
+while (i < testWhile.length) {
+    console.log(testWhile[i]);
+    i++; 
+}
+//for
+
+for(i=0; i<testWhile.length;i++){
+    console.log(testWhile[i]);
+}
+
+//odd number
+
+var myArr =[];
+for(var i=0; i<10; i += 2){
+  myArr.push(i);
+};
+console.log(myArr);
+
+var myArr =[];
+for(var i=1; i<10; i += 2){
+  myArr.push(i);
+};
+console.log(myArr);
+
+var myArr =[];
+for(var i=10; i>0; i--){
+  myArr.push(i);
+};
+console.log(myArr);
+
+var myArr =[];
+for(var i=10; i>0; i-=2){
+  myArr.push(i);
+};
+console.log(myArr);
+
+var myArr =[];
+for(var i=9; i>0; i-=2){
+  myArr.push(i);
+};
+console.log(myArr);
+
+
+var ourArray = [9, 10, 11, 12];
+var ourTotal = 0;
+
+for(var i = 0; i < ourArray.length; i++){
+    ourTotal += ourArray[i];
+}
+console.log(ourTotal);
+
+
+function mutliplyAll(arr){
+    var product =1;
+
+    for(var i=0; i< arr.length; i++){
+        for(var j=0; j<arr[i].length; j++){
+            product *= arr[i][j];
+        }
+    }
+    return product;
+
+}
+// console.log(mutliplyAll([[1,2],[3,4],[5,6,7]]));
+var product = mutliplyAll([[1,2],[3,4],[5,6,7]]);
+console.log(product);
+
+
+//do-while
+
+var myArrayy = [];
+var i =10;
+
+do{
+    myArrayy.push(i);
+    i++;
+}while(i < 5)
+console.log(i, myArrayy);
+
+var contact = [
+    {
+        "firstname" : "hema",
+        "secondname": "nambiar",
+        "number": "1234567890",
+        "likes": ["pizza", "coding"]
+    },
+    {
+        "firstname" : "harry",
+        "secondname": "potter",
+        "number": "1112223334444",
+        "likes": ["magic", "book"]
+    },
+    {
+        "firstname" : "jashin",
+        "secondname": "jagadeesh",
+        "number": "2233445566",
+        "likes": ["cooking", "sleeping"]
+    },
+    {
+        "firstname" : "hari",
+        "secondname": "dev",
+        "number": "1289446780",
+        "likes": ["development", "violin"]
+    },
+
+]
+
+function lookForName(name, prop){
+    for(var i = 0; i<contact.length; i++){
+        if(contact[i].firstname === name){
+            return contact[i][prop]
+        }
+    }
+    return "no result";
+}
+var data = lookForName('jashin','number');
+console.log(data);
+
+
+// var randomNumber = Math.floor(Math.random()* 20);
+// function randomFunction(){
+
+// }
+
+function convert(str){
+    return parseInt(str);
+}
+console.log(convert("44"));
+
+
+function convertToInteger(str){
+    return parseInt(str, 2);
+}
+console.log(convertToInteger("10011"));
+
+
+//ternary    (condition ? statement-if-true :state-if-false)
+function ternary(a,b){
+    // if(a == b){
+    //     return true;
+    // }else{
+    //     return false;
+    // }
+
+    return a === b ? true : false;
+}
+console.log(ternary(2,2));
+
+
+function checkSign(num){
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero"
+}
+
+console.log(checkSign(0));
+
+
+
+//mutate array
+const s = [5, 7, 2];
+function mutate(){
+    "use strict";
+
+    s[0] = 2;
+    s[1] = 5;
+    s[2] = 6;
+}
+mutate();
+console.log(s);
+
+
+// freeze
+
+// function freezeObj(){
+//     "use strict";
+//     const 
+// }
+
+//default parameter
+
+const increment = (function(){
+    return function increment(number, value =1){
+        return number + value;
+    };
+
+})();
+console.log(increment(5, 2));
+console.log(increment(5));
+
+//rest operator
+const sum = (function () {
+    return function sum(...args){
+        return args.reduce((a,b) => a + b, 0);
+    };
+})();
+console.log(sum(1,2,3,4));
+
+//spread operator
+
+const arr1 = ['jan','feb','march','april','may'];
+let arr2 ;
+(function(){
+    arr2 = [...arr1];
+    arr1[0]='hey';
+})();
+console.log(arr2);
+
+
+var voxel = {x:3.6, y:7.4, z:6.54};
+
+var x = voxel.x;
+var y = voxel.y;
+var z = voxel.z;
+
+const { x : g, y : h, z : c } = voxel;
+
+const avg = {
+    today: 77.5,
+    tomorrow: 79
+};
+
+function getTemp(avg){
+    "use strict";
+    // const tempOfTmw = undefined;
+    const { tomorrow : tempOfTmw} = avg;
+    return tempOfTmw;
+}
+console.log(getTemp(avg));
+
+ const localForcast = {
+    today : {min:72, max:83},
+    tomorrow : {min: 73.3, max: 84.6}
+ };
+
+ function getMaxOftmw(forecast){
+    "use strict";
+    const { tomorrow : {max : maxOfTmw }} = forecast;
+    return maxOfTmw;
+ }
+ console.log(getMaxOftmw(localForcast));
+
+
+//  const [p, d, f] = [1, 2, 3, 4, 5, 6];
+const [p, d, , , f] = [1, 2, 3, 4, 5, 6];
+console.log(p, d, f);
+
+
+
+const createPerson = (name, age, gender) => (
+//   return{
+//     name: name,
+//     age: age,
+//     gender: gender
+//   };
+
+ {name, age, gender}
+);
+console.log(createPerson("hari",33,'male'));
+
+
+const bicycle = {
+    gear: 2,
+    // setGear: function(newGear){
+    //     "use strict";
+    //     this.gear = newGear;
+    // }
+    setGear(newGear){
+        "use strict";
+        this.gear = newGear;
+    }
+
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+
+//class syntax
+// var spaceShuttle = function(targetPlanet){
+//     this.targetPlanet = targetPlanet;
+// }
+// var zeus = new spaceShuttle('jupiter');
+// console.log(zeus.targetPlanet);
+
+class spaceShuttle{
+    constructor(targetPlanet){
+        this.targetPlanet = targetPlanet;
+    }
+}
+var zeus = new spaceShuttle('jupiter');
+console.log(zeus.targetPlanet);
+
+//vegetable class
+
+function makeClass(){
+    class vegetable{
+        constructor(name){
+            this.name = name;
+        }
+    }
+    return vegetable;
+}
+const vegetable = makeClass();
+const carrot = new vegetable('beetroot');
+console.log(carrot.name);
+//getter and setter
+class Book{
+    constructor(author){
+        this._author = author;
+    }
+
+    get writer(){
+        return this._author;
+    }
+
+
+    set writer(updatedAuthor){
+        this._author = updatedAuthor;
+    }
+}
+
+
+function makeClass(){
+    class thermostat{
+        constructor(temp){
+            this._temp = 5/9 * (temp - 32);
+        }
+        get temperature(){
+            return this._temp;
+
+        }
+        set temperature(updatedTemp){
+            this._temp = updatedTemp;
+        }
+    }
+    return thermostat;
+}
+
+const thermostat = makeClass();
+const thermo = new thermostat(76);
+let temp = thermo.temperature;
+thermo.temperature = 26;
+temp = thermo.temperature;
+console.log(temp);
