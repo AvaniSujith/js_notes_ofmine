@@ -97,6 +97,10 @@ function testForVowels(){
         {
             input : 'g',
             output : "The given alphabet is consonent"
+        },
+        {
+            input : 'h',
+            output : 'The given alphabet is vowel'
         }
     ]
 
@@ -107,7 +111,7 @@ function testForVowels(){
             if(result == testCase.output){
                 console.log(`Test case ${index + 1} passed`);
             }else{
-                console.log(`Test case ${index + 1} failed`);
+                console.log(`Test case ${index + 1} failed \n Correct output - ${result}`);
             }
         });
 }
