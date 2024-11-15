@@ -117,21 +117,67 @@
 
 // version-10.7
 
-function primeORNot(num){
-    for(i=2; i< num; i++){
-     if( num % i === 0){
-         console.log("The given number is not a prime number");
-         return;
-    }
+// function primeORNot(num){
+//     for(i=2; i< num; i++){
+//      if( num % i === 0){
+//          console.log("The given number is not a prime number");
+//          return;
+//     }
   
-    }
-    console.log("The given number is a prime number");
-     }
+//     }
+//     console.log("The given number is a prime number");
+//      }
      
     
 
- primeORNot(76);
+//  primeORNot(76);
 //  primeORNot(15);
 //  primeORNot(30);
 
+// version-10.8 using testcase 
 
+
+function primeORNot(num){
+    for(i=2; i< num; i++){
+     if( num % i === 0){
+         return "The given number is not a prime number";
+         
+    }
+  
+    }
+     return "The given number is a prime number";
+     }
+     
+
+     function testPrimeOrNot(){
+        const testCases = [
+            {
+                input : 2,
+                output : "The given number is a prime number"
+            },
+            {
+                input : 4,
+                output : "The given number is not a prime number"
+            },
+            {
+                input : 5,
+                output : "The given number is a prime number"
+            },
+            {
+                input : 9,
+                output : "The given number is a prime number"
+            }
+        ]
+
+        testCases.forEach((testCase, index)=>{
+            const result = primeORNot(testCase.input);
+
+            if(result == testCase.output){
+                console.log(`Test case ${index +1} passed`);
+            }else{
+                console.log(`Test case ${index+1} failed \nCorrect output - ${result}`);
+            }
+        });
+     }
+
+     testPrimeOrNot();
