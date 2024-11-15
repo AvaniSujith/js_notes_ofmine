@@ -128,6 +128,10 @@ function testNumbers(){
         {
           input : 0,
           output : "The given number is zero."
+        },
+        {
+            input : 9,
+            output : "The given number is zero."
         }
     ]
 
@@ -137,7 +141,7 @@ function testNumbers(){
         if (result === testCase.output) {
             console.log(`Test case ${index + 1}: Passed`);
         } else {
-            console.log(`Test case ${index + 1}: Failed \nCorrect output - "${testCase.output}", but got "${result}"`);
+            console.log(`Test case ${index + 1}: Failed \nCorrect output - ${result}`);
         }
 
 
