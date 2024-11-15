@@ -30,14 +30,57 @@
 
 //version-8.3
 
-function maxValue(arr){
-    arr.sort((a,b) => a - b);
-    let maxElement = arr[arr.length - 1];
-    console.log(`The max value is ${maxElement}`)
-}
+// function maxValue(arr){
+//     arr.sort((a,b) => a - b);
+//     let maxElement = arr[arr.length - 1];
+//     console.log(`The max value is ${maxElement}`)
+// }
 
 // let array = [1,0,5,8,4,2];
 // maxValue(array);
 
-let array = [1,0,99,556,39,59,288,47,10000,555555,33,4];
-maxValue(array);
+// let array = [1,0,99,556,39,59,288,47,10000,555555,33,4];
+// maxValue(array);
+
+
+// version -  8.4 using testcases 
+
+function maxValue(arr){
+    arr.sort((a,b) => a - b);
+    let maxElement = arr[arr.length - 1];
+    return maxElement;
+}
+
+function testMaxvalue(){
+    const testCases = [
+        {
+            input : [1,2,3,4,44,66,22,42356,11,10],
+            output : 42356
+        },
+        {
+            input : [44,55,33,66,11,22],
+            output : 66
+        },
+        {
+            input : [888,-55,-2,-4],
+            output : 888
+        },
+        {
+            input : [-8, -3, -5],
+            output : -8
+        }
+    ]
+
+    testCases.forEach((testCase, index) =>{
+        const result = maxValue(testCase.input);
+
+
+        if(result == testCase.output){
+            console.log(`Test case ${index+1} passed`);
+        }else{
+            console.log(`Test case ${index+1} failed\nCorrect output - ${result}`);
+        }
+    })
+}
+
+testMaxvalue();
