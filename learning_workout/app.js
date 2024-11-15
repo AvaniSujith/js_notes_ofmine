@@ -409,8 +409,8 @@
 
 
 // practice -5
-let markOfall = [85, 97, 44, 37, 76, 60];
-let sum = 0;
+// let markOfall = [85, 97, 44, 37, 76, 60];
+// let sum = 0;
 // for(let i = 0; i < markOfall.length; i++){
 //     sum += markOfall[i];
 // }
@@ -492,3 +492,92 @@ let sum = 0;
 //splice - change org array (add, remove, replace)
 //   numbers.splice(44,0,5);
 //   console.log(numbers);
+
+
+//Functions in javascript
+
+
+// function printingName(){
+//     console.log("avani s");
+// }
+
+// function printingFunction(msg){
+//     console.log(msg);
+// }
+// printingFunction("hello");
+
+//after return statement no codes written will be executed. parameters/arguments are block elements defined only within the function.
+
+//arrow funcitons
+
+// const functionName = (para1, para2) => {
+//     //code
+// }
+
+// const sum = (a,b) => {
+//     return a + b;     //return function should be assigned to a new variable and consoled otherwise do console.log(functionName(para1, para2))
+//     // console.log(a + b);
+// }
+// sum(2,3);
+// console.log(sum(3,7));
+
+// const multiplication = (a,b) => {
+//     console.log(a * b);
+// }
+// multiplication(2,8);
+
+
+//practice -6
+ 
+// function countVowel(string){
+//     let count = 0;
+//     for(let i = 0;i < string.length ;i++){
+//         // console.log(string[i]);
+//         if(string[i] == "a" || string[i] =="e" || string[i] =="i" || string[i] =="o" || string[i] =="u" ){
+//             count += 1;
+//             // console.log(string[i])
+//         }
+//     }
+//     console.log(count);
+// }
+
+// const counting = (string) => {
+//     let count = 0;
+//     for(let i = 0 ; i<string.length; i++){
+//         if(string[i] == "a" || string[i] =="e" || string[i] =="i" || string[i] =="o" || string[i] =="u" ){
+//             count++ ;
+//         }
+//     }
+//     console.log(count)
+// }
+
+
+// counting('jashin');
+// countVowel("avani");
+
+
+//forEach -method used with array ************ higher order function/methods -- takes funciton as parameter / return a function as result
+//arr.forEach(callback function)
+
+// let arr = [1,2,3,4];
+// // arr.forEach(function(val){
+// //     console.log(val);
+// // })
+// arr.forEach((val , index, arr)=>{
+//     console.log(val, index, arr);
+// });
+
+
+// practice - 7
+
+let Array = [1,2,3,4];
+
+// Array.forEach((val) =>{
+//     for(let i = 0; i<Array.length; i++){
+//         console.log(val[i] = val[i]**2)
+//     }
+// })
+
+Array.forEach((val) => {
+    console.log(val ** 2);
+})
