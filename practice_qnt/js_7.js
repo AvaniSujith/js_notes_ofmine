@@ -32,12 +32,37 @@
 
 // version-7.4
 
+// function factorial(num){
+//     if(num == 1 || num == 0){
+//         console.log(`The factorial of ${num} is 1`);
+        
+//     }else if(num < 0){
+//         console.log("Cannot be computed");
+//     }
+//     else{
+//         let fact = 1;
+//         for(i = 1; i <= num ; i++){
+            
+//             fact *= i;
+        
+//         }
+//         console.log(`The fatorial of ${num} is ${fact}`);
+//     }
+// }
+
+// factorial(7);
+// factorial(1);
+// factorial(3);
+
+
+// version - 7.5 using test cases
+
 function factorial(num){
     if(num == 1 || num == 0){
-        console.log(`The factorial of ${num} is 1`);
+        return "1";
         
     }else if(num < 0){
-        console.log("Cannot be computed");
+        return "Cannot be computed";
     }
     else{
         let fact = 1;
@@ -46,10 +71,40 @@ function factorial(num){
             fact *= i;
         
         }
-        console.log(`The fatorial of ${num} is ${fact}`);
+        return fact;
     }
 }
 
-factorial(7);
-factorial(1);
-factorial(3);
+function testFactorial(){
+    const testCases = [
+        {
+            input : 7,
+            output : 5040
+        },
+        {
+            input : 5,
+            output : 120
+        },
+        {
+            input : 4,
+            output : 24
+        },
+        {
+            input : 6,
+            output : 700
+        }
+    ]
+
+    testCases.forEach((testCase , index) =>{
+        const result = factorial(testCase.input);
+
+        if(result == testCase.output){
+            console.log(`Test case ${index +1} passed`);
+        }else{
+            console.log(`Test case ${index+1} failed\nCorrect output - ${result}`);
+        }
+    });
+}
+
+
+testFactorial();
