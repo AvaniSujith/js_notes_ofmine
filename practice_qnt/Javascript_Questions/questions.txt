@@ -3,7 +3,7 @@ Questions
 1. Write a program to add, subtract, multiply, and divide two numbers.
 2. Write a program to check if two ratios are in proportion.
 3. Calculate the percentage increase or decrease between two numbers.
-4. Write a program to find the ratio of three numbers.
+4. Find the LCM and GCD of two numbers.
 5. Develop a program to simplify a fraction to its lowest terms.
 6. Solve a linear equation in one variable( ax + b = c ).
 7. Write a program to verify the quadratic identity \( (a + b)^2 = a^2 + 2ab + b^2 \).
@@ -31,7 +31,7 @@ Questions
 29. Create a function to find the range of a dataset.
 30. Calculate the probability of selecting a specific marble from a bag containing different-colored marbles.
 31. Write a program to check if a number is prime.
-32. Find the LCM and GCD of two numbers.
+32. Write a program to find the ratio of three numbers.
 33. Write a program to calculate the sum of the digits of a number.
 34. Find the factors of a given number.
 35. Write a program to determine if a number is a perfect square.
