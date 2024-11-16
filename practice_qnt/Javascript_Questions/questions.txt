@@ -1,0 +1,52 @@
+Questions
+
+1. Write a program to add, subtract, multiply, and divide two numbers.
+2. Write a program to check if two ratios are in proportion.
+3. Calculate the percentage increase or decrease between two numbers.
+4. Write a program to find the ratio of three numbers.
+5. Develop a program to simplify a fraction to its lowest terms.
+6. Solve a linear equation in one variable( ax + b = c ).
+7. Write a program to verify the quadratic identity \( (a + b)^2 = a^2 + 2ab + b^2 \).
+8. Write a program to calculate the value of a linear polynomial \( ax + b \) for a given \( x \).
+9. Solve a system of linear equations in two variables using substitution.
+10. Develop a program to expand and simplify ((a - b)^2 ).
+11. Write a program to calculate the area of a triangle using Heron’s formula.
+12. Compute the perimeter and area of a rectangle.
+13. Calculate the area and circumference of a circle.
+14. Write a program to determine if three sides can form a triangle.
+15. Calculate the surface area and volume of a cylinder.
+16. Write a program to find the value of sine, cosine, and tangent for an angle (input in degrees).
+17. Calculate the height of a tree given its shadow length and angle of elevation.
+18. Compute the area of a triangle using trigonometric functions.
+19. Write a program to solve simple trigonometric equations.
+20. Calculate the length of a hypotenuse in a right triangle given the other two sides.
+21. Calculate the \( n \)-th term of an arithmetic progression.
+22. Find the sum of the first \( n \) terms of an arithmetic progression.
+23. Write a program to generate the first \( n \) terms of a geometric progression.
+24. Calculate the sum of the first \( n \) odd numbers.
+25. Develop a program to compute the sum of squares of the first \( n \) natural numbers.
+26. Write a program to calculate the mean, median, and mode of a dataset.
+27. Simulate the rolling of a die and calculate the probability of each outcome.
+28. Write a program to compute the probability of drawing a red card from a standard deck of cards.
+29. Create a function to find the range of a dataset.
+30. Calculate the probability of selecting a specific marble from a bag containing different-colored marbles.
+31. Write a program to check if a number is prime.
+32. Find the LCM and GCD of two numbers.
+33. Write a program to calculate the sum of the digits of a number.
+34. Find the factors of a given number.
+35. Write a program to determine if a number is a perfect square.
+36. Check if a given point lies on a line represented by \( y = mx + c \).
+37. Write a program to check if a number is a palindrome.
+38. Develop a program to calculate the remainder when one number is divided by another.
+39. Write a program to check if a number is divisible by both 3 and 5.
+40. Write a program to find the sum of all prime numbers less than  n.
+41. Convert a given number of hours into minutes.
+42. Write a program to convert meters into centimeters.
+43. Convert seconds into hours, minutes, and seconds.
+44. Calculate the speed of an object given distance and time.
+45. Write a program to convert temperatures between Celsius and Fahrenheit.
+46. Find the distance between two points on a coordinate plane.
+47. Calculate the area of a rhombus given its diagonals.
+48. Write a program to find the total surface area of a cuboid.
+49. Compute the volume of a cone given its radius and height.
+50. Write a program to check if a given year is a leap year.

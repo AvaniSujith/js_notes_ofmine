@@ -1,0 +1,52 @@
+
+01. Develop a program to perform addition, subtraction, multiplication, and division of fractions.
+02. Program to calculate the percentage of marks obtained out of a total.
+03. Program to know if two values are direct / inverse proportion.
+04. Program to calculate simple and compound interest.
+05. Compute (a+b)**2.
+06. compute ax+b.
+07. Accept the sides of a triangle and return if it is right triangle or not.
+08. Compute the area and perimeter of a circle.
+09. calculate mean, median and mode.
+10. find prime factors of a given number.
+11. solve ax + by.
+12. calculate nth term of an arithmetic progression.
+13. compute sin theta.
+14. determine if a point lies inside or outside or on  a circle
+15. Develop a program to find the surface area and volume of 3D shapes like a sphere, cylinder, and cone.
+16. Write a program to generate the first n terms of a geometric progression.
+17. Develop a function to perform basic matrix addition and multiplication.
+18. Write a program to calculate the distance between two points on a graph.
+19. Write a function to solve unitary method problems, such as "If 5 apples cost Rs. 100, what is the cost of 8 apples?"
+20. Develop a program to check if two triangles are similar based on given conditions.
+21. Write a function to compute the length of the tangent from a point to a circle.
+22. Create a program to simulate the rolling of a die and calculate probabilities of outcomes.
+23. Develop a program to calculate the LCM of two numbers.
+24. Implement a program to find the absolute value of a given integer or float.
+25. Create a program to compute the square and cube of a number.
+26. Develop a function to check if a number is a perfect square.
+27. Implement a program to calculate the perpendicular distance from a point to a line.
+28. Write a program to solve for angles in a right triangle using trigonometric functions.
+29. Write a program to calculate the probability of drawing a specific card from a standard deck.
+30. Write a program to compute the sum of all prime numbers less than n.
+31. Create a function to simulate the tossing of a coin n times and display the results.
+32. Convert 2 meters into centimeters.
+33. If a pencil costs 10 rupees, how much will 5 pencils cost?
+34. In a class, 15 students are boys and 10 are girls. What is the ratio of boys to girls?
+35. Write a program to find the remainder when one number is divided by another.
+36. Write a program to calculate the perimeter of a rectangle.
+37. Create a program to check if a given number is a palindrome.
+38. Create a program to generate a random number within a range.
+39. Write a program to determine if a given year is a leap year.
+40. Write a program to calculate the square and cube of a number.
+41. Create a program to calculate the n-th power of a number.
+42. Write a program to check if a given number is divisible by both 3 and 5.
+43. Create a function to calculate the volume of a cube.
+44. Write a program to convert hours into minutes.
+45. Create a program to convert seconds into hours and minutes.
+46. Write a program to find the number of diagonals in a polygon given its number of sides.
+47. Write a program to calculate the number of days between two dates.
+48. Convert a given number of seconds into days, hours, minutes, and seconds.
+49. Determine the equation of a line given two points.
+50. Create a function to find the midpoint of two given points.
+

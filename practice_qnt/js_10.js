@@ -152,11 +152,11 @@ function primeORNot(num){
      function testPrimeOrNot(){
         const testCases = [
             {
-                input : 2,
+                input : 25,
                 output : "The given number is a prime number"
             },
             {
-                input : 4,
+                input : 49,
                 output : "The given number is not a prime number"
             },
             {

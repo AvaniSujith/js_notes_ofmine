@@ -570,14 +570,147 @@
 
 // practice - 7
 
-let Array = [1,2,3,4];
+// let Array = [1,2,3,4];
 
-// Array.forEach((val) =>{
-//     for(let i = 0; i<Array.length; i++){
-//         console.log(val[i] = val[i]**2)
-//     }
+// // Array.forEach((val) =>{
+// //     for(let i = 0; i<Array.length; i++){
+// //         console.log(val[i] = val[i]**2)
+// //     }
+// // })
+
+// Array.forEach((val) => {
+//     console.log(val ** 2);
 // })
 
-Array.forEach((val) => {
-    console.log(val ** 2);
-})
+
+//map in javascript - similar to forEach. return a new array with the result of operation
+
+// let num = [2,44, 5,55];
+
+// num.map((val) =>{
+//     console.log(val);
+// });
+
+
+
+// function target(){
+//        let total = 0;
+//     for(let day = 0; day < 180; day ++){
+//          total += 8 * day;
+//     }
+//     console.log(total);
+// }
+ 
+// target();
+
+///simply questions *****************************************************************************
+
+function target(){
+    
+    let totalGoal = 0;
+    let currentTotal = 349 + (9/60);
+
+    for(let day = 0; day < 180; day ++){
+        totalGoal += 8;
+    }
+
+    let remainingHours = totalGoal - currentTotal;
+    let dailyGoal = remainingHours / 87;
+
+    console.log(`Your Daily Goal is : ${dailyGoal}`);
+    console.log(`Total target hours: ${totalGoal} hours`);
+    console.log(`You have ${remainingHours} hours remaining to reach your goal.`);
+
+}
+
+target();
+
+
+//**************************************************************************************************** */
+
+
+// let num = [1,2,3,4];
+//  num.map((val)=>{
+//     console.log(val);
+//  });
+ 
+//  let newArray = num.map((val)=>{
+//     return val;
+//  });
+
+//  console.log(newArray);
+
+
+//  num.forEach((Element, index, num) =>{
+//     // console.log(Element);
+//     console.log(Element, index);
+//     // console.log(num);
+//  });
+
+
+// filter in array method - filter ouot elemeents of array depending upon certain conditions, the return value is a  new array
+
+// let arrayElement = [1,2,3,4,5,6,7,8];
+// let newArr = arrayElement.filter((val)=>{
+//     return val % 2 === 0;
+// });
+
+// console.log(newArr);
+
+// let oddArr = arrayElement.filter((val)=>{
+//     return val % 2 !== 0;
+
+// });
+
+// console.log(oddArr);
+
+//reduce method in array - input array changed into a single value in reduced form . like avg
+
+
+// let arr = [1, 2, 3, 4 ];
+
+// const output = arr.reduce((res, curr) =>{
+//     return res + curr;
+// });
+
+// console.log(output);
+
+// //return the max element in an array
+// let arrayMax = [2, 4, 66, 1, 22];
+
+// const maxValue = arrayMax.reduce((prev,next)=>{
+//     return prev > next ? prev : next;
+// });
+
+// console.log(maxValue);
+
+// //practice - 8
+
+// let marks = [22, 6, 77, 99, 44, 98, 93, 96];
+// //  const mark = marks.reduce((val)=>{
+// //     if(val > 90){
+// //         return val;
+// //     }
+// //  });
+
+// //  console.log(mark);
+
+
+// const mark = marks.filter((val)=>{
+//     return val > 90;
+// });
+
+// console.log(mark);
+
+// practice - 9
+
+// let input = prompt("Enter the number");
+
+// let arr = [];
+// for(let i = 0; i < input; i++){
+//  arr[i-1] = i;
+// }
+
+// console.log(arr);
+
+

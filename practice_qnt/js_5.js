@@ -40,40 +40,66 @@
 
 // version - 5.5 using testcases 
 
- function SumOfNatural(x){
+//  function SumOfNatural(x){
         
-        return x*(x+1)/2;
+//         return x*(x+1)/2;
         
-    }
+//     }
+
+// function testSum(){
+//     const testCases = [
+//         {
+//             input : 5,
+//             output : 15
+//         },
+//         {
+//             input : 10,
+//             output : 55
+//         },
+//         {
+//             input : 3,
+//             output : 6
+//         }, 
+//         {
+//             input : 100,
+//             output : 5000
+//         }
+//     ]
+
+//     testCases.forEach((testCase, index) =>{
+//         const result = SumOfNatural(testCase.input);
+
+//         if(result == testCase.output){
+//             console.log(`Test case ${index + 1} passed`);
+//         }else{
+//             console.log(`Test case ${index + 1} failed\nCorrect output - ${result}`);
+//         }
+//     })
+// }
+// testSum();
+
+// version- 5.6
+
+function SumOfNatural(x){
+    return x*(x+1)/2;
+}
+// console.log(SumOfNatural(3))
 
 function testSum(){
-    const testCases = [
-        {
-            input : 5,
-            output : 15
-        },
-        {
-            input : 10,
-            output : 55
-        },
-        {
-            input : 3,
-            output : 6
-        }, 
-        {
-            input : 100,
-            output : 5000
-        }
-    ]
+    let sample = [3,5,10,100];
+    let output = [33,15,55,500];
+    let result = 0;
+    let i = 0;
 
-    testCases.forEach((testCase, index) =>{
-        const result = SumOfNatural(testCase.input);
+    for(i=0; i<sample.length; i++){
+        result = SumOfNatural(sample[i]);
 
-        if(result == testCase.output){
-            console.log(`Test case ${index + 1} passed`);
+        if(result == output[i]){
+            console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${index + 1} failed\nCorrect output - ${result}`);
+            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
         }
-    })
+    }
 }
+
 testSum();
