@@ -1,15 +1,15 @@
 Questions
 
-1. Write a program to add, subtract, multiply, and divide two numbers.
-2. Write a program to check if two ratios are in proportion.
-3. Calculate the percentage increase or decrease between two numbers.
-4. Find the GCD of two numbers.
-5. Develop a program to simplify a fraction to its lowest terms.
-6. Solve a linear equation in one variable( ax + b = c ).
-7. Write a program to verify the quadratic identity ( (a + b)^2 = a^2 + 2ab + b^2 ).
-8. Write a program to fibonacci series.
-9. Solve a system of linear equations in two variables using substitution.
-10. Develop a program to expand and simplify ((a - b)^2 ).
+01. Write a program to add, subtract, multiply, and divide two numbers.
+02. Write a program to check if two ratios are in proportion.
+03. Calculate the percentage increase or decrease between two numbers.
+04. Find the GCD of two numbers.
+05. Develop a program to simplify a fraction to its lowest terms.
+06. Solve a linear equation in one variable( ax + b = c ).
+07. Write a program to verify the quadratic identity ( (a + b)^2 = a^2 + 2ab + b^2 ).
+08. Write a program to fibonacci series.
+09. Program to find perimeter of triangle.
+10. Write a program to calculate the compound interest for a fixed deposit over 5 years.
 11. Write a program to calculate the area of a triangle.
 12. Compute the perimeter and area of a rectangle.
 13. Calculate the area and circumference of a circle.
