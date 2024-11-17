@@ -196,3 +196,5 @@ const people = ['hari', 'jai', 'sam', 'lia', 'jia'];
  });
  console.log(html);
  ul.innerHTML = html;
+
+ 
