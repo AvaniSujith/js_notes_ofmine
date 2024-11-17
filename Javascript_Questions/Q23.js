@@ -29,14 +29,21 @@
 
 
 // version-23.3 **********************************************
-// function reverse(arr){
-//     let arr1 = [];
-//     for(let i = arr.length; i>0; i--){
-//         arr1.push(i)
-//     }
-//     console.log(arr1)
-// }
+function reverse(arr){
+    let arr1 = [];
+    for(let i = arr.length; i>0; i--){
+        arr1.push(i)
+    }
+    console.log(arr1)
+}
 
-// reverse([1,2,3,4]);
- 
-// version-23.4
+reverse([1,2,3,4]);
+
+
+
+
+
+
+
+
+
