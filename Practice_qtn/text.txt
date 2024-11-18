@@ -1,0 +1,29 @@
+Javascript Questions
+ 1. Write a program to calculate the remainder of two numbers?
+ 2. Write a program to find the average of an array of numbers?
+ 3. Write a program to add two matrices?
+ 4. Write a program to calculate the area of a rectangle, given its length and breadth?
+ 5. Write a program to check if the given matrix is a diagonal matrix?
+ 6. Write a program to check if the given matrix is an identity matrix?
+ 7. Write a program that returns the transpose of a given matrix?
+ 8. Write a program to find the most repeated value in an array of numbers?
+ 9. Write a program that approximates the derivative of f(x)=x^n?
+ 10. Write a program to check if the given number is a perfect square or not?
+ 11. Write a program to calculate the area of a triangle given its base and height.?
+ 12. Write a program to calculate the Fibonacci series of a given number?
+ 13. Write a program to check whether a given number is an Armstrong number or not?
+ 14. Write a program to check whether a given number is a perfect number or not?
+ 15. Write a program to convert the decimal number to a binary representation?
+ 16. Write a program to check whether the given string is palindrome or not?
+ 17. Write a program to find the greatest common divisor (GCD) of two numbers?
+ 18. Write a program to find the least common multiple (LCM) of two numbers?
+ 19. Write a program to count the number of vowels in a string?
+ 20. Write a program to calculate the factorial of a number using a recursive method?
+ 21. Write a program to find the first n prime numbers up to the given number?
+ 22. Write a program to remove duplicates in an array of numbers?
+ 23. Write a program to check whether the given string with space is palindrome or not?
+ 24. Write a program to simplify a fraction of two numbers to its lowest term?
+ 25. Write a program to find the range (difference between the highest and lowest values) in
+ an array of numbers?
+ 
+ * Please write test cases for all the questions.
