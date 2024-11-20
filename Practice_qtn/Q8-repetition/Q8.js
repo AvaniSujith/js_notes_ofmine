@@ -16,3 +16,36 @@ function repetation(arr){
 }
 
 repetation([1,4,1,7,8]);
+
+// function testRepeat(){
+//     const testCases = [
+//         {
+//             input :
+//             output :
+//         },
+//         {
+//             input :
+//             output : 
+//         },
+//         {
+//             input : 
+//             output :
+//         },
+//         {
+//             input : 
+//             output :
+//         }
+//     ];
+
+//     testCases.forEach((testCase, index)=>{
+//         let result = repetation(testCase.input);
+
+//         if(result == repetation.output){
+//             console.log(`Test case ${index+1} passed`);
+//         }else{
+//             console.log(`Test case ${index+1} failed`);
+//         }
+//     });
+
+
+// }
