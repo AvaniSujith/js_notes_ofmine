@@ -5,6 +5,7 @@ function rectangle(l,b){
 }
 
 function testRectangle(){
+    
     let sample = [[5,10], [5.5,3.2],  [0,5]];
     let output = [50, 17.6, 5];
 
