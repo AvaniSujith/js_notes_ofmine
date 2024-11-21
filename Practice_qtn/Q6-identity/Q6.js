@@ -1,14 +1,32 @@
 // Write a program to check if the given matrix is an identity matrix?
 
-function identity(){
-    for(let i = 0; i<length; i++){
-        for(let j = 0; j<length; j++){
-
-            
-
+function identity(arr){
+    let position = 0 ;
+    if(arr.length === 0 || arr.length !== arr[position].length || arr == []){
+        return "Not an identity matrix";
+    }
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr.length; j++){
+            if(arr[i][i] == 1 && arr[i][j] == 0 && i != j){
+                return "Is an identity matrix";
+            }
         }
     }
+    return "Not an identity matrix";
 }
+
+
+console.log(identity([1,2],
+    [2,2]
+));
+
+console.log(identity([1,0,0],
+    [0,1,0],
+    [0,0,1]
+));
+
+
+
 
 // function testIdentity(){
 //     const testCases = [

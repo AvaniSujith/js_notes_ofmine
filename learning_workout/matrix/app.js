@@ -74,8 +74,3 @@ console.log(matrix[0][1]);
 
 
 
-
-
-
-
-
