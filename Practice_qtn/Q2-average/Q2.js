@@ -23,6 +23,7 @@ function avg(arr){
 // let arr = [1,2,3,4,5];
 // avg(arr);
 
+
 function testAvg(){
 
     const testCases = [
