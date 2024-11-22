@@ -1,6 +1,7 @@
 
 function derivative(power){
-   let coefficient = power;
+   
+    let coefficient = power;
    let powerUpdated = power - 1;
 
    return `${coefficient}X^${powerUpdated}`;
@@ -8,6 +9,7 @@ function derivative(power){
 
 
 function testDerivative(){
+
     let sample = [3, 4, 8, 36];
     let output = ["3X^2", "4X^3", "7X^4", "33X^36"];
 

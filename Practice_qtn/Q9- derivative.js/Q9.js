@@ -16,7 +16,7 @@ function derivative(power){
 
 function testDerivative(){
     let sample = [3, 4, 8, 36];
-    let output = ["3X^2", "4X^3", "7X^4", "33X^36"];
+    let output = ["3X^2", "4X^3", "7X^4", "36X^35"];
 
     for(let i = 0; i<sample.length; i++){
         let result = derivative(sample[i]);
