@@ -31,7 +31,14 @@ function square(num){
                 guessNum -= 1;
                 squareNum = guessNum * guessNum;
             }
-    
+            
+        
+        }
+
+        if(squareNum === num){
+            console.log("perfect square");
+        }else{
+            console.log("not a perfect square");
         }
        
 
@@ -40,3 +47,4 @@ function square(num){
 }
 
 square(36);
+square(32);
