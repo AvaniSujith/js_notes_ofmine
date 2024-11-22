@@ -69,8 +69,7 @@ function testRepetition(){
         }else{
             console.log(`Test case ${index+1} failed\nCorrect output: ${result}`);
         }
-    })
+    });
 }
-
 
 testRepetition();
