@@ -1,4 +1,7 @@
 function perfectSquare(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     if(num < 0 ){
         console.log("Invalid");
     }else{
@@ -29,7 +32,8 @@ function testPerfect(){
         0,
         1,
         1050,
-        1024
+        1024,
+        "hello"
     ];
     let output = [
         "perfect square",
@@ -46,7 +50,7 @@ function testPerfect(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\n Correct output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

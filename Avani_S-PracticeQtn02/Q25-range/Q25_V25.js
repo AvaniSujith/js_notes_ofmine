@@ -1,4 +1,7 @@
 function range(arr){
+    if(typeof(arr) !== "object"){
+        return "Invalid input. Input should be array."
+    }
     
     // let minValue = 0;
     // let maxValue = 0;
@@ -30,7 +33,7 @@ function range(arr){
 // range([1,4,6,3,8,5]);
 
 function testRange(){
-    let sample = [[10], [5, 5, 5, 5], [-10, -5, 0, 5, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9]];
+    let sample = [[10], [5, 5, 5, 5], [-10, -5, 0, 5, 10], [1, 2, 3, 4, 5, 6, 7, 8, 9],9];
     let output = [10, 0, 20, 8];
 
     for(let i = 0; i < sample.length; i++){
@@ -39,7 +42,7 @@ function testRange(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

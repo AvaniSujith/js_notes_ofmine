@@ -1,5 +1,7 @@
 function gcdCalc(a,b){
-    
+    if(typeof(a) !== "number" && typeof(b) !== "number"){
+        return "Invalid input. Input should be number."
+    }
     let x = 0;
     
     if( a > b){
@@ -31,7 +33,7 @@ function gcdCalc(a,b){
 
 
 function testGCD(){
-    let input = [[8, 12], [15, 45], [13, 27], [0,10]];
+    let input = [[8, 12], [15, 45], [13, 27], [0,10], ["h", "j"]];
     let output = [4, 15, 3, 1];
 
     for(let i = 0; i<input.length; i++){
@@ -40,7 +42,7 @@ function testGCD(){
         if(result === output[i]){
             console.log(`Test cases ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

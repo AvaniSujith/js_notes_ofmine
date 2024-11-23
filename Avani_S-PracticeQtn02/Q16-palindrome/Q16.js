@@ -1,6 +1,9 @@
 // Write a program to check whether the given string is palindrome or not?
 
 function palindrome(string){
+    if(typeof(string) !== "string"){
+        return "Invalid input. Input should be string."
+    }
    let arr = [];
    let revArr = [];
    let newString = string.toLowerCase();
@@ -30,7 +33,7 @@ function palindrome(string){
 
 
 function testPalindrome(){
-    let sample = ["radar", "abba", "avani", "Madam", "1234"];
+    let sample = ["radar", "abba", "avani", "Madam", 1234];
     let output = ["Is a palindrome","Is a palindrome", "Is a palindrome", "Is a palindrome", "Is a palindrome"];
 
     for(let i = 0; i<sample.length; i++){
@@ -39,7 +42,7 @@ function testPalindrome(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

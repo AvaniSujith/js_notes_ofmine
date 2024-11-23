@@ -1,6 +1,9 @@
 // Write a program to check if the given matrix is an identity matrix?
 
 function identity(matrix){
+    if(typeof(matrix) !== "object"){
+        return "Invalid input. Input should be a matrix."
+    }
     // let position = 0 ;
     // if(arr.length !== arr[position].length || arr.length == 0){
     if(matrix.length === 0){
@@ -25,7 +28,6 @@ function identity(matrix){
 }
 
 
-
 // console.log(identity([
 //     [1,2],
 //     [2,2]
@@ -48,8 +50,8 @@ function testIdentity(){
     const testCases = [
         {
             input : [
-                [1,2],
-                [2,2]
+                [1,0],
+                [0,1]
             ],
             output : "Is an identity matrix"
         },
@@ -71,8 +73,14 @@ function testIdentity(){
             output : "Is an identity matrix"
         },
         {
-            input : [],
+            input : [
+                [1,2],
+                [0,1]
+            ],
             output : "Is an identity matrix"
+        },
+        {
+            input : 9
         }
     ];
 
@@ -82,7 +90,7 @@ function testIdentity(){
         if(result == testCase.output){
             console.log(`Test case ${index+1} passed`);
         }else{
-            console.log(`Test case ${index+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${index+1} failed\n${result}`);
         }
         
     });

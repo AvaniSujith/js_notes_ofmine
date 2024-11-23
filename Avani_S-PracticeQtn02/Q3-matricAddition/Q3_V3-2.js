@@ -1,4 +1,7 @@
 function addition(matrix, matrix1){
+    if(typeof(matrix) !== "object" && typeof(matrix1) !== "object"){
+        return "Invalid input. Input should be array format."
+    }
    if(matrix.length !== matrix1.length){
     return "Addition cannot be done";
    }else{

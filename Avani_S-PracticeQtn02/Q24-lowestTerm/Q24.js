@@ -1,6 +1,9 @@
 // Write a program to simplify a fraction of two numbers to its lowest term?
 
 function simplification(numerator, denominator){
+    if(typeof(numerator) !== "number" && typeof(denominator) !== "number"){
+        return "Invalid input. Input should be number."
+    }
     let value = 0;
     if(numerator > denominator){
         value = denominator;
@@ -36,7 +39,7 @@ function simplification(numerator, denominator){
 
 // simplification(8,12);
 function testSimplification(){
-    let sample = [[20,60], [7,13], [0,25], [45,60], [8,12]];
+    let sample = [[20,60], [7,13], [0,25], [45,60], [8,12], ["j","h"]];
     let output = ["numerator = 1\n denominator = 3",
                   "numerator = 7\n denominator = 13",
                   "numerator = 0\n denominator = 1",
@@ -50,7 +53,7 @@ function testSimplification(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

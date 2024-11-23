@@ -1,4 +1,7 @@
 function palindromeWithSpace(givenStr){
+    if(typeof(givenStr) !== "string"){
+        return "Invalid input. Input should be string."
+    }
     let string = givenStr.toLowerCase();
     let strArr = [];
     let revArr = [];
@@ -41,7 +44,7 @@ function testPalindrome(){
                   "Was it a car or a cat I saw",
                 //   `A man, a plan, a canal, Panama!`,
                   "Too hot to hoot",
-                    "a"
+                    "a", 9
                     ];
     let output = ["Palindrome", "Palindrome", "Palindrome", "Palindrome", "Palindrome"];
 
@@ -52,7 +55,7 @@ function testPalindrome(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 

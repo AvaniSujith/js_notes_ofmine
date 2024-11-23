@@ -1,6 +1,9 @@
 // 14. Write a program to check whether a given number is a perfect number or not?
 
 function perfect(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     let divisors = 0;
     let perfectNum = 0;
     for(let i = 0; i <= num; i++){
@@ -24,7 +27,7 @@ function perfect(num){
 
 
 function testPerft(){
-    let sample = [33550336, 1, 12, 496, 28];
+    let sample = [33550336, 1, 12, 496, 28, "h"];
     let output = [ "Perfect", "Perfect",  "Perfect",  "Perfect",  "Perfect"];
 
     for(let i = 0; i <sample.length; i++){
@@ -33,7 +36,7 @@ function testPerft(){
     if(result == output[i]){
         console.log(`Test case ${i+1} passed`);
     }else{
-        console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+        console.log(`Test case ${i+1} failed\n${result}`);
     }
     }
 }

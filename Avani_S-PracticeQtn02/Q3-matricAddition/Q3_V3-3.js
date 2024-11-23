@@ -1,5 +1,8 @@
 
 function addition(matrix, matrix1){
+    if(typeof(matrix) !== "object" && typeof(matrix1) !== "object"){
+        return "Invalid input. Input should be matrix."
+    }
     if(matrix.length !== matrix1.length){
      return "Addition cannot be done";
     }else{
@@ -58,6 +61,8 @@ function addition(matrix, matrix1){
          output: [
              [5]
          ]
+     },{
+        input : 9
      }
  ];
      
@@ -71,7 +76,7 @@ function addition(matrix, matrix1){
          if(JSON.stringify(result) == JSON.stringify(expectedOutput)){
              console.log(`Test case ${i+1} passed`);
          }else{
-             console.log(`Test case ${i+1} failed\nCorrect output: ${JSON.stringify(result)}`);
+             console.log(`Test case ${i+1} failed\n${JSON.stringify(result)}`);
          }
      }
  

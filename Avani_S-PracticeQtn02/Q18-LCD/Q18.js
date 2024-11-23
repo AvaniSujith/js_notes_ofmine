@@ -1,6 +1,9 @@
 // Write a program to find the least common multiple (LCM) of two numbers?
 
 function leastCommonMultiple(num1, num2){
+    if(typeof(num1) !== "number" && typeof(num2) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     let num = 0;
     
     if(num1 > num2){
@@ -43,7 +46,7 @@ function leastCommonMultiple(num1, num2){
 
 function testLCM(){
 
-    let sample = [[6,8], [7,7], [1,12], [100,250], [5,10]];
+    let sample = [[6,8], [7,7], [1,12], [100,250], [5,10], ["h","j"]];
     let output = [24, 20, 12, 500, 10];
 
     for(let i = 0; i<sample.length; i++){
@@ -54,7 +57,7 @@ function testLCM(){
         if(JSON.stringify(result) == JSON.stringify(output[i])){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

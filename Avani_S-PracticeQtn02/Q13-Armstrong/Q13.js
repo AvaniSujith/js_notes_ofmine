@@ -1,6 +1,9 @@
 // Write a program to check whether a given number is an Armstrong number or not?
 
 function armstrong(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     let digits = JSON.stringify(num);
     let numOfDigits = digits.length;
     // console.log(numOfDigits);
@@ -28,7 +31,7 @@ function armstrong(num){
 
 
 function testArmstrong(){
-    let sample = [153, 370, 9474, 123];
+    let sample = [153, 370, 9474, 123, "h"];
     let output = ["It is an Armstrong number.", "It is an Armstrong number.", "It is an Armstrong number.", "It is an Armstrong number."];
 
     for(let i = 0; i<sample.length; i++){

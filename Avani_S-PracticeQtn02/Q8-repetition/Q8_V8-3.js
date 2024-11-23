@@ -1,5 +1,7 @@
 function repetition(arr){
-
+    if(typeof(arr) !== "object"){
+        return "Invalid input. Input should be an array."
+    }
     let maxCount = 0;
     // let temp = arr[0];
     let temp = [];
@@ -58,6 +60,9 @@ function testRepetition(){
         {
             input : [2,2,0,1],
             output : "The most repeated value is 4,1 with a count of 4"
+        },
+        {
+            input :9
         }
     ];
 
@@ -67,7 +72,7 @@ function testRepetition(){
         if(result == testCase.output){
             console.log(`Test case ${index+1} passed`);
         }else{
-            console.log(`Test case ${index+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${index+1} failed\n${result}`);
         }
     });
 }

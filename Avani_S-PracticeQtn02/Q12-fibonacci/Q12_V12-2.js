@@ -1,5 +1,8 @@
 
 function fibonacci(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     
     let array = [];
     array[0] = 0;
@@ -16,7 +19,7 @@ function fibonacci(num){
 
 
 function testFibonacci(){
-    let input = [4, 5, 7, 3];
+    let input = [4, 5, 7, 3, "h"];
     let output = [[0, 1, 1, 2], [0], [0, 1, 1, 2, 3, 5, 8], [0, 1]];
 
     for(let i = 0; i<input.length; i++){

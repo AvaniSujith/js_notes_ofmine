@@ -1,4 +1,7 @@
 function diagonal(matrix){
+    if(typeof(matrix) !== "object"){
+        return "Invalid input. Input should be matrix."
+    }
     let position = 0;
     if(matrix.length === 0 || matrix.length != matrix[position].length){
         return "Not a diagonal matrix";
@@ -70,7 +73,7 @@ function testDiagonal(){
             output : "It is diagonal matrix" 
         },
         {
-            input : [],
+            input : 7,
             ouput : "It is diagonal matrix" 
         }
     ];
@@ -81,7 +84,7 @@ function testDiagonal(){
         if(result == testCase.output){
             console.log(`Test case ${index+1} passed`);
         }else{
-            console.log(`Test case ${index+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${index+1} failed\n${result}`);
         }
     });
 }

@@ -1,4 +1,7 @@
 function numberConv(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     if(num == 0){
         console.log("0");
     }else if (num == 1){
@@ -30,7 +33,7 @@ function numberConv(num){
 // console.log(numberConv(13));
 
 function testNumb(){
-    let sample = [5, 8, 13, 7];
+    let sample = [5, 8, 13, 7, "h"];
     let output = [[1,0,1], [1,0,0,0], [1,1,0,1], [0]];
 
     for(let i = 0; i <sample.length; i++){
@@ -39,7 +42,7 @@ function testNumb(){
     if(JSON.stringify(result) == JSON.stringify(output[i])){
         console.log(`Test case ${i+1} passed`);
     }else{
-        console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+        console.log(`Test case ${i+1} failed\n${result}`);
     }
     }
 }

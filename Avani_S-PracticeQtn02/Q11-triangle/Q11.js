@@ -1,12 +1,15 @@
 // Write a program to calculate the area of a triangle given its base and height.?
 
 function triangle(l,b){
+    if(typeof(l) !== "number" && typeof(b) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     let area = (l * b)/2;
     return area;
 }
 
 function testTriangle(){
-    let sample = [[3,4], [2,5], [6,9], [0,23]];
+    let sample = [[3,4], [2,5], [6,9], [0,23], ["hello", "hello"]];
     let input = [6,5,9,1];
 
     for(let i =0; i<sample.length; i++){

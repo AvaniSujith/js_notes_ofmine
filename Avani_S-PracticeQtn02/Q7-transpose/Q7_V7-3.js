@@ -1,4 +1,8 @@
 function transposeMatrix(matrix){
+    if(typeof(matrix) !== "object"){
+      return "Invalid input. Input should be matrix."
+    }
+
     let transpose = [];
     for(let i = 0; i < matrix[0].length; i++){
         let row = [];
@@ -36,7 +40,8 @@ function testTranspose(){
             [2],
             [3],
             [4]
-          ]
+          ],
+          9
      ];
     let output = [
           [
@@ -67,7 +72,7 @@ function testTranspose(){
         if(JSON.stringify(result) === JSON.stringify(output[i])){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

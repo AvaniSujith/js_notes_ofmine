@@ -1,4 +1,7 @@
 function vowelsNum(string){
+    if(typeof(string) !== "string"){
+        return "Invalid input. Input should be string."
+    }
     let newString = string.toLowerCase();
     let countA = 0;
     let countE = 0;
@@ -38,7 +41,7 @@ function vowelsNum(string){
 // console.log(vowelsNum("aVAnI"));
 
 function testVowels(){
-    let sample = ["AaEeIiOoUu", "bcdfg", "a e!i@o#u$", "abcdefghijklmnopqrstuvwxyz"];
+    let sample = ["AaEeIiOoUu", "bcdfg", "a e!i@o#u$", "abcdefghijklmnopqrstuvwxyz", 99];
     let output = ["The Total count: 10\ncount of A: 2\ncount of E: 2\ncount of I: 2\ncount of O: 2\ncount of U: 2", 
                   "The Total count: 0\ncount of A: 0\ncount of E: 0\ncount of I: 0\ncount of O: 0\ncount of U: 0",
                  "The Total count: 10\ncount of A: 2\ncount of E: 2\ncount of I: 2\ncount of O: 2\ncount of U: 2",
@@ -50,7 +53,7 @@ function testVowels(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\n Correct output: ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

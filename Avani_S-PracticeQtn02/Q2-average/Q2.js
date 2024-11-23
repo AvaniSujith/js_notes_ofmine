@@ -1,6 +1,9 @@
 // Write a program to find the average of an array of numbers?
 
 function avg(arr){
+    if(typeof(arr) !== "object"){
+        return "Invalid input. Input should be array."
+    }
     if(arr != []){
 
         let sum = 0;
@@ -41,7 +44,10 @@ function testAvg(){
         },
         {
             input : [0, 0, 0],
-            output : 3
+            output : 0
+        },
+        {
+            input : 9
         },
         {
             input :[1.5, 2.5, 3.5],
@@ -55,7 +61,7 @@ function testAvg(){
         if( result == testcase.output){
             console.log(`Test case ${index+1} passed`);
         }else{
-            console.log(`Test case ${index+1} failed\nCorrect output is ${result}`);
+            console.log(`Test case ${index+1} failed\n${result}`);
         }
     });
 }

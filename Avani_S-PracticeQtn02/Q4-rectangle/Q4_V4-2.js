@@ -1,4 +1,7 @@
 function rectangle(l,b){
+    if(typeof(l) !== "number" && typeof(b) !== "number"){
+        return "Invalid input. Input should be a number."
+    }
     let area = 0;
     area = l * b;
     return area;
@@ -6,7 +9,7 @@ function rectangle(l,b){
 
 function testRectangle(){
     
-    let sample = [[5,10], [5.5,3.2],  [0,5]];
+    let sample = [[5,10], [5.5,3.2],[0,5], ["hello","hey"]];
     let output = [50, 17.6, 5];
 
     for(let i = 0; i<sample.length; i++){
@@ -17,7 +20,7 @@ function testRectangle(){
         if(result === output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }
