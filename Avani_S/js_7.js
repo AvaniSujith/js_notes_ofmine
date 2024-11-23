@@ -111,6 +111,9 @@
 
 // version - 7.6
 function factorial(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Inputs should be a number";
+    }
     if(num == 1 || num == 0){
         return "1";
         
@@ -129,7 +132,7 @@ function factorial(num){
 }
 
 function testFactorial(){
-    let input = [7,5,6];
+    let input = ["hello",5,6];
     let output = [5040,120,600];
     let result = 0;
     let i = 0;
@@ -140,7 +143,7 @@ function testFactorial(){
         if(result == output[i]){
             console.log(`Test cases ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

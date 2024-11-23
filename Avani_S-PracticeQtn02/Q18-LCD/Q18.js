@@ -31,7 +31,7 @@ function leastCommonMultiple(num1, num2){
     let lcm = 0;
     lcm = (num1 * num2)/ gdc;
 
-    console.log(lcm);
+    return lcm;
 }
 
 // leastCommonMultiple(6,8);
@@ -44,16 +44,19 @@ function leastCommonMultiple(num1, num2){
 function testLCM(){
 
     let sample = [[6,8], [7,7], [1,12], [100,250], [5,10]];
-    let output = [24, 20, 14, 12, 500, 10];
+    let output = [24, 20, 12, 500, 10];
 
     for(let i = 0; i<sample.length; i++){
-        let value = [sample[i][0], sample[i][1]];
-        let result = leastCommonMultiple(value);
+        // let value = [sample[i][0], sample[i][1]];
+        // let result = leastCommonMultiple(value);
+        let result = leastCommonMultiple(sample[i][0], sample[i][1])
 
-        if(result == output[i]){
+        if(JSON.stringify(result) == JSON.stringify(output[i])){
             console.log(`Test case ${i+1} passed`);
         }else{
             console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
         }
     }
 }
+
+testLCM();

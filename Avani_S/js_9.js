@@ -92,6 +92,11 @@
 
 
 function averageValue(arr){
+
+    if(typeof(arr) !== "object"){
+         return "Invalid input. Input should be of array form.";
+    }
+
     let i =0;
     let sum = 0;
     for(i=0; i<arr.length;i++){
@@ -121,6 +126,9 @@ function testAverageValue(){
         {
             input : [0,0,0,0],
             output : 4
+        },
+        {
+            input : 2
         }
     ]
 
@@ -130,7 +138,7 @@ function testAverageValue(){
         if(result == testCase.output){
             console.log(`Test case ${index+1} passed`);
         }else{
-            console.log(`Test case ${index +1} failed \nCorrect output - ${result}`)
+            console.log(`Test case ${index +1} failed \n${result}`)
         }
     });
 }

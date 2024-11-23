@@ -1,6 +1,6 @@
 function diagonal(matrix){
     let position = 0;
-    if(matrix.length === 0 || matrix.length != matrix[position].length || matrix == []){
+    if(matrix.length === 0 || matrix.length != matrix[position].length){
         return "Not a diagonal matrix";
     }
     for(let i = 0; i < matrix.length; i++){
@@ -68,6 +68,10 @@ function testDiagonal(){
                 [1, 3, 4]
             ],
             output : "It is diagonal matrix" 
+        },
+        {
+            input : [],
+            ouput : "It is diagonal matrix" 
         }
     ];
 

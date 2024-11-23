@@ -4,7 +4,9 @@ function factorial(num){
     let fact = 0;
     if(num < 0){
         return "Invalid";
-    }else if(num === 0 || num === 1){
+    }
+    
+    if(num === 0 || num === 1){
         return "1";
     }
     
@@ -16,7 +18,7 @@ function factorial(num){
 
 function testFactorial(){
     let sample = [5, -2, 20, 0];
-    let output = [120, 2, 2432902008176640000, 0];
+    let output = [120, 2, 2432902008176640000, 1];
 
     for(let i = 0; i< sample.length; i++){
         let result = factorial(sample[i]);
@@ -31,3 +33,4 @@ function testFactorial(){
 }
 
 testFactorial();
+

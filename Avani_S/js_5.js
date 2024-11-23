@@ -81,12 +81,15 @@
 // version- 5.6
 
 function SumOfNatural(x){
+    if(typeof(x) !== "number"){
+        return "Invalid input. Inputs should be a number.";
+    }
     return x*(x+1)/2;
 }
 // console.log(SumOfNatural(3))
 
 function testSum(){
-    let sample = [3,5,10,100];
+    let sample = ["hey",5,10,100];
     let output = [33,15,55,500];
     let result = 0;
     let i = 0;
@@ -97,7 +100,7 @@ function testSum(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
     }
 }

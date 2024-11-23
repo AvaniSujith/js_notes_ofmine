@@ -155,6 +155,9 @@
 // verion - 1.5
 
 function checkNum(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Inputs should be of number type.";
+    }
     if(num > 0){
         return "positive";
     }else if(num < 0){
@@ -168,7 +171,7 @@ function checkNum(num){
 
 function testCheckNum(){
     
-    let sample = [2,4,-5,0,-4];
+    let sample = ["hello",4,-5,0,-4];
     let expectedResult = ['positive','positive','negative','zero','zero'];
     let result = 0;
     let i = 0;
@@ -179,7 +182,7 @@ function testCheckNum(){
          if(result == expectedResult[i] ){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+            console.log(`Test case ${i+1} failed\n${result}`);
         }
    
     }

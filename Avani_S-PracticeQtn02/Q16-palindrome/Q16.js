@@ -39,7 +39,7 @@ function testPalindrome(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed`);
+            console.log(`Test case ${i+1} failed\nCorrect output: ${result}`);
         }
     }
 }

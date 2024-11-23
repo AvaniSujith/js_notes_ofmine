@@ -62,6 +62,9 @@
 
 // version-4.3
 function OddOrEven(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Inputs should be a number.";
+    }
     if(num%2 === 0){
         return "even";
     }else{
@@ -70,8 +73,8 @@ function OddOrEven(num){
 }
 
 function testOddorEven(){
-    let sample = [2,44,55,1,7];
-    let output = ['even','odd','odd','even','odd'];
+    let sample = ["hello",44,55,1,7];
+    let output = ['even','even','odd','even','odd'];
     let result = 0;
     let i = 0;
 
@@ -82,7 +85,7 @@ function testOddorEven(){
         if(result == output[i]){
             console.log(`Test case ${i+1} passed`);
         }else{
-            console.log(`Test case ${i+1} failed\nCorrect output is ${result}`)
+            console.log(`Test case ${i+1} failed\n${result}`)
         }
     }
 }

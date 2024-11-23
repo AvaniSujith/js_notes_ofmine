@@ -121,6 +121,9 @@
 // version-2.4 
 
     function checkForVowel(letter){
+        if(typeof(letter) !== "string"){
+            return "Invalid Input. Input should be alphabets."
+        }
  
         if(letter == "a" || letter == "A"){
             return "vowel";
@@ -148,7 +151,7 @@
     }
 
     function testForVowels(){
-        let input = ['u','P','I','S'];
+        let input = [1,'P','I','S'];
         let output = ['vowel','consonent','vowel','vowel'];
         let i = 0;
         let result = 0;
@@ -160,7 +163,7 @@
                 console.log(`Test case ${i+1} passed`);
 
             }else{
-                console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+                console.log(`Test case ${i+1} failed\n${result}`);
             }
         }
     }

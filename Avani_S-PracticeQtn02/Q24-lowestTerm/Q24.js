@@ -36,7 +36,7 @@ function simplification(numerator, denominator){
 
 // simplification(8,12);
 function testSimplification(){
-    let sample = [[20,60], [7,13], [0,25], [-45,60], [8,12]];
+    let sample = [[20,60], [7,13], [0,25], [45,60], [8,12]];
     let output = ["numerator = 1\n denominator = 3",
                   "numerator = 7\n denominator = 13",
                   "numerator = 0\n denominator = 1",

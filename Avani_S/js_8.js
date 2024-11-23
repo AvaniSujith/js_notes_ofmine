@@ -46,6 +46,9 @@
 // version -  8.4 using testcases 
 
 function maxValue(arr){
+    if(typeof(arr) !== "object"){
+        return "Invalid input. Input should be of array form."
+    }
     arr.sort((a,b) => a - b);
     let maxElement = arr[arr.length - 1];
     return maxElement;
@@ -68,6 +71,9 @@ function testMaxvalue(){
         {
             input : [-8, -3, -5],
             output : -8
+        },
+        {
+            input : "hello"
         }
     ]
 
@@ -78,7 +84,7 @@ function testMaxvalue(){
         if(result == testCase.output){
             console.log(`Test case ${index+1} passed`);
         }else{
-            console.log(`Test case ${index+1} failed\nCorrect output - ${result}`);
+            console.log(`Test case ${index+1} failed\n${result}`);
         }
     })
 }

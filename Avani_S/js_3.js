@@ -69,6 +69,9 @@
 // version-3.3
 
 function checkEligibility(age){
+  if(typeof(age) !== "number"){
+    return "Invalid input. Inputs should be a number.";
+  }
     if(age > 18){
         return "eligible";
     }else{
@@ -77,7 +80,7 @@ function checkEligibility(age){
 }
 
 function testForEligibility(){
-    let sample = [12,2,33,4,55];
+    let sample = ["hello",2,33,4,55];
     let output = ['eligible','ineligible','eligible','ineligible','eligible'];
     let result = 0;
     let i = 0;
@@ -88,7 +91,7 @@ function testForEligibility(){
       if(result == output[i]){
         console.log(`Test case ${i+1} passed`);
       }else{
-        console.log(`Test case ${i+1} failed\nCorrect output is ${result}`);
+        console.log(`Test case ${i+1} failed\n${result}`);
       }
    }
 }

@@ -125,6 +125,9 @@
 // version -6.5 
 
 function multiplicationTable(num){
+    if(typeof(num) !== "number"){
+        return "Invalid input. Inputs should be a number.";
+    }
         let emptyArr = [];
         for(i=0 ; i<11; i++){
            
@@ -191,6 +194,10 @@ function multiplicationTable(num){
                             '10 x4 = 40'
                     ] 
                 },
+                {
+                    input: "hey",
+                    output: []
+                }
             ]
     
         testCases.forEach((testCase, index) =>{
@@ -199,7 +206,7 @@ function multiplicationTable(num){
             if(JSON.stringify(result) == JSON.stringify(testCase.output)){
                 console.log(`Test cases ${index + 1} passed`);
             }else{
-                console.log(`Test cases ${index + 1} failed\n correct output - ${result}`);
+                console.log(`Test cases ${index + 1} failed\n ${result}`);
             }
         });
     
