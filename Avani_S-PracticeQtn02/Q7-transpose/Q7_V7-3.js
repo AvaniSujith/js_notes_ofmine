@@ -3,8 +3,19 @@ function transposeMatrix(matrix){
       return "Invalid input. Input should be matrix."
     }
 
+    for(let i = 0; i < matrix.length; i++){
+      if(!Array.isArray(matrix[i])){
+       return "Invalid.Row is not array."
+       }
+       for(let j = 0; j < matrix[i].length; j++){
+          if(typeof matrix[i][j] !== "number"){
+            return "Invalid input. Elements should be number."}
+            }
+    }
+
     let transpose = [];
     for(let i = 0; i < matrix[0].length; i++){
+     
         let row = [];
         for(let j = 0; j < matrix.length; j++){
             row.push(matrix[j][i]);
@@ -41,7 +52,10 @@ function testTranspose(){
             [3],
             [4]
           ],
-          9
+          9,
+          [
+            ["a", "b", "c"]
+          ]
      ];
     let output = [
           [
@@ -63,6 +77,11 @@ function testTranspose(){
             [2],
             [3],
             [4]
+          ],
+          [
+            ["a"], 
+            ["b"],
+            ["c"]
           ]
     ];
 

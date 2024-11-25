@@ -1,7 +1,19 @@
 function duplicatesRemoval(arr){
-    if(typeof(arr) !== "object"){
-        return "Invalid input. Input should be a array."
+    // if(typeof(arr) !== "object"){
+    //     return "Invalid input. Input should be a array."
+    // }
+
+    if(!Array.isArray(arr)){
+         return "Invalid input. Input should be an array."
     }
+
+    for(let i = 0; i < arr.length; i++){
+        if(typeof arr[i] !== "number"){
+            return "Invalid input. Elements should ba numbers"
+        }
+    }
+
+
     let compareArr = [];
     for(let i = 0; i < arr.length; i++){
         let compare = arr[i];
@@ -28,13 +40,15 @@ function testDuplicate(){
         [7, 7, 7, 7, 7],
         [-1, -2, -2, -3, -1, -4],
         [1,1,1,2,2,3,4],
-        9
+        9,
+        ["h",1,2]
     ];
     let output = [
         [1, 2, 3, 4, 5, 6],
         [7],
         [-1, -2, -3, -4],
-        [1]
+        [1],
+        []
     ];
 
     for(let i = 0; i < sample.length; i++){

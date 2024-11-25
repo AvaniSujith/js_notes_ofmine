@@ -8,6 +8,12 @@ function diagonal(matrix){
     }
     for(let i = 0; i < matrix.length; i++){
         for(let j = 0; j< matrix.length; j++){
+
+            if(typeof matrix[i][j] !== "number"){
+                return "Invalid matrix element. Element should be number."
+            }
+
+
             if(i !== j && matrix[i][j] !== 0){
                 // console.log("Not a diagonal matrix");
                 return "Not a diagonal matrix";
@@ -75,6 +81,12 @@ function testDiagonal(){
         {
             input : 7,
             ouput : "It is diagonal matrix" 
+        },
+        {
+            input : [
+                ["a", 0],
+                [0, "a"]
+            ]
         }
     ];
 

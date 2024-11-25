@@ -314,5 +314,147 @@ function patternOne(num){
 }
 patternOne(5);
 
+// function arr(arr){
+//     let length = arr.length;
+//     console.log(length);
+
+// }
+
+function comparison(arr,arr1){
+    if(typeof(arr) !== "number" && typeof(arr1) !== "number"){
+        return "Invalid"
+    }
+    let rangeOfArr1 = arr.length;
+    let rangeOfArr2 = arr.length;
+    let newArr = [];
+    let value = 0;
+    if(rangeOfArr1 > rangeOfArr2){
+        value = rangeOfArr1;
+    }else{
+        value = rangeOfArr2;
+    }
+
+    for(let i = 0; i < value; i++){
+        if(arr.includes(arr1[i])){
+            newArr.push(arr1[i]);
+        }
+    }
+    return newArr;
+}
+
+comparison([0,5,3], [0,1,2,3,4,5]);
+comparison([0,1,2,], [1,3,5]);
+comparison([5,8], [8,8]);
 
 
+function arrayCreation(n){
+    let arr = [];
+    for(let i = 0; i<n; i++){
+        arr.push(i);
+    }
+    console.log(arr);
+}
+
+arrayCreation(3);
+arrayCreation(4);
+arrayCreation(5);
+
+
+
+arrayOperations([99,88,77]);
+
+function arraySearch(arr,n){
+    for(let i = 0; i< arr.length; i++){
+        if(n > arr[i]){
+            n = arr[i];
+        }
+    }
+    console.log(n);
+
+}
+
+arraySearch([4,5,6], 33);
+
+
+function fibonacci(n){
+    let arr = [];
+    arr[0] = 0;
+    arr[1] = 1;
+
+    for(let i = 2; i < n; i++){
+        arr[i] = arr[i-1]+arr[i-2];
+    }
+    console.log(arr);
+
+}
+
+fibonacci(5);
+fibonacci(4)
+
+
+console.log("********25-11-2024********");
+
+function arrayOperations(arrayCheck){
+    arrayCheck.push(1);
+    // console.log(arrayCheck)
+    arrayCheck.push("avani");
+    // console.log(arrayCheck)
+    arrayCheck.push(22);
+    // arrayCheck.pop(arrayCheck);
+    console.log(arrayCheck);
+
+
+    //remove last element
+    let lastElement = arrayCheck.pop();
+    console.log("The removed element is ", lastElement);
+    console.log(arrayCheck);
+
+    //add elements to start of array
+    arrayCheck.unshift("first");
+    console.log(arrayCheck);
+
+    //remove element from start
+    arrayCheck.shift();
+    console.log(arrayCheck);
+
+    //loop through array
+    for(let i = 0; i <arrayCheck.length; i++){
+        console.log(arrayCheck[i]);
+    }
+
+
+    arrayCheck.forEach((val,index) => {
+        console.log(index, val);
+    });
+
+
+
+    for(let val of arrayCheck){
+        console.log(val);
+    }
+
+
+
+
+}
+  arrayOperations([1,2,3,4]);
+
+
+
+
+// Q1.check if an element exist in an array 
+
+function elementExist(arr, element){
+
+    
+    for(let i = 0; i < arr.length; i++){
+        if(element === arr[i]){
+            return true;
+        }
+    }
+    return false;
+    }
+
+
+    console.log(elementExist([1,2,3], 4));
+    console.log(elementExist([1,2,3,4], 4));

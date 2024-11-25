@@ -122,3 +122,8 @@ function longestOfStrings(string) {
 }
 
 longestOfStrings(string1);
+
+
+
+
+

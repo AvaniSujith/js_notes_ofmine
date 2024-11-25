@@ -3,6 +3,7 @@ function addition(matrix, matrix1){
     if(typeof(matrix) !== "object" && typeof(matrix1) !== "object"){
         return "Invalid input. Input should be matrix."
     }
+
     if(matrix.length !== matrix1.length){
      return "Addition cannot be done";
     }else{
@@ -10,6 +11,10 @@ function addition(matrix, matrix1){
      for(let i = 0; i < matrix.length; i++){
          let nextRow = [];
          for(let j = 0; j<matrix[i].length; j++){
+
+            if(typeof matrix[i][j] !== "number" || typeof matrix1[i][j] !== "number"){
+                return "Invalid matrix elements. Elements should be number."
+            }
              nextRow.push(matrix[i][j]+matrix1[i][j]);
          }
        
@@ -62,7 +67,17 @@ function addition(matrix, matrix1){
              [5]
          ]
      },{
-        input : 9
+        input : {
+            matrix: [
+                ["hello"],
+                ["hi"]
+            ],
+            matrix1:[
+                ["hello"],
+                ["hey"]
+            ]
+        },
+        output :[]
      }
  ];
      

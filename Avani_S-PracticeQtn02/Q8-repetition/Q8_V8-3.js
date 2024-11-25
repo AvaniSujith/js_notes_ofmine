@@ -1,6 +1,11 @@
 function repetition(arr){
-    if(typeof(arr) !== "object"){
+    if(!Array.isArray(arr)){
         return "Invalid input. Input should be an array."
+    }
+    for(let i = 0; i<arr.length; i++){
+        if(typeof arr[i] !== "number"){
+            return "Invalid input. Elements should be numbers."
+        }
     }
     let maxCount = 0;
     // let temp = arr[0];
@@ -63,6 +68,10 @@ function testRepetition(){
         },
         {
             input :9
+        },
+        {
+            input : ["h",2,"h"],
+            output : "h"
         }
     ];
 

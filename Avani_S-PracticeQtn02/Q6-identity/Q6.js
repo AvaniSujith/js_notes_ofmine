@@ -16,9 +16,15 @@ function identity(matrix){
         //     }
         // }
         for(let j = 0; j < matrix[i].length; j++){
+
+            if(typeof matrix[i][j] !== "number"){
+                return "Invalid matrix element. Element should be a number."
+            }
+
             if( i===j && matrix[i][j] !== 1){
                 return "Not an identity matrix";
             }
+
             if( i !== j && matrix[i][j] !== 0){
                 return "Not an identity matrix";
             }
@@ -81,6 +87,13 @@ function testIdentity(){
         },
         {
             input : 9
+        },
+        {
+            input : [
+                ["b", 0],
+                [0, "c"]
+            ],
+            output : []
         }
     ];
 
