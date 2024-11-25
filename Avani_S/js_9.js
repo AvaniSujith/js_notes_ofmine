@@ -93,9 +93,19 @@
 
 function averageValue(arr){
 
-    if(typeof(arr) !== "object"){
-         return "Invalid input. Input should be of array form.";
+    // if(typeof(arr) !== "object"){
+    //      return "Invalid input. Input should be of array form.";
+    // }
+
+    if(!Array.isArray(arr)){
+        return "Invalid input. Input should be of array form."
     }
+
+    for(let i = 0; i < arr.length; i++){
+        if(typeof arr[i] !== "number"){
+            return "Ivalid input. Elements should be number."
+        }
+    } 
 
     let i =0;
     let sum = 0;
@@ -129,6 +139,10 @@ function testAverageValue(){
         },
         {
             input : 2
+        },
+        {
+            input : [1,"a"],
+            output : 1
         }
     ]
 
