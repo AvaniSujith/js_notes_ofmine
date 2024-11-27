@@ -145,7 +145,7 @@ function maxValue(arr){
 
     for(let i = 0; i < arr.length; i++){
         if(typeof arr[i] !== "number"){
-            return "Ivalid input. Elements should be number."
+            return "Invalid input. Elements should be number."
         }
     }
 

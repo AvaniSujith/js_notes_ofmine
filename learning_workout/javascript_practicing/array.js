@@ -458,3 +458,155 @@ function elementExist(arr, element){
 
     console.log(elementExist([1,2,3], 4));
     console.log(elementExist([1,2,3,4], 4));
+
+
+function methodElement(arr, num){
+    if(arr.includes(num)){
+        return true;
+    }
+    return false
+}
+
+console.log(methodElement([1,2,3], 7));
+console.log(methodElement([1,2,3], 3));
+
+// Question. check if element exists in the array and return its index 
+
+function indexOfElement(arr, val){
+    // arr.forEach((arrValue, index)=>{
+    //     if(arrValue == val){
+    //         return index;
+    //     }
+    // })
+    // return false;.
+
+    for(let i = 0; i < arr.length ; i++){
+        if(arr[i] == val){
+            return i;
+        }
+    }
+    return "not found";
+}
+
+console.log("Element and index");
+console.log(indexOfElement([1,2,3], 3));
+console.log(indexOfElement([0,9,6,4], 7));
+
+let arrayIndex = [1,2,3,22,88];
+console.log(arrayIndex.indexOf(22));
+
+
+// arrayIndex.splice(1,3)
+// console.log(arrayIndex);
+arrayIndex.splice(1,0,11,22,33,44);
+console.log(arrayIndex);
+
+//splice vs slice ---> slice only returns the sub array of the main array. 
+
+//shallow copy of array. vs deep copy. 
+// deep copy --> const arrC = [...arr]
+
+
+let arrFirst = [1,2,3];
+let arrNext = [4,5,6];
+let arrTgther = arrFirst.concat();                       //deep copy method
+console.log(arrTgther);
+console.log(arrFirst+ ',' +arrNext);
+console.log(arrFirst.concat(arrNext));
+
+// Question check if two arrays are equal 
+function equalityCheck(arr1, arr2){
+    // if(arr1.length == arr2.length){
+    //     for(let i = 0; i < arr1.length; i++){
+    //         if(arr2.includes(arr1[i])){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+    // return false;
+
+    // if(arr1.length == arr2.length){
+    //     for(val of arr1){
+    //         if(arr2.includes(val)){
+    //             return true;
+    //         }
+    //             return false
+    //     }
+     
+    // }
+    // return false;
+
+    // if(arr1.length == arr2.length){
+    //     arr1.forEach((val) =>{
+    //         if(arr2.includes(val)){
+    //             return true;
+    //         }
+    //         return false
+    //     });
+    // }
+    // return false;
+
+    if(arr1.length !== arr2.length){
+        return false;
+    }
+    for(let i = 0; i < arr1.length; i++){
+        if(arr1[i] !== arr2[i]){
+            return false;
+        }
+    }
+    return true;
+
+
+
+}
+
+function oneLineCheck(arr1, arr2){
+    return arr1.length === arr2.length && arr1.every((ele, i ) => arr1[i] === arr2[i])
+}
+
+console.log(oneLineCheck([1,2,3], [1,2,3]));
+console.log(oneLineCheck([11,33,55], [11,22,1]));
+
+// console.log(equalityCheck([1,2,3], [1,2,3]));
+// console.log(equalityCheck([11,33,55], [11,22,1]));
+// console.log(equalityCheck([2,3], [0]));
+
+
+// ascending and descnending order sorting 
+let unorderedArr = [4,5,2,1];
+unorderedArr.sort((a,b) => a - b);
+console.log(unorderedArr);
+
+unorderedArr.sort((a,b) => b-a);
+console.log(unorderedArr);
+
+// Question reverse array 
+
+unorderedArr.reverse();
+console.log(unorderedArr);
+
+
+///map, filter and reduce
+
+const newMapp = unorderedArr.map((ele, i) =>  ele  > 0)
+console.log(newMapp);
+
+let flatArr = [1,2,3,[1,3,4],5,[6,7]];
+flatArr.flat();
+console.log();
+
+
+
+// // String 
+// let string = "happy";
+// console.log(string.length);
+// console.log(string[string.length-1])
+// console.log(string[4]);
+
+
+
+// recursion 
+
+
+

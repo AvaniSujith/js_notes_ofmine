@@ -15,6 +15,112 @@
 // console.log((remainder));
 
 
+
+
+
+
+
+
+
+// function stringToArray(str){
+//     let arr = []
+//     for(let i = 0; i < arr; i++){
+//         arr.push(str[i]);
+//     }
+//     console.log(arr);
+// }
+
+
+
+// stringToArray("avani");
+
+// function countingOf(arr, i){
+//     for(let i = 0; i < arr.length ; i++){
+//      if(i === arr[i]){
+//         return true;
+//      }
+//     }
+// }
+
+
+
+// function countDays(arr){
+//     let value = prompt("Enter name");
+//     let lengthOfName = value.length;
+//     console.log(lengthOfName);
+//     let arr = [];
+//     for(let i = 0; i < lengthOfName; i++){
+//         arr.push(value);
+//     }
+//     console.log(arr)
+//     console.log(typeof(value));
+//     console.log(typeof(arr));
+    
+// }
+
+
+// function naming(choice){
+   
+//     let choice = prompt("Enter your choice - 1 / 2 / 3");
+
+//     if(choice !== 1 || choice !== 2 || choice !== 3){
+//         return "Invalid choice"
+//     }
+
+//     if(choice === 1){
+//      document.write("You selected option one");
+//      let str = "avani";
+//      let arr = 0;
+//      document.write(str);
+//      for(let i = 0; i<str.length; i++){
+//         arr.push(str[i]);
+//      }
+//      document.write(arr);
+//     }else if(choice === 2){
+//         document.write("odd numbers till 10");
+//         for(let i = 0; i < 10; i++){
+//             if(i%2 !== 0){
+//                 document.write(i);
+//             }
+//         }
+//     }else{
+//         document.write("Your choice is 3");
+
+//         let name = prompt("Enter your name");
+//         document.write("Your name is ",name);
+//         console.log(typeof(name));
+    
+//     }
+
+
+// console.log("hello");
+// console.log("how are yyou");
+
+// if(n%2==0){
+//     console.log("Even");
+// }else{
+//     console.log("odd")
+// }
+
+
+// if(n > 0){
+//     console.log("Positive");
+// }else if(n <0){
+//     console.log("negative");
+// }else{
+//     console.log("Zero");
+// }
+
+
+
+
+
+
+
+
+
+
+
 // var age = 22;
 // console.log(age);
 
@@ -498,7 +604,7 @@
 
 
 // function printingName(){
-//     console.log("avani s");
+//     console.log("avani s ");
 // }
 
 // function printingFunction(msg){
