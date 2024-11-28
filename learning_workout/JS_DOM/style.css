@@ -3,3 +3,22 @@ body{
     padding: 0;
 }
 
+.head{
+    color: red;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+#container{
+    margin-top: 75px;
+    width: 75px;
+    margin:auto;
+}
+
+#fruit{
+    visibility: hidden;
+}
+
+#practice{
+    margin-top: 88px;
+}

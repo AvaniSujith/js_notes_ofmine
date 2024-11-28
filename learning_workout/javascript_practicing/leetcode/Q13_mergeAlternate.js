@@ -41,23 +41,48 @@
 // version-3
 
 
-function alternateMerge(word1, word2){
-    let string = "";
-    let i = 0;
+// function alternateMerge(word1, word2){
+//     let string = "";
+//     let i = 0;
 
-    while(i < word1.length || i < word2.length){
+//     while(i < word1.length || i < word2.length){
+//         if(i < word1.length){
+//             string += word1[i];
+//         }
+//         if(i < word2.length){
+//             string += word2[i];
+//         }
+//         i++;
+//     }
+
+//     return string;
+// }
+
+
+// console.log(alternateMerge("abc", "pqr"));
+// console.log(alternateMerge("qwert", "yu"));
+
+
+
+function mergingAlternate(word1, word2){
+    let mergeStr = '';
+    // let range = max(word1.length, word2.length);
+    let range = word1.length;
+    if(word2.length > word1.length){
+        range = word2.length;
+    }
+    for(let i = 0; i < range; i++){
         if(i < word1.length){
-            string += word1[i];
+            mergeStr += word1[i];
         }
         if(i < word2.length){
-            string += word2[i];
+            mergeStr += word2[i];
         }
-        i++;
-    }
 
-    return string;
+    }
+    return mergeStr;
 }
 
 
-console.log(alternateMerge("abc", "pqr"));
-console.log(alternateMerge("qwert", "yu"));
+console.log(mergingAlternate("abcde", "pqr"));
+console.log(mergingAlternate("qwert", "yu"));

@@ -33,6 +33,8 @@ let s1 = "    the sky is blue     ";
 console.log(reverse(s1));
 
 
+// version - 3
+
 // function reverse(s) {
 //     // Trim leading and trailing spaces, then split on one or more spaces
 //     let words = s.trim().split(/\s+/);
@@ -42,5 +44,12 @@ console.log(reverse(s1));
 
 // let s = "  hello world  ";
 // console.log(reverse(s)); // Output: "world hello"
+function reverses(s){
+  let words = s.trim().split(/\s+/);
+  return words.reverse().join(" ");
+}
+
+let s2 = "  hello world  ";
+console.log(reverses(s2));
 
 

@@ -23,15 +23,90 @@
 
 // console.log(reverseVowels("IceCreAm"));
 
-version
+// version - 2 
+
+// function reverseVowels(s){
+//     let arrStr = [];
+//     for(let i = 0; i < s.length ; i++){
+//        if(s[i] === 'a' || s[i] === 'e' || s[i] === "i" || s[i] === 'o' || s[i] === 'u' || s[i] === 'A' || s[i] === 'E' || s[i] === 'I' || s[i] === 'O' || s[i] === 'U'){
+//             arrStr.push(s[i]);
+//         }
+//     }
+//     arrStr.reverse();
+//     let finalStr = '';
+//     for(let i = 0; i < s.length ; i++){
+//         if(s[i] === 'a' || s[i] === 'e' || s[i] === 'i' || s[i] === 'o' || s[i] === 'u' || s[i] === 'A' || s[i] === 'E' || s[i] === 'I' || s[i] === 'O' || s[i] === 'U'){
+//             // finalStr += arrStr[i];
+//             for(let j = 0; j < arrStr.length; j++){
+//                 finalStr += arrStr[j];
+//             }
+//         }else{
+//             finalStr += s[i];
+//         }
+
+     
+//     }
+//     console.log(finalStr);
+// }
+
+// reverseVowels("IceCreAm");
+
+// version- 3
+
+
+// function reverseVowels(s){
+//     let arrStr = [];
+//     for( let i = 0; i < s.length ; i++){
+//         if(s[i] === 'a' || s[i] === 'e' || s[i] === "i" || s[i] === 'o' || s[i] === 'u' || s[i] === 'A' || s[i] === 'E' || s[i] === 'I' || s[i] === 'O' || s[i] === 'U'){
+//             arrStr.push(s[i]);
+//         }
+//     }
+//     arrStr.reverse();
+//     // console.log(arrStr);
+
+//     let finalStr = '';
+//     for(let i = 0; i < s.length ; i++){
+//         let j = 0;
+//         if(s[i] === 'a' || s[i] === 'e' || s[i] === "i" || s[i] === 'o' || s[i] === 'u' || s[i] === 'A' || s[i] === 'E' || s[i] === 'I' || s[i] === 'O' || s[i] === 'U'){
+//             finalStr += arrStr[j];
+//             j++;
+            
+//         }else{
+//             finalStr += s[i];
+//         }
+//     }
+//     console.log(finalStr);
+// }
+
+// reverseVowels("IceCreAm");
+
+// version - 4
 
 function reverseVowels(s){
-    for(let i = 0; i < s.length ; i++){
-        let arrStr = [];
+    let arrStr = [];
+    for(let i = 0; i < s.length; i++){
         if(s[i] === 'a' || s[i] === 'e' || s[i] === "i" || s[i] === 'o' || s[i] === 'u' || s[i] === 'A' || s[i] === 'E' || s[i] === 'I' || s[i] === 'O' || s[i] === 'U'){
             arrStr.push(s[i]);
         }
-
     }
-    console.log(arrStr)
+    arrStr.reverse();
+
+    let finalStr = "";
+    
+    let j = 0;
+    for(let i = 0; i < s.length ; i++){
+        if(s[i] === 'a' || s[i] === 'e' || s[i] === "i" || s[i] === 'o' || s[i] === 'u' || s[i] === 'A' || s[i] === 'E' || s[i] === 'I' || s[i] === 'O' || s[i] === 'U'){
+            finalStr += arrStr[j];
+            // s += arrStr[j]
+            j++;
+        }else{
+            finalStr += s[i];
+            // s += s[i];
+        }
+    }
+    console.log(finalStr)
+    // console.log(s);
 }
+
+
+reverseVowels("IceCreAm");

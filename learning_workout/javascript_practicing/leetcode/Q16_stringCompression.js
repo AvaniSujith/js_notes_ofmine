@@ -105,6 +105,7 @@ console.log(stringCompress(["a","a","b","b","c","c","c"]));
 
 
 
+// version - 5
 
 function stringCompress(chars) {
     let write = 0; // Position to write in `chars`

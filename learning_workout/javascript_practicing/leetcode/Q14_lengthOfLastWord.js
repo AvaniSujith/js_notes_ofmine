@@ -1,6 +1,8 @@
 // Given a string s consisting of words and spaces, return the length of the last word in the string.
 // A word is a maximal substring consisting of non-space characters only.
 
+// verion-1 
+
 // function lengthOfLast(s){
 //     let string = s.split(" ");
 //     let last = string[string.length - 1];
@@ -12,6 +14,7 @@
 
 // lengthOfLast("Hello world");
 
+// version-2
 
 function lengthOfLast(s){
     let string = s.split(" ").filter(word => word !== "");
@@ -22,4 +25,3 @@ function lengthOfLast(s){
 }
 
 console.log(lengthOfLast("   fly me   to   the moon  "));
-
