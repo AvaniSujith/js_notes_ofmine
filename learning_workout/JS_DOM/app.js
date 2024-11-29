@@ -91,13 +91,20 @@
 // let append = document.getElementById("practice-heading");
 // document.body.h2.innerText = "Hello Javascript from Apna College.";
 
+
+
 // version - 2
-let h2 = document.getElementsByTagName("h2");
-console.dir(h2);
+// let h2 = document.getElementsByTagName("h2");
+// console.dir(h2);
 
-h2.innerText = h2.innerText + " from Apna College students!"
+// h2.innerText = h2.innerText + " from Apna College students!"
 
 
+
+//creating elements
+
+const head = document.getElementsByTagName('h2');
+const header = document.createElement('h3');
 
 
 
