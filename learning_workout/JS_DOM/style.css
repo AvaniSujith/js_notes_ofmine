@@ -1,9 +1,10 @@
 body{
     margin: 0;
     padding: 0;
+    /* background-color: blueviolet; */
 }
 
-.head{
+/* .head{
     color: red;
     background-color: antiquewhite;
     text-align: center;
@@ -13,12 +14,51 @@ body{
     margin-top: 75px;
     width: 75px;
     margin:auto;
-}
+} */
 
-#fruit{
+/* #fruit{
     visibility: hidden;
+} */
+
+/* #practice{
+    margin-top: 88px;
+} */
+
+
+h1{
+   color: #fff;  
 }
 
-#practice{
-    margin-top: 88px;
+.box{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+
+    margin:20px;
+    text-align: center;
+    color: #000;
+    background-color: #f6f6f6;
+
+}
+
+
+#box{
+    padding: 10px;
+    margin: 30px;
+    
+    height: 350px;
+    
+    width: 400px;
+    background-color: lightblue;
+    color: #5a5555;
+    border: 1px solid black;
+}
+
+.newClass{
+    background-color: green;
+}
+
+.content{
+    /* background-color: #000; */
+    color: #fff;
 }

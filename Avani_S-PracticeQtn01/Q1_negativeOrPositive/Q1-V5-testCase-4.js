@@ -35,4 +35,6 @@ function testCheckNum(){
     }
 }
 
-    testCheckNum();
+
+testCheckNum();
+

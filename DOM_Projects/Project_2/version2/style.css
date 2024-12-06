@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+/* 
+.container{
+    display: ;
+} */
+
+
+.inner-container{
+    display: flex;
+
+    margin: 20px;
+}
+
+.circle{
+    border: 1px solid #000;
+    margin: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    /* position: relative; */
+}
+
+.circle.active{
+    border: 1px solid blue;
+    background-color: blue;
+    color: white;
+}
+
+/* .progress-line{
+    background-color: blue;
+    height: 2px;
+    width: 353px;
+    position: absolute;
+    top: 50%;
+} */
+
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.buttons button{
+    margin: 10px;
+    padding: 9px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgb(17, 41, 173);
+    cursor: pointer;
+}
+
+button:disabled{
+    
+    background-color: #807c7c;
+
+}
+
+

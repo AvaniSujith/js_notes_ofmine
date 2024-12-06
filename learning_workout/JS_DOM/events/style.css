@@ -1,0 +1,13 @@
+div{
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+    color: #fff;
+    margin: 30px;
+    border: 1px solid black;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

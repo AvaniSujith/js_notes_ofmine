@@ -52,4 +52,4 @@ function primeORNot(num){
         });
      }
 
-     testPrimeOrNot();
+    testPrimeOrNot();
