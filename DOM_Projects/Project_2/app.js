@@ -51,4 +51,6 @@ function update(){
         previous.disabled = false;
         next.disabled = false;
     }
+
+    
 }

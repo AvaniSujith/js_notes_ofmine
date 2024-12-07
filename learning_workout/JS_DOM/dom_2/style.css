@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+
+.bulb{
+    height: 200px;
+    width: 200px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: yellow;
+    display: flex;
+    /* text-align: center ; */
+    /* position: relative; */
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: #e6e6e6;
+    border: 1px solid #000;
+    cursor: pointer;
+    color: #000;
+    /* position: absolute; */
+    padding: 8px;
+    border-radius: 12px;
+    /* left: 50%;
+    right: 50%; 
+    top: 50%;
+    bottom: 50%; */
+    /* transform: translate(-50%, -50%); */
+}
+
+
+

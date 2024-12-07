@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bulb{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: beige;
+}
+
+button{
+    padding: 8px;
+    border-radius: 12px;
+}
