@@ -30,5 +30,4 @@ on.addEventListener('click', () => {
 
 // console.log(count)
 
-
-
+// NODELIST************************ similar to array.
