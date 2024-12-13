@@ -711,25 +711,25 @@
 
 ///simply questions *****************************************************************************
 
-function target(){
+// function target(){
     
-    let totalGoal = 0;
-    let currentTotal = 349 + (9/60);
+//     let totalGoal = 0;
+//     let currentTotal = 349 + (9/60);
 
-    for(let day = 0; day < 180; day ++){
-        totalGoal += 8;
-    }
+//     for(let day = 0; day < 180; day ++){
+//         totalGoal += 8;
+//     }
 
-    let remainingHours = totalGoal - currentTotal;
-    let dailyGoal = remainingHours / 87;
+//     let remainingHours = totalGoal - currentTotal;
+//     let dailyGoal = remainingHours / 87;
 
-    console.log(`Your Daily Goal is : ${dailyGoal}`);
-    console.log(`Total target hours: ${totalGoal} hours`);
-    console.log(`You have ${remainingHours} hours remaining to reach your goal.`);
+//     console.log(`Your Daily Goal is : ${dailyGoal}`);
+//     console.log(`Total target hours: ${totalGoal} hours`);
+//     console.log(`You have ${remainingHours} hours remaining to reach your goal.`);
 
-}
+// }
 
-target();
+// target();
 
 
 //**************************************************************************************************** */
@@ -821,4 +821,10 @@ target();
 
 
 
-
+function matrix(m1, m2){
+    for(let i = 0; i <matrix.length; i++){
+        for(let j =0; j < matrix.length; j++){
+            
+        }
+    }
+}
