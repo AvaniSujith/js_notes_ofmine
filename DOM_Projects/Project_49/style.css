@@ -1,23 +1,19 @@
+@import url();
 
 *{
     box-sizing: border-box;
 }
 
-
 body{
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin: 0;
+
     overflow: hidden;
-    background-color: aquamarine;
-    font-family: sans-serif;
+    background-color: aliceblue;
+    color: black;
+
 
 }
-
-
-
-
-

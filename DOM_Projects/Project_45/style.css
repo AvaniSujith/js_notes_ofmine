@@ -1,22 +1,21 @@
 @import url();
 
+
 *{
     box-sizing: border-box;
 }
-
 
 body{
     margin: 0;
     overflow: hidden;
     display: flex;
+
     flex-direction: column;
     align-items: center;
-
-
     justify-content: center;
     height: 100vh;
-    background-color: aqua;
-    color: black;
+    background-color: aliceblue;
+    color: blueviolet;
     font-family: sans-serif;
-    
+
 }

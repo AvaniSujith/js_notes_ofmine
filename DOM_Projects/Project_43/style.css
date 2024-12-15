@@ -1,23 +1,18 @@
-
 *{
     box-sizing: border-box;
 }
 
-
 body{
-
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
     overflow: hidden;
-    background-color: aquamarine;
-    font-family: sans-serif;
+    background-color: aqua;
+    font-family: ;
+    height: 100vh;
 
 }
-
-
-
-
 
