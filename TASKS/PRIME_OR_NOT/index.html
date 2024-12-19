@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/hat-wizard-solid.svg">
+    <title>Prime Number Checker</title>
+</head>
+<body>
+    <header>
+        <div class="side-bar" id="side-bar">
+            <i class="fa-solid fa-bars"></i>
+            <div class="dropdown-start" id="start">
+                <div class="dropdown-header">
+                    <h3>PRIME NUMBER</h3>
+                </div>
+                <ul class="dropdown-item">
+                    <li class="item">
+                        Development
+                    </li>
+                    <li class="item">
+                        About
+                    </li>
+                    <li class="item">
+                        Contact
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="title">
+            <h2>PRIME OR NOT GENERATOR</h2>
+        </div>
+        <div class="profile" id="profile">
+            <i class="fa-solid fa-user"></i>
+            <div class="dropdown-end" id="end">
+                <ul class="dropdown-item">
+                    <li class="item">
+                        Login
+                    </li>
+                    <li class="item">
+                        Signup
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container active" id="container">
+            <div class="emoji-container">
+            <span class="emoji">&#x1F9D0;</span>
+            </div>
+            <label for="input" class="header-text">Enter the Number to be Checked!!</label>
+            <input type="text" id="inputNum" placeholder="Enter the number..">
+            <button class="submit-btn" id="submit">SUBMIT</button>
+        </div>
+
+        <section class="win" id="win">
+            <div class="prime-page">
+                <span class="win-emoji">&#129395;</span>
+                <h3></h3>
+            </div>
+        </section>
+
+        <section class="loss" id="loss">
+            <div class="not-prime-page">
+                <span class="loss-emoji">&#128528;</span>
+                <h3></h3>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="items">
+            <nav>
+                <ul class="nav-items">
+                    <li class="item">
+                        <a href="#">
+                            ©2024 PrimeOrNot
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            India
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
