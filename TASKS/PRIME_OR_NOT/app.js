@@ -10,7 +10,7 @@ const homePage = document.getElementById('container');
 // const page = document.querySelector('main')
 const primePage = document.querySelector('.prime-page');
 const nonPrimePage = document.querySelector('.not-prime-page');
-const emojis = ['😢', '😔', '😭', '😞'];
+const emojis = [ '😔'];
 const emojiContainer = document.getElementById('emoji-shower');
 const backBtns = document.querySelectorAll('#back-btn');
 
@@ -56,18 +56,16 @@ function itsPrime(){
 function createEmoji() {
     const emoji = document.createElement('div');
     emoji.className = 'rain-emoji';
-    // emoji.textContent = '😔';
-    emoji.textContent = emoji[Math.floor(Math.random() * emojis.length)];
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
     
-    emoji.style.left = Math.random() * 90+ 5 +'%';
+    emoji.style.left = Math.random() * 90 + 5 + '%';
     emoji.style.fontSize = Math.random() * 20 + 25 + 'px';
-
     emoji.style.animationDelay = Math.random() * 3 + 's';
     
-    emojiShower.appendChild(emoji);
+    emojiContainer.appendChild(emoji);
     
     emoji.addEventListener('animationend', () => {
-        emojiContainer.removeChild(emoji);
+        emoji.remove();
     });
 }
 
@@ -131,10 +129,11 @@ submit.addEventListener('click', checkNumber)
 
 backBtns.forEach(backBtn => {
     backBtn.addEventListener('click', ()=>{
-        homePage.style.display = 'flex';
-        winPage.style.display = 'none';
-        lossPage.style.display = 'none';
-        input.value = '';
+        // homePage.style.display = 'flex';
+        // winPage.style.display = 'none';
+        // lossPage.style.display = 'none';
+        // input.value = '';
+        window.location.reload();
     })
 })
 

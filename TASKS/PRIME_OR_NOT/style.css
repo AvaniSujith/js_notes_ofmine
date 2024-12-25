@@ -374,7 +374,7 @@ footer{
 .rain-emoji{
     position: absolute;
     font-size: 35px;
-    animation: fall 30s linear infinite;
+    animation: fall 3s linear infinite;
     will-change: transform;
 }
 
