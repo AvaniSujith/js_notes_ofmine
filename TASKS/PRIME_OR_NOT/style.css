@@ -33,9 +33,10 @@ header{
     align-items: center;
     justify-content: space-between;
     background-color: #283618;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 0.75rem;
     color: #fefae0;
     position: relative;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 ul{
@@ -47,6 +48,7 @@ ul{
 a{
     text-decoration: none;
     color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body{
@@ -62,10 +64,18 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 70vh; */
-    height: auto;
     flex: 1;
-    padding: 0rem 2rem;
+    padding: 1rem 2rem;
+    background-color: #fefeff;
+    position: relative;
+    overflow: hidden;
+}
+
+.side-bar, .profile{
+    position: relative;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .side-bar:hover, .profile:hover{
@@ -73,17 +83,34 @@ main{
     background-color: #606c38;
 }
 
+.side-bar:hover i, .profile:hover i{
+    transform: scale(1.1);
+}
+
 .dropdown-start, .dropdown-end{
     text-align: left;
     position: absolute;
-    display: none;
+    display: flex;
     flex-direction: column;
-    width: 50%;
+    min-width: 230px;
+    top: 120%;
     background-color: #fff;
     border: none;
     box-shadow: 0px 12px 32px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
     color: #283618;
     padding: 1rem;
+}
+
+.dropdown-start.active, .dropdown-end.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .dropdown-start .dropdown-item{
@@ -92,20 +119,28 @@ main{
 
 .dropdown-start .item{
     border-bottom: 1px solid #283618;
-    padding: .5rem;
     font-family: 'letter_new';
     cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
 }
 
 .dropdown-start .item:hover{
     background-color: #606c38;
     color: #fefae0;
+    padding-left: 2rem;
 }
 
 .dropdown-end .item{
     border-bottom: 1px solid #283618;
-    padding: .25rem;
     font-family: 'letter_new';
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
 }
 
 .dropdown-end{
@@ -115,6 +150,7 @@ main{
 .dropdown-end .item:hover{
     background-color: #606c38;
     color: #fefae0;
+    padding-left: 2rem;
 }
 
 .dropdown-start .item:last-child, .dropdown-end .item:last-child{
@@ -123,13 +159,10 @@ main{
 
 .dropdown-start{
     left: 0;
-    top: 70%;
 }
 
 .dropdown-end{
-    max-width: fit-content;
     right: 0;
-    top: 70%;
 }
 
 h3{
@@ -140,9 +173,13 @@ h3{
 
 h2{
     font-family: 'letter';
-    font-size: 1.25rem;
+    font-size: 1rem;
     padding: 0px;
     margin: 0px;
+}
+
+.fa-bars, .fa-user{
+    font-size: 1rem;
 }
 
 .container{
@@ -152,6 +189,10 @@ h2{
     justify-content: center;
     background-color: #fff;
     width: 100%;
+    max-width: 550px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
 }
 
 .header-text{
@@ -160,13 +201,15 @@ h2{
     color: #283618;
     word-spacing: -4px;
     letter-spacing: -1px;
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
+    margin-bottom: 1.1rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 input{
-    padding: 1rem 2.5rem 1rem 1.5rem;
-    border-radius: 5px;
+    padding: 1rem;
+    border-radius: 8px;
+    width: 100%;
     border: .5px solid #dddddd;
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -180,13 +223,14 @@ input:focus{
 .submit-btn{
     background-color: #283618;
     color: #fefae0;
-    padding: .75rem;
+    padding: 1rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
+    width: 100%;
 }
 
 .submit-btn:hover{
@@ -194,11 +238,12 @@ input:focus{
 }
 
 .emoji-container{
-    padding-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    animation: floating 3s ease-in-out infinite;
 }
 
 .emoji{
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
 footer{
@@ -225,71 +270,229 @@ footer{
 #loss{
     display: none;
     color:  #d00000;
-    font-size: 2rem;
+    padding: 0px;
+    align-items: center;
+    justify-content: center;
 }
 
+/* #loss button{
+    background: linear-gradient(to right, #ffcccc, #e69999);
+} */
+
 .win-emoji{
-    font-size: 8rem;
-    margin-bottom: 2rem;
+    font-size: 4rem;
 }
 
 #win{
     display: none;
+    align-items: center;
+    justify-content: center;
     color: #00652b;
-    font-size: 2rem;
+    padding: 0px;
 }
+
+/* #win button{
+    background: linear-gradient(to right, #ccffcc, #99e699);
+} */
+
+.prime-page{
+    width: 100%;
+    height: 100%;
+    /* animation: changeWinBackground 2s forwards; */
+}
+
+/* .not-prime-page{
+    animation: changeLossBackground 2s forwards;
+} */
 
 .prime-page, .not-prime-page{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    gap: 0.75rem;
 }
 
 .loss-emoji{
-    font-size: 8rem;
-    margin-bottom: 2rem;
+    font-size: 4rem;
 }
 
-@media screen and (min-width:500px){
-    .emoji{
-        font-size: 8rem;
+.win .emoji-container, .loss .emoji-container{
+    padding-bottom: 0px;
+}
+
+.prime-page h2, .not-prime-page h2{
+    font-size: 1.75rem;
+    font-family: 'letter';
+}
+
+.prime-page h3, .not-prime-page h3{
+    text-align: center;
+    font-family: 'letter_new';
+}
+
+.footer-link a{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.footer-link a:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.footer-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.prime-page button:hover, .not-prime-page button:hover {
+    background: linear-gradient(to right, #ccffcc, #99e699)
+}
+
+.fa-arrow-right{
+    font-size: 0.875rem; 
+    margin-left: 12px; 
+}
+
+#emoji-shower{
+    /* position: fixed; */
+    position: absolute;
+    pointer-events: none;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index:100;
+
+}
+
+.rain-emoji{
+    position: absolute;
+    font-size: 35px;
+    animation: fall 30s linear infinite;
+    will-change: transform;
+}
+
+.win .submit-btn, 
+.loss .submit-btn {
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+}
+
+.win .submit-btn:hover {
+    background: linear-gradient(135deg, #66bb6a, #4caf50);
+}
+
+.loss .submit-btn {
+    background: linear-gradient(135deg, #e53935, #ef5350);
+}
+
+.loss .submit-btn:hover {
+    background: linear-gradient(135deg, #ef5350, #e53935);
+}
+
+@keyframes fall {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(90%);
+        opacity: 0;
+    }
+}
+
+@keyframes floating {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* @keyframes zoomIn {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+} */
+
+
+
+@media screen and (min-width:400px){
+    h2{
+        font-size: 1.2rem;
     }
 
     .header-text{
+        font-size: 1.4rem;
+    }
+
+    .fa-bars, .fa-user{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width:500px){
+    .header-text{
         font-size: 1.5rem;
-    }
-
-    input{
-        max-width: calc(100% - 2rem);
-        margin: auto;
-        width: 100%;
-    }
-
-    .submit-btn{
-        margin-top: 1.5rem;
-        max-width: 130px;
-        width: 100%;
-    }
-
-    .nav-items{
-        justify-content: center;
     }
 }
 
 @media screen and (min-width:740px){
     .header-text{
-        font-size: 2.25rem;
+        font-size: 2rem;
     }
 
-    input{
-        max-width: 575px;
+    main{
+        padding: 2rem;
     }
+
+    .prime-page h3, .not-prime-page h3{
+        font-size: 1.85rem;
+    }
+
+    .prime-page, .not-prime-page{
+        gap: 1.5rem;
+    }
+
+    .win .container, .loss .container{
+        padding: 3rem;
+    }
+
+    .loss-emoji, .win-emoji{
+        font-size: 8rem;
+    }
+
+    #loss button, #win button{
+        font-size: 1.25rem;
+    }
+
 }
 
 @media screen and (min-width:1000px){
     .side-bar i, .profile i{
         font-size: 2rem;
+    }
+
+    .side-bar .fa-arrow-right{
+        font-size: 0.875rem;
     }
 
     .dropdown-start{
@@ -307,4 +510,5 @@ footer{
     footer .item{
         font-size: 1.15rem;
     }
+
 }

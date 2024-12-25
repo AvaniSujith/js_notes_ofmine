@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/hat-wizard-solid.svg">
     <title>Prime Number Checker</title>
@@ -19,14 +18,13 @@
                 </div>
                 <ul class="dropdown-item">
                     <li class="item">
+                        Development
+                    </li>
+                    <li class="item">
                         About
                     </li>
                     <li class="item">
                         Contact
-                    </li>
-                    <li class="item">
-                        More 
-                        <i class="fa-solid fa-arrow-right"></i>
                     </li>
                 </ul>
             </div>
@@ -59,28 +57,21 @@
         </div>
 
         <section class="win" id="win">
-            <div class="container prime-page">
+            <div class="prime-page">
                 <h2 class="new-header">RESULT</h2>
-                <div class="emoji-container">
-                    <span class="win-emoji">&#129395;</span>
-                </div>
+                <span class="win-emoji">&#129395;</span>
                 <h3></h3>
-                <button class="submit-btn" id="back-btn">Go Back</button>
             </div>
         </section>
 
         <section class="loss" id="loss">
-            <div class="container not-prime-page">
+            <div class="not-prime-page">
                 <h2 class="new-header">RESULT</h2> 
-                <div class="emoji-container">
-                    <span class="loss-emoji">&#128528;</span>
-                </div>
+                <span class="loss-emoji">&#128528;</span>
                 <h3></h3>
-                <button class="submit-btn" id="back-btn">Try Again</button>
             </div>
         </section>
 
-        <div id="emoji-shower"></div>
     </main>
     <footer>
         <div class="footer-container">
@@ -101,6 +92,6 @@
             </nav>
         </div>
     </footer>
-    <script src="app.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
