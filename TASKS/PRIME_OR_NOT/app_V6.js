@@ -7,6 +7,7 @@ const input = document.getElementById('inputNum');
 const winPage = document.getElementById('win');
 const lossPage = document.getElementById('loss');
 const homePage = document.getElementById('container');
+// const page = document.querySelector('main')
 const primePage = document.querySelector('.prime-page');
 const nonPrimePage = document.querySelector('.not-prime-page');
 const emojis = [ '😔'];
@@ -14,19 +15,23 @@ const emojiContainer = document.getElementById('emoji-shower');
 const backBtns = document.querySelectorAll('#back-btn');
 
 sideBar.addEventListener('mouseenter', () => {
+    // start.style.display = "flex"
     start.classList.add('active');
 
 })
 
 sideBar.addEventListener('mouseleave', () => {
+    // start.style.display = 'none'
     start.classList.remove('active');
 })
 
 profile.addEventListener('mouseenter', () =>{
+    // end.style.display = "flex"
     end.classList.add('active');
 })
 
 profile.addEventListener('mouseleave', () =>{
+    // end.style.display = 'none';  
     end.classList.remove('active');
 })
 
@@ -38,6 +43,15 @@ function itsPrime(){
         colors: ['#FF007A', '#7A00FF', '#00FF7A', '#FFD700', '00D4FF'],
     });
 }
+
+// function notPrime(){
+//     confetti({
+//         particleCount: 900,
+//         spread: 120,
+//         origin: {x: 0.5, y:0.5},
+//         colors: ['😢', '😔', '😭', '😞'],
+//     });
+// }
 
 function createEmoji() {
     const emoji = document.createElement('div');
@@ -98,7 +112,15 @@ function checkNumber(){
         lossPage.style.display = 'flex'
         winPage.style.display = 'none'
         document.querySelector('.not-prime-page h3').innerText = `${inputValue} is Not a prime Number!`
+        // setInterval(createEmojis, 300);
         nonPrimePage.style.backgroundImage = 'linear-gradient(to right, #ffcccc, #ffe6e6, #e69999) '
+
+        // const rainInterval = setInterval(createEmoji, 300);
+
+        // setTimeout(() => {
+        //     clearInterval(rainInterval);
+        // }, 9000)
+
         startShower();
     }
 }
@@ -107,12 +129,16 @@ submit.addEventListener('click', checkNumber)
 
 backBtns.forEach(backBtn => {
     backBtn.addEventListener('click', ()=>{
+        // homePage.style.display = 'flex';
+        // winPage.style.display = 'none';
+        // lossPage.style.display = 'none';
+        // input.value = '';
         window.location.reload();
     })
 })
 
 input.addEventListener('keypress', (e) =>{
     if(e.key === 'Enter'){
-        checkNumber();
+        checkNumber()
     }
 })
