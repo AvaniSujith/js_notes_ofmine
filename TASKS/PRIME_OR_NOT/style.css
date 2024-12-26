@@ -193,6 +193,7 @@ h2{
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
     border-radius: 15px;
+    animation: slideIn 0.5s ease-out;
 }
 
 .header-text{
@@ -275,10 +276,6 @@ footer{
     justify-content: center;
 }
 
-/* #loss button{
-    background: linear-gradient(to right, #ffcccc, #e69999);
-} */
-
 .win-emoji{
     font-size: 4rem;
 }
@@ -291,19 +288,11 @@ footer{
     padding: 0px;
 }
 
-/* #win button{
-    background: linear-gradient(to right, #ccffcc, #99e699);
-} */
-
 .prime-page{
     width: 100%;
     height: 100%;
-    /* animation: changeWinBackground 2s forwards; */
 }
 
-/* .not-prime-page{
-    animation: changeLossBackground 2s forwards;
-} */
 
 .prime-page, .not-prime-page{
     display: flex;
@@ -311,6 +300,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     gap: 0.75rem;
+    animation: scaleIn 0.5s ease-out;
 }
 
 .loss-emoji{
@@ -329,6 +319,7 @@ footer{
 .prime-page h3, .not-prime-page h3{
     text-align: center;
     font-family: 'letter_new';
+    animation: fall 1s linear;
 }
 
 .footer-link a{
@@ -395,6 +386,28 @@ footer{
     background: linear-gradient(135deg, #ef5350, #e53935);
 }
 
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes fall {
     0%{
         transform: translateY(-50px);
@@ -404,11 +417,7 @@ footer{
         opacity: 1;
     }
     70%{
-        opacity: 1;
-    }
-    100%{
         transform: translateY(90%);
-        opacity: 0;
     }
 }
 
@@ -423,17 +432,6 @@ footer{
         transform: translateY(0);
     }
 }
-
-/* @keyframes zoomIn {
-    0%{
-        transform: scale(0);
-    }
-    100%{
-        transform: scale(1);
-    }
-} */
-
-
 
 @media screen and (min-width:400px){
     h2{
