@@ -1,4 +1,5 @@
-@import url();
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -7,16 +8,33 @@
 
 body{
     margin: 0;
-    overflow: hidden;
+   
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
     justify-content: center;
-    height: 100vh;
-    background-color: aqua;
-    color: black;
-    font-family: sans-serif;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
     
+}
+
+.title{
+    margin: 10px 0 0 ;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.contaier img{
+    object-fit: cover;
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
 }
