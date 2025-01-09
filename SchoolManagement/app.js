@@ -143,4 +143,8 @@ markOfStudent("Binu");
 
 function averageOfMark(){
     let mark = [];
+    for(let i = 0; i < classObj; i++){
+        let mark = [];
+        mark.push();
+    }
 }
