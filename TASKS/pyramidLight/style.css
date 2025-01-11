@@ -1,24 +1,40 @@
-body{
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+.container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-#pattern{
-    white-space: pre;
-    align-items: center;
+.row{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
 }
 
 .circle{
-    align-items: center;
-    display: inline-block;
-    margin-right: 10px;
-    height: 25px;
-    width: 25px;
-    border: 1px solid black;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    border: 1px solid black;
+    margin: 0 5px;
+}
+
+.controls{
+    margin-bottom: 20px;
+}
+
+.input-group{
+    margin: 10px 0;
+}
+
+label{
+    margin-right: 10px;
+}
+
+.button-group{
+    margin-top: 10px;
+}
+
+button{
+    margin: 0 5px;
+    padding: 5px 15px;
 }

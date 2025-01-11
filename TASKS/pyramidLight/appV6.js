@@ -1,6 +1,6 @@
-let defaultDelay = 1000;
-        let isAnimating = false;
-        let animationTimeouts = [];
+    let defaultDelay = 1000;
+    let isAnimating = false;
+    let animationTimeouts = [];
 
         function createPyramid(rows) {
             const pyramid = document.getElementById('pyramid');
@@ -35,7 +35,6 @@ let defaultDelay = 1000;
 
         function stopAnimation() {
             isAnimating = false;
-            // Clear all timeouts
             animationTimeouts.forEach(timeout => clearTimeout(timeout));
             animationTimeouts = [];
             clearAllCircles();
@@ -64,7 +63,6 @@ let defaultDelay = 1000;
                     let timeout = setTimeout(lightUpRow, delay);
                     animationTimeouts.push(timeout);
                 } else {
-                    // Reset and start over
                     currentRow = 0;
                     let resetTimeout = setTimeout(() => {
                         clearAllCircles();
@@ -79,7 +77,6 @@ let defaultDelay = 1000;
         }
 
         function startAnimation() {
-            // Stop any existing animation
             stopAnimation();
             
             const rows = parseInt(document.getElementById('rows').value) || 3;
@@ -94,5 +91,6 @@ let defaultDelay = 1000;
             animateRows();
         }
 
-        // Initial creation
         createPyramid(3);
+
+        
