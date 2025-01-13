@@ -92,5 +92,3 @@
         }
 
         createPyramid(3);
-
-        

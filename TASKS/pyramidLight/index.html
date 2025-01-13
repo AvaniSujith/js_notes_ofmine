@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <title>Pyramid Tree</title>
+    <link rel="icon" href="assets/icon.svg">
+    <title>Pyramid Coloring</title>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container"> -->
         
-        <div class="controls">
-            <div class="input-group">
-                <label>Number of Rows:</label>
-                <input type="number" id="rows" min="1" value="3">
+        <header>
+            <div class="profile-icon">
+                <i class="fa-solid fa-user" id="user-btn"></i>
             </div>
-            <div class="input-group">
-                <label>Color:</label>
-                <input type="text" id="colorInput" value="red">
+            <div class="settings-icon">
+                <i class="fa-solid fa-gear" id="setting-btn"></i>
             </div>
-            <div class="input-group">
-                <label>Delay:</label>
-                <input type="number" id="delayInput" value="500" min="100">
+        </header>
+
+        <main>
+            <div class="head">
+                <h1>Lets Begin!</h1>
+                <div class="click-btn">
+                    <button>
+                        <a href="#">
+                            Continue
+                        </a>
+                    </button>
+                </div>
             </div>
-            <div class="button-group">
-                <button onclick="startAnimation()">Start Animation</button>
-                <button onclick="stopAnimation()">Stop Animation</button>
+        </main>
+    <!-- </div>  -->
+        <footer>
+            <div class="footer-item">
+                ©2025 PyramidColoring
             </div>
-        </div>
-        <div id="pyramid"></div>
-    </div>
+        </footer>
       <script src="appV6.js"></script>
 </body>
 </html>
