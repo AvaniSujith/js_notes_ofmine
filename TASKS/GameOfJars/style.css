@@ -1,0 +1,218 @@
+/* Reset and Base Styles */
+:root {
+    --primary-color: #29626c;
+    --secondary-color: #183f39;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --accent-color: #007bff;
+    --border-color: #666666;
+    --background-light: rgba(255, 255, 255, 0.8);
+    --spacing-small: 10px;
+    --spacing-medium: 20px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-dark);
+}
+
+/* Header Styles */
+.header {
+    padding: var(--spacing-medium);
+    background-color: var(--secondary-color);
+}
+
+.home-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: transform var(--transition-speed);
+}
+
+.home-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Main Content Styles */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-medium);
+}
+
+.game-title {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-medium);
+    font-size: 2.5rem;
+}
+
+/* Input Styles */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-small);
+}
+
+.input-field label {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    padding: 8px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 200px;
+}
+
+/* Button Styles */
+.play-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: 12px 24px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform var(--transition-speed);
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Game Area Styles */
+.game-area {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.message {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin: var(--spacing-medium) 0;
+    padding: var(--spacing-small);
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-medium);
+}
+
+.jar-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+}
+
+.jar {
+    width: 100px;
+    min-height: 200px;
+    border: 3px solid var(--border-color);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: var(--spacing-small);
+    background: var(--background-light);
+    cursor: pointer;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.jar.selected {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.ball-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    padding: var(--spacing-medium);
+    border: 2px dashed var(--text-light);
+    min-height: 100px;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.ball {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform var(--transition-speed);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ball:hover {
+    transform: scale(1.1);
+}
+
+.ball.selected {
+    box-shadow: 0 0 10px #000;
+}
+
+/* Footer Styles */
+.footer {
+    padding: var(--spacing-medium);
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .jar {
+        width: 80px;
+        min-height: 160px;
+    }
+
+    .ball {
+        width: 30px;
+        height: 30px;
+    }
+
+    .game-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-field input {
+        width: 100%;
+    }
+}
