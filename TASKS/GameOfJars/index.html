@@ -4,50 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Interactive Jars and Balls game">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/6ed48917-5d25-4209-b008-f3f96776e72e.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Jars and Balls - Interactive Game</title>
+    <link rel="icon" href="assets/freepik__background__55644.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <button class="home-btn" aria-label="Home">
+            <button class="home-btn">
                 <i class="fa-solid fa-house"></i>
             </button>
         </nav>
     </header>
 
+    <div class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#" id="profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+                <li><a href="#" id="instructions"><i class="fa-solid fa-book"></i> Instructions</a></li>
+                <li><a href="#" id="end-game"><i class="fa-solid fa-power-off"></i> End Game</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <main class="main">
         <div class="container" id="setupContainer">
-            <h1 class="game-title">Jars and Balls</h1>
-            
-            <div class="input-group">
-                <div class="input-field">
-                    <label for="jarCount">Number of Jars</label>
-                    <input type="number" id="jarCount" min="1" max="10" placeholder="Enter jars (1-10)">
-                </div>
-                
-                <div class="input-field">
-                    <label for="ballCount">Number of Balls</label>
-                    <input type="number" id="ballCount" min="1" max="20" placeholder="Enter balls (1-20)">
-                </div>
+            <div class="header-container">
+                <h1 class="game-title">Jars and Balls</h1>
+                <video autoplay muted loop playsinline id="video-logo">
+                    <source src="assets/Animation - 1736921066996.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-
+            
             <button class="play-btn" id="startGame">
                 <i class="fa-solid fa-play"></i>
                 <span>Start Game</span>
             </button>
+
+            <audio id="backgroundMusic" loop>
+                <source src="assets/Sakura-Girl-Daisy-chosic.com_.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
         </div>
 
         <div id="gameArea" class="game-area" style="display:none;">
-            <div id="message" class="message">Click a ball to select it</div>
+            <!-- <div id="message" class="message">Click a ball to select it</div> -->
             
             <div class="game-board">
                 <div id="jarContainer" class="jar-container"></div>
-                <div id="ballArray" class="ball-container">
-                    <!-- Balls will be dynamically added here -->
-                </div>
+                <div id="ballArray" class="ball-container"></div>
             </div>
         </div>
     </main>

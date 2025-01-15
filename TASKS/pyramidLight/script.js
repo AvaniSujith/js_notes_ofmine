@@ -207,7 +207,7 @@ function animateRows(selectedColor, selectedDelay, startFromRow) {
     const delay = selectedDelay >= 100 ? selectedDelay : defaultDelay;
     currentRowIndex = startFromRow;
 
-    function lightUpRow() {
+    async function lightUpRow() {
         if (isPaused) return;
 
         if(currentRowIndex < rows.length) {
@@ -219,23 +219,40 @@ function animateRows(selectedColor, selectedDelay, startFromRow) {
             let timeout = setTimeout(lightUpRow, delay);
             animationTimeouts.push(timeout);
         } else {
-            // Reset animation
-            let resetTimeout = setTimeout(() => {
-                clearAllCircles();
+            // Clear all circles
+            const clearTimeout = setTimeout(() => {
+                const allCircles = document.getElementsByClassName('circle');
+                Array.from(allCircles).forEach(circle => {
+                    clearCircleWater(circle);
+                });
                 
-                // Add a small delay before starting the next iteration
-                let nextTimeout = setTimeout(() => {
-                    currentRowIndex = 0;  // Reset to start from first row
-                    lightUpRow();  // Start new iteration
-                }, delay);
-                
-                animationTimeouts.push(nextTimeout);
+                // Wait for clearing animation to complete
+                setTimeout(() => {
+                    if (!isPaused && isAnimating) {
+                        currentRowIndex = 0;
+                        lightUpRow();
+                    }
+                }, 600); // Slightly longer than the clearing animation
             }, delay);
-            animationTimeouts.push(resetTimeout);
+            
+            animationTimeouts.push(clearTimeout);
         }
     }
 
+    // Start the animation
     lightUpRow();
+}
+
+function clearCircleWater(circle) {
+    const waterFill = circle.querySelector('.water-fill');
+    if (waterFill) {
+        waterFill.style.height = '0%';
+        setTimeout(() => {
+            if (waterFill.parentNode === circle) {
+                circle.removeChild(waterFill);
+            }
+        }, 500);
+    }
 }
 
 function clearAllCircles() {

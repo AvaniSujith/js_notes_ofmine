@@ -49,7 +49,6 @@ let classObj = {
     ]
 }
 
-
 // fetch('data.json')
 //   .then(response => response.json())
 //   .then(data => {
@@ -60,11 +59,24 @@ let classObj = {
 
 function className(){
     let name = classObj.name;
-    return `Name of class is ${name}`;
+    return name;
 }
 
-console.log(className());
+function testCases(){
+    let input = [classObj, classObj];
+    let output = ["class A", undefined];
 
+    for(let i = 0; i < input.length; i++){
+        let result = className(input[i]);
+        if(result === output[i]){
+            console.log(`Test case ${i+1} passed`);
+        }else{
+            console.log(`Test case ${i+1} failed`);
+        }
+    }
+}
+
+testCases();
 
 
 // function testCases(){

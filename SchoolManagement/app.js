@@ -141,10 +141,38 @@ function markOfStudent(studentName){
 markOfStudent("Binu");
 
 
-function averageOfMark(){
-    let mark = [];
-    for(let i = 0; i < classObj; i++){
-        let mark = [];
-        mark.push();
+
+function calculateAverageMarks(studentName) {
+    const student = classObj.students.find(s => s.name === studentName);
+    if (student) {
+        const totalMarks = student.marks.reduce((sum, mark) => sum + mark.mark, 0);
+        return totalMarks / student.marks.length;
     }
+    return "Student not found";
 }
+
+calculateAverageMarks("Binu")
+
+
+function calculateTotalMarks(studentName) {
+    const student = classObj.students.find(s => s.name === studentName);
+    if (student) {
+        return student.marks.reduce((sum, mark) => sum + mark.mark, 0);
+    }
+    return "Student not found";
+}
+
+
+calculateTotalMarks("Binu");
+
+
+function calculateAverageMarksForSubject(subject) {
+    const marks = classObj.students.map(student => {
+        const markObj = student.marks.find(m => m.subject === subject);
+        return markObj ? markObj.mark : null;
+    }).filter(mark => mark !== null);
+
+    return marks.length > 0 ? marks.reduce((sum, mark) => sum + mark, 0) / marks.length : "Subject not found";
+}
+
+
