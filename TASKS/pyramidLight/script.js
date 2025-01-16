@@ -5,12 +5,10 @@ let animationTimeouts = [];
 let currentRowIndex = 0;
 
 
-// Select necessary buttons
 const continueBtn = document.getElementById('continue-btn');
 const settingsBtn = document.getElementById('setting-btn');
 const profileBtn = document.getElementById('user-btn');
 
-// Function to show input boxes
 const showInputBoxes = () => {
     const mainSection = document.querySelector('main');
     mainSection.innerHTML = '';
@@ -28,8 +26,8 @@ const showInputBoxes = () => {
 
 
     const createInput = (labelText, inputType, inputId, placeholder) => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'input-wrapper';
+        const innerContainer = document.createElement('div');
+        innerContainer.className = 'input-innerContainer';
 
         const label = document.createElement('label');
         label.textContent = labelText;
@@ -39,16 +37,15 @@ const showInputBoxes = () => {
         input.id = inputId;
         input.placeholder = placeholder;
 
-        wrapper.appendChild(label);
-        wrapper.appendChild(input);
-        return wrapper;
+        innerContainer.appendChild(label);
+        innerContainer.appendChild(input);
+        return innerContainer;
     };
 
     const rowsInput = createInput('Number of rows', 'number', 'rows', 'Enter a number');
     const colorInput = createInput('Pick a color', 'color', 'colorInput', '');
     const delayInput = createInput('Delay (ms)', 'number', 'delayInput', 'Enter a number');
 
-    // Create start animation button
     const startButton = document.createElement('button');
     startButton.textContent = 'Start Animation';
     startButton.className = 'start-button';
@@ -57,40 +54,36 @@ const showInputBoxes = () => {
         const color = document.getElementById('colorInput').value;
         const delay = parseInt(document.getElementById('delayInput').value);
 
-        // Check if any of the required inputs are missing
         if (!rows || !color || !delay) {
             showErrorMessage('Missing information');
             return;
         }
 
-        // Clear the main section and create pyramid container
         mainSection.innerHTML = '';
         const pyramidContainer = document.createElement('div');
         pyramidContainer.id = 'pyramid';
         mainSection.appendChild(pyramidContainer);
 
-         // Add pause button
          const pauseButton = document.createElement('button');
          pauseButton.textContent = 'Pause';
          pauseButton.className = 'pause-button';
          pauseButton.addEventListener('click', () => {
              if (isPaused) {
-                 // Resume animation
+                
                  isPaused = false;
                  pauseButton.textContent = 'Pause';
                  animateRows(color, delay, currentRowIndex);
              } else {
-                 // Pause animation
+              
                  isPaused = true;
                  pauseButton.textContent = 'Resume';
-                 // Clear any pending timeouts
                  animationTimeouts.forEach(timeout => clearTimeout(timeout));
                  animationTimeouts = [];
              }
          });
          mainSection.appendChild(pauseButton);
         
-        // Start the animation
+     
         createPyramid(rows);
         isAnimating = true;
         isPaused = false;
@@ -98,7 +91,6 @@ const showInputBoxes = () => {
         animateRows(color, delay, 0);
     });
 
-    // inputContainer.appendChild(headerContainer);
     inputContainer.appendChild(rowsInput);
     inputContainer.appendChild(colorInput);
     inputContainer.appendChild(delayInput);
@@ -109,7 +101,6 @@ const showInputBoxes = () => {
     mainSection.appendChild(startButton);
 };
 
-// Function to show error message
 const showErrorMessage = (message) => {
     const mainSection = document.querySelector('main');
     const errorMessage = document.createElement('div');
@@ -119,7 +110,7 @@ const showErrorMessage = (message) => {
     
     setTimeout(() => {
         mainSection.removeChild(errorMessage);
-    }, 3000);
+    }, 1000);
 };
 
 
@@ -155,7 +146,6 @@ function fillCircleWithWater(circle, color) {
     const waterFill = circle.querySelector('.water-fill');
     if (!waterFill) {
         createWaterElements(circle, color);
-        // Trigger reflow to ensure animation works
         circle.offsetHeight;
         requestAnimationFrame(() => {
             circle.querySelector('.water-fill').style.height = '100%';
@@ -171,11 +161,10 @@ function clearCircleWater(circle) {
             if (waterFill.parentNode === circle) {
                 circle.removeChild(waterFill);
             }
-        }, 500); // Match the CSS transition duration
+        }, 500); 
     }
 }
 
-// Pyramid-related functions
 function createPyramid(rows) {
     const pyramid = document.getElementById('pyramid');
     pyramid.innerHTML = '';
@@ -219,27 +208,25 @@ function animateRows(selectedColor, selectedDelay, startFromRow) {
             let timeout = setTimeout(lightUpRow, delay);
             animationTimeouts.push(timeout);
         } else {
-            // Clear all circles
+            
             const clearTimeout = setTimeout(() => {
                 const allCircles = document.getElementsByClassName('circle');
                 Array.from(allCircles).forEach(circle => {
                     clearCircleWater(circle);
                 });
                 
-                // Wait for clearing animation to complete
                 setTimeout(() => {
                     if (!isPaused && isAnimating) {
                         currentRowIndex = 0;
                         lightUpRow();
                     }
-                }, 600); // Slightly longer than the clearing animation
+                }, 600); 
             }, delay);
             
             animationTimeouts.push(clearTimeout);
         }
     }
 
-    // Start the animation
     lightUpRow();
 }
 
@@ -262,7 +249,6 @@ function clearAllCircles() {
     });
 }
 
-// Modal-related functions
 const showModal = (createContentCallback) => {
     const mainSection = document.querySelector('main');
     mainSection.style.filter = 'blur(5px)';
@@ -326,7 +312,6 @@ const createProfileContent = (modalBox) => {
     modalBox.appendChild(signupButton);
 };
 
-// Event Listeners
 continueBtn.addEventListener('click', showInputBoxes);
 settingsBtn.addEventListener('click', () => showModal(createSettingsContent));
 profileBtn.addEventListener('click', () => showModal(createProfileContent));

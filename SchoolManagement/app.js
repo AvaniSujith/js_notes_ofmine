@@ -175,4 +175,4 @@ function calculateAverageMarksForSubject(subject) {
     return marks.length > 0 ? marks.reduce((sum, mark) => sum + mark, 0) / marks.length : "Subject not found";
 }
 
-
+j

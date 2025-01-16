@@ -49,22 +49,3 @@ let classObj = {
     ]
 }
 
-
-function getStudentNames() {
-    return classObj.students.map(student => student.name);
-}
-
-function testCases() {
-    let sample = [classObj, { students: [] }];
-    let output = [["Ravi", "Aju", "Mini SS", "Binu"], []];
-
-    for (let i = 0; i < sample.length; i++) {
-        let result = getStudentNames(sample[i]);
-        if (JSON.stringify(result) === JSON.stringify(output[i])) {
-            console.log(`Test case ${i + 1} passed`);
-        } else {
-            console.log(`Test case ${i + 1} failed\nExpected: ${output[i]}, Got: ${result}`);
-        }
-    }
-}
-testCases();
