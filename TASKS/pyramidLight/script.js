@@ -1,4 +1,4 @@
-let defaultDelay = 1000;
+// let defaultDelay = 1000;
 let isAnimating = false;
 let isPaused = false;
 let animationTimeouts = [];
@@ -10,11 +10,10 @@ const settingsBtn = document.getElementById('setting-btn');
 const profileBtn = document.getElementById('user-btn');
 
 const showInputBoxes = () => {
-    const mainSection = document.querySelector('main');
-    mainSection.innerHTML = '';
+    const inputScreen = document.createElement('div');
+    inputScreen.classList.add('screen');
 
-
-    const headerContainer = document.createElement('div')
+    const headerContainer = document.createElement('div');
     const header = document.createElement('h2');
     headerContainer.classList.add('header-block');
     header.innerText = 'Let\'s Fill in Some Details';
@@ -22,8 +21,6 @@ const showInputBoxes = () => {
 
     const inputContainer = document.createElement('div');
     inputContainer.id = 'input-container';
-
-
 
     const createInput = (labelText, inputType, inputId, placeholder) => {
         const innerContainer = document.createElement('div');
@@ -59,31 +56,29 @@ const showInputBoxes = () => {
             return;
         }
 
+        const mainSection = document.querySelector('main');
         mainSection.innerHTML = '';
         const pyramidContainer = document.createElement('div');
         pyramidContainer.id = 'pyramid';
         mainSection.appendChild(pyramidContainer);
 
-         const pauseButton = document.createElement('button');
-         pauseButton.textContent = 'Pause';
-         pauseButton.className = 'pause-button';
-         pauseButton.addEventListener('click', () => {
-             if (isPaused) {
-                
-                 isPaused = false;
-                 pauseButton.textContent = 'Pause';
-                 animateRows(color, delay, currentRowIndex);
-             } else {
-              
-                 isPaused = true;
-                 pauseButton.textContent = 'Resume';
-                 animationTimeouts.forEach(timeout => clearTimeout(timeout));
-                 animationTimeouts = [];
-             }
-         });
-         mainSection.appendChild(pauseButton);
-        
-     
+        const pauseButton = document.createElement('button');
+        pauseButton.textContent = 'Pause';
+        pauseButton.className = 'pause-button';
+        pauseButton.addEventListener('click', () => {
+            if (isPaused) {
+                isPaused = false;
+                pauseButton.textContent = 'Pause';
+                animateRows(color, delay, currentRowIndex);
+            } else {
+                isPaused = true;
+                pauseButton.textContent = 'Resume';
+                animationTimeouts.forEach(timeout => clearTimeout(timeout));
+                animationTimeouts = [];
+            }
+        });
+        mainSection.appendChild(pauseButton);
+
         createPyramid(rows);
         isAnimating = true;
         isPaused = false;
@@ -95,10 +90,29 @@ const showInputBoxes = () => {
     inputContainer.appendChild(colorInput);
     inputContainer.appendChild(delayInput);
     
-   
-    mainSection.appendChild(headerContainer)
-    mainSection.appendChild(inputContainer);
-    mainSection.appendChild(startButton);
+    inputScreen.appendChild(headerContainer);
+    inputScreen.appendChild(inputContainer);
+    inputScreen.appendChild(startButton);
+
+    const mainSection = document.querySelector('main');
+    const currentScreen = document.querySelector('.head');
+    currentScreen.classList.add('screen');
+
+    inputScreen.style.opacity = '0';
+    inputScreen.style.transform = 'translateY(100%)';
+    mainSection.appendChild(inputScreen);
+
+    requestAnimationFrame(() => {
+        currentScreen.classList.add('up');
+        inputScreen.style.opacity = '1';
+        inputScreen.style.transform = 'translateY(0)';
+    });
+
+    setTimeout(() => {
+        if (currentScreen.parentNode === mainSection) {
+            mainSection.removeChild(currentScreen);
+        }
+    }, 600);
 };
 
 const showErrorMessage = (message) => {
@@ -110,7 +124,7 @@ const showErrorMessage = (message) => {
     
     setTimeout(() => {
         mainSection.removeChild(errorMessage);
-    }, 1000);
+    }, 3000);
 };
 
 
@@ -193,7 +207,7 @@ function animateRows(selectedColor, selectedDelay, startFromRow) {
 
     const rows = document.getElementsByClassName('row');
     const color = validateColor(selectedColor) ? selectedColor : 'red';
-    const delay = selectedDelay >= 100 ? selectedDelay : defaultDelay;
+    const delay = selectedDelay >= 100 ? selectedDelay : 100;
     currentRowIndex = startFromRow;
 
     async function lightUpRow() {
@@ -273,14 +287,21 @@ const showModal = (createContentCallback) => {
 };
 
 const createSettingsContent = (modalBox) => {
-    const startNewButton = document.createElement('button');
-    startNewButton.innerText = 'Start New';
-    startNewButton.className = 'start-new-button';
-    startNewButton.addEventListener('click', () => {
-        document.body.removeChild(document.getElementById('modal-overlay'));
-        document.querySelector('main').style.filter = 'none';
-        showInputBoxes();
-    });
+    // const startNewButton = document.createElement('button');
+    // startNewButton.innerText = 'Start New';
+    // startNewButton.className = 'start-new-button';
+    // startNewButton.addEventListener('click', () => {
+
+    //     document.body.removeChild(document.getElementById('modal-overlay'));
+    //     document.querySelector('main').style.filter = 'none';
+    //     showInputBoxes();
+
+    //     // const mainSection = document.querySelector('main');
+    //     // mainSection.innerHTML = '';
+
+    //     // const inputScreen = document.createElement('div');
+    //     // inputScreen.classList.add('screen');
+    // });
 
     const reloadButton = document.createElement('button');
     reloadButton.innerText = 'Reload';
@@ -289,7 +310,7 @@ const createSettingsContent = (modalBox) => {
         location.reload();
     });
 
-    modalBox.appendChild(startNewButton);
+    // modalBox.appendChild(startNewButton);
     modalBox.appendChild(reloadButton);
 };
 
