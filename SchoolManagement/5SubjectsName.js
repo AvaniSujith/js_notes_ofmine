@@ -138,7 +138,29 @@ function subjectOfStudent(name){
             break;
         }
     }
-    console.log(subjects)
+    return subjects;
 }
 
-subjectOfStudent("Binu")
+// subjectOfStudent("Binu")
+
+
+function testCase(){
+
+    let input = ["Binu", "Aju", "Ravi", "Avani"];
+    let output = [[ 'English', 'Maths', 'Physics', 'Chemistry', 'Computer' ],
+                  [ 'English', 'Maths', 'Physics', 'Chemistry', 'Computer' ],
+                  [ 'English', 'Maths', 'Physics', 'Chemistry', 'Computer' ],
+                  [ 'English', 'Maths', 'Physics', 'Chemistry', 'Computer' ]];
+
+    for(let i = 0; i < input.length; i++){
+        let result = subjectOfStudent(input[i]);
+         
+        if(JSON.stringify(result) === JSON.stringify(output[i])){
+            console.log(`Test case ${i+1} passed`);
+        }else{
+            console.log(`Test case ${i+1} failed`);
+        }
+    }
+}
+
+testCase();

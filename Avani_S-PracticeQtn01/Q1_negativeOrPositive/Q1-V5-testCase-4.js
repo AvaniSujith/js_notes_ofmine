@@ -11,6 +11,7 @@ function checkNum(num){
         return "negative";
     }else{
         return "zero";
+        // console.log("zero")
     }
 }
 

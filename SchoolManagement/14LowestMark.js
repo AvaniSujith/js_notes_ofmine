@@ -50,66 +50,109 @@ let classObj = {
 }
 
 
-// function idsOfStudents(){
-//     let id = [];
+// function lowestMark(){
+//     let maxMark = ;
+//     let student = '';
+
 //     for(let i = 0; i < classObj.students.length; i++){
-//         let item = classObj.students.id;
-//         id.push(item)
+//         let marks = classObj.students[i].marks;
+//         let totalMark = 0;
+
+//         for(let j = 0; j < marks.length; j++){
+//             totalMark += marks[i].mark;
+//         }
+
+//         if(totalMark < maxMark){
+//             maxTotal = totalMark;
+//             student = classObj.students[i].name
+//         }
 //     }
 
-//     console.log(id)
+//     return student;
 // }
 
-// idsOfStudents();
+
+// console.log(lowestMark());
+
+// // function testCase(){
+// //     let output = []
+// // }
 
 
-// version -2
+// version-2
 
+// function lowestMark(){
+//     let minMark = 0;
+//     let student = '';
+//     let maxMark = 0;
 
-// function idsOfStudents(){
-//     let ids = [];
 //     for(let i = 0; i < classObj.students.length; i++){
-//         let item = classObj.students[i].id;
-//         ids.push(item)
+//         let marks = classObj.students[i].marks;
+//         let totalMark = 0;
+
+//         for(let j = 0; j < marks.length; j++){
+//             totalMark += marks[i].mark;
+//         }
+
+//         if(totalMark < maxMark){
+//             maxMark = totalMark;
+            
+//         }
 //     }
 
-//     return ids;
+    
+
+    
 // }
 
-// // console.log(idsOfStudents());
-
-// function testCases(){
-//     if(idsOfStudents(classObj) === "[ '101', '102', '103', '104' ]"){
-//         console.log(`Test case passed`)
-//     }else{
-//         console.log(`Test case Failed`)
-//     }
-// }
-
-// testCases();
 
 
-// version - 3
+// version-3
 
 
-function idsOfStudents(){
-    let ids = [];
+function lowestTotalMark(){
+    let minMark = 0;
+    let student = '';
+
+    let marks = classObj.students[0].marks;
+    for(let j = 0; j < marks.length; j++){
+        minMark += marks[j].mark;
+    }
+    student = classObj.students[0].name;
+
+
     for(let i = 0; i < classObj.students.length; i++){
-        let item = classObj.students[i].id;
-        ids.push(item)
+        let marks = classObj.students[i].marks;
+        let totalMark = 0;
+
+        for(let j = 0; j < marks.length; j++){
+            totalMark += marks[j].mark;
+        }
+
+        if(totalMark < minMark){
+            minMark = totalMark;
+            student = classObj.students[i].name;
+        }
     }
-    return ids;
+
+    return student;
 }
 
-function testCases(){
-    let output = [ '101', '102', '103', '104' ];
-    let result = idsOfStudents();
+// console.log(lowestTotalMark());
 
-    if(JSON.stringify(result) === JSON.stringify(output)){
-        console.log(`Test case passed`);
-    }else{
-        console.log(`Test case failed`)
+
+function testCase(){
+    let output = ["Mini SS", "Avani"];
+    let result = lowestTotalMark();
+        
+    for(let i = 0; i < output.length; i++){
+        if(result === output[i]){
+            console.log(`Test case passed`);
+        }else{
+            console.log(`Test case failed`);
+        }
     }
 }
 
-testCases()
+testCase();
+

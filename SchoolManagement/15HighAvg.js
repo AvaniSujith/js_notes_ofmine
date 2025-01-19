@@ -50,66 +50,33 @@ let classObj = {
 }
 
 
-// function idsOfStudents(){
-//     let id = [];
-//     for(let i = 0; i < classObj.students.length; i++){
-//         let item = classObj.students.id;
-//         id.push(item)
-//     }
+function highAverageMark(){
+    let totalMark = 0;
+    let mark = '';
+    let avgMark = '';
 
-//     console.log(id)
-// }
+    for(let i = 0 ; i < classObj.students.length; i++){
+        let marks = classObj.students[i].marks
 
-// idsOfStudents();
-
-
-// version -2
-
-
-// function idsOfStudents(){
-//     let ids = [];
-//     for(let i = 0; i < classObj.students.length; i++){
-//         let item = classObj.students[i].id;
-//         ids.push(item)
-//     }
-
-//     return ids;
-// }
-
-// // console.log(idsOfStudents());
-
-// function testCases(){
-//     if(idsOfStudents(classObj) === "[ '101', '102', '103', '104' ]"){
-//         console.log(`Test case passed`)
-//     }else{
-//         console.log(`Test case Failed`)
-//     }
-// }
-
-// testCases();
-
-
-// version - 3
-
-
-function idsOfStudents(){
-    let ids = [];
-    for(let i = 0; i < classObj.students.length; i++){
-        let item = classObj.students[i].id;
-        ids.push(item)
-    }
-    return ids;
-}
-
-function testCases(){
-    let output = [ '101', '102', '103', '104' ];
-    let result = idsOfStudents();
-
-    if(JSON.stringify(result) === JSON.stringify(output)){
-        console.log(`Test case passed`);
-    }else{
-        console.log(`Test case failed`)
+        for(let j = 0; j < marks.length; j++){
+          
+        }
+        
     }
 }
 
-testCases()
+function testCase(){
+    let input = [];
+    let output = [];
+    for(let i = 0; i<input.length; i++){
+        let result = highAverageMark(input[i]);
+        
+        if(result === output[i]){
+            console.log(`Test case passed`);
+        }else{
+            console.log(`Test case failed`);
+        }
+
+    }
+}
+

@@ -40,7 +40,7 @@ function testForVowels(){
     for(i=0; i < input.length; i++){
         result = checkForVowel(input[i]);
 
-        if(result == output[i]){
+        if(result === output[i]){
             console.log(`Test case ${i+1} passed`);
 
         }else{
