@@ -50,83 +50,31 @@ let classObj = {
 }
 
 
-// function highAverageMark(){
-//     let totalMark = 0;
-//     let mark = '';
-//     let avgMark = '';
+function overallAverageMarks() {
+    let totalMarks = 0;
+    let totalSubjects = 0;
 
-//     for(let i = 0 ; i < classObj.students.length; i++){
-//         let marks = classObj.students[i].marks
-
-//         for(let j = 0; j < marks.length; j++){
-          
-//         }
-        
-//     }
-// }
-
-// function testCase(){
-//     let input = [];
-//     let output = [];
-//     for(let i = 0; i<input.length; i++){
-//         let result = highAverageMark(input[i]);
-        
-//         if(result === output[i]){
-//             console.log(`Test case passed`);
-//         }else{
-//             console.log(`Test case failed`);
-//         }
-
-//     }
-// }
-
-
-
-// version -2 
-
-function highestAverageSubject() {
-    let subjectTotals = {}; 
-    
-   
     for (let i = 0; i < classObj.students.length; i++) {
         let marks = classObj.students[i].marks;
 
-      
+ 
         for (let j = 0; j < marks.length; j++) {
-            let subject = marks[j].subject;
-            let mark = marks[j].mark;
-
-           
-            if (!(subject in subjectTotals)) {
-                subjectTotals[subject] = [0, 0];
-            }
-            subjectTotals[subject][0] += mark; 
-            subjectTotals[subject][1] += 1;   
+            totalMarks += marks[j].mark;
+            totalSubjects += 1;
         }
     }
 
-   
-    let highestAvg = 0;
-    let highestSubject = '';
 
-    for (let subject in subjectTotals) {
-        let avg = subjectTotals[subject][0] / subjectTotals[subject][1];
-        if (avg > highestAvg) {
-            highestAvg = avg;
-            highestSubject = subject;
-        }
-    }
-
-    return highestSubject;
+    return totalMarks / totalSubjects;
 }
 
 
-// console.log( highestAverageSubject());
+// console.log(overallAverageMarks());
 
 
 function testCase(){
-    let output = ["Maths", "Computer"];
-    let result = highestAverageSubject();
+    let output = [36.15, 50];
+    let result = overallAverageMarks();
         
     for(let i = 0; i < output.length; i++){
         if(result === output[i]){
@@ -139,3 +87,4 @@ function testCase(){
 
 
 testCase()
+

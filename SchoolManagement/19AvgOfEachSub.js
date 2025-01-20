@@ -50,92 +50,108 @@ let classObj = {
 }
 
 
-// function highAverageMark(){
-//     let totalMark = 0;
-//     let mark = '';
-//     let avgMark = '';
+// function avgMarkOfSub(){
+//     let subTotal = {};
 
-//     for(let i = 0 ; i < classObj.students.length; i++){
-//         let marks = classObj.students[i].marks
+//     for(let i = 0; i < classObj.students.length; i++){
+//         let marks = classObj.students[i].marks;
 
 //         for(let j = 0; j < marks.length; j++){
-          
+//             let subject = marks[i].subject;
+//             let mark = marks[j].mark;
+
+//             if(!subTotal.includes(subject)){
+//                 avg[sub]
+//             }
 //         }
-        
 //     }
 // }
 
-// function testCase(){
-//     let input = [];
-//     let output = [];
-//     for(let i = 0; i<input.length; i++){
-//         let result = highAverageMark(input[i]);
-        
-//         if(result === output[i]){
-//             console.log(`Test case passed`);
-//         }else{
-//             console.log(`Test case failed`);
+// version - 2
+
+// function avgMarkOfSub(){
+//     let subTotal = {};
+
+//     for(let i = 0; i < classObj.students.length; i++){
+//         let marks = classObj.students[i].marks;
+
+//         for (let j = 0; j < marks.length; j++) {
+//             let subject = marks[j].subject;
+//             let mark = marks[j].mark;
+
+            
+//             if (!(subject in subjectTotals)) {
+//                 subjectTotals[subject] = [0, 0];
+//             }
+//             subjectTotals[subject][0] += mark; 
+//             subjectTotals[subject][1] += 1;   
 //         }
 
 //     }
+
+//     let average = {};
+//     for(let subject in subTotal){
+//         average[subject] = subTotal[subject][0] / subTotal[subject][1];
+//     }
+
+//     return average;
 // }
 
 
 
-// version -2 
+// version - 3
 
-function highestAverageSubject() {
-    let subjectTotals = {}; 
-    
+function avgMarkOfSub(subjectName) {
+    let subTotal = {}; 
+
    
     for (let i = 0; i < classObj.students.length; i++) {
         let marks = classObj.students[i].marks;
 
-      
         for (let j = 0; j < marks.length; j++) {
             let subject = marks[j].subject;
             let mark = marks[j].mark;
 
            
-            if (!(subject in subjectTotals)) {
-                subjectTotals[subject] = [0, 0];
+            if (!(subject in subTotal)) {
+                subTotal[subject] = [0, 0]; 
             }
-            subjectTotals[subject][0] += mark; 
-            subjectTotals[subject][1] += 1;   
+
+           
+            subTotal[subject][0] += mark;
+            subTotal[subject][1] += 1;
         }
     }
 
-   
-    let highestAvg = 0;
-    let highestSubject = '';
+    
+    if (subjectName in subTotal) {
+    
+        let avg =  subTotal[subjectName][0] / subTotal[subjectName][1];
+        return avg;
 
-    for (let subject in subjectTotals) {
-        let avg = subjectTotals[subject][0] / subjectTotals[subject][1];
-        if (avg > highestAvg) {
-            highestAvg = avg;
-            highestSubject = subject;
-        }
+    } else {
+      
+        return `Not found`;
     }
-
-    return highestSubject;
 }
 
 
-// console.log( highestAverageSubject());
-
+// console.log(avgMarkOfSub("Maths"));
+// console.log(avgMarkOfSub("English"));
 
 function testCase(){
-    let output = ["Maths", "Computer"];
-    let result = highestAverageSubject();
-        
-    for(let i = 0; i < output.length; i++){
+    let input = ["Maths", "English", "Malayalam"];
+    let output = [46, 30.25, 70];
+
+    for(let i = 0; i < input.length; i++){
+        let result = avgMarkOfSub(input[i]);
+
         if(result === output[i]){
-            console.log(`Test case passed`);
+            console.log("Test case passed")
         }else{
-            console.log(`Test case failed`);
+            console.log("Test case failed")
         }
     }
 }
-
 
 testCase()

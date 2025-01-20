@@ -50,83 +50,49 @@ let classObj = {
 }
 
 
-// function highAverageMark(){
-//     let totalMark = 0;
-//     let mark = '';
-//     let avgMark = '';
 
-//     for(let i = 0 ; i < classObj.students.length; i++){
-//         let marks = classObj.students[i].marks
-
-//         for(let j = 0; j < marks.length; j++){
-          
-//         }
-        
-//     }
-// }
-
-// function testCase(){
-//     let input = [];
-//     let output = [];
-//     for(let i = 0; i<input.length; i++){
-//         let result = highAverageMark(input[i]);
-        
-//         if(result === output[i]){
-//             console.log(`Test case passed`);
-//         }else{
-//             console.log(`Test case failed`);
-//         }
-
-//     }
-// }
-
-
-
-// version -2 
-
-function highestAverageSubject() {
+function lowestAverageSubject() {
     let subjectTotals = {}; 
     
-   
     for (let i = 0; i < classObj.students.length; i++) {
         let marks = classObj.students[i].marks;
 
-      
+        
         for (let j = 0; j < marks.length; j++) {
             let subject = marks[j].subject;
             let mark = marks[j].mark;
 
-           
+          
             if (!(subject in subjectTotals)) {
                 subjectTotals[subject] = [0, 0];
             }
             subjectTotals[subject][0] += mark; 
-            subjectTotals[subject][1] += 1;   
+            subjectTotals[subject][1] += 1;  
         }
     }
 
-   
-    let highestAvg = 0;
-    let highestSubject = '';
+    
+    let lowestAvg = 99999; 
+    let lowestSubject = '';
 
     for (let subject in subjectTotals) {
         let avg = subjectTotals[subject][0] / subjectTotals[subject][1];
-        if (avg > highestAvg) {
-            highestAvg = avg;
-            highestSubject = subject;
+        if (avg < lowestAvg) {
+            lowestAvg = avg;
+            lowestSubject = subject;
         }
     }
 
-    return highestSubject;
+    return lowestSubject;
 }
 
 
-// console.log( highestAverageSubject());
+// console.log(lowestAverageSubject());
 
 
 function testCase(){
-    let output = ["Maths", "Computer"];
-    let result = highestAverageSubject();
+    let output = ["Maths", "English"];
+    let result = lowestAverageSubject();
         
     for(let i = 0; i < output.length; i++){
         if(result === output[i]){

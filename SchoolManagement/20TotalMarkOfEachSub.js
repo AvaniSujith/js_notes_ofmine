@@ -50,92 +50,121 @@ let classObj = {
 }
 
 
-// function highAverageMark(){
-//     let totalMark = 0;
-//     let mark = '';
-//     let avgMark = '';
+// function TotalMarkOfSub(subjectName) {
+//     let subTotal = {}; 
 
-//     for(let i = 0 ; i < classObj.students.length; i++){
-//         let marks = classObj.students[i].marks
+   
+//     for (let i = 0; i < classObj.students.length; i++) {
+//         let marks = classObj.students[i].marks;
 
-//         for(let j = 0; j < marks.length; j++){
-          
+//         for (let j = 0; j < marks.length; j++) {
+//             let subject = marks[j].subject;
+//             let mark = marks[j].mark;
+
+           
+//             if (!(subject in subTotal)) {
+//                 subTotal[subject] = [0, 0]; 
+//             }
+
+           
+//             subTotal[subject][0] += mark;
+//             subTotal[subject][1] += 1;
+
+//             let total = subTotal[subject][0];
 //         }
-        
+//     }
+
+    
+//     if (subjectName in subTotal) {
+
+//          return total;
+    
+//         // let avg =  subTotal[subjectName][0] / subTotal[subjectName][1];
+//         // return avg;
+
+//     } else {
+      
+//         return `Not found`;
 //     }
 // }
+
+
+// // console.log(TotalMarkOfSub("Maths"));
+// // console.log(TotalMarkOfSub("English"));
 
 // function testCase(){
-//     let input = [];
-//     let output = [];
-//     for(let i = 0; i<input.length; i++){
-//         let result = highAverageMark(input[i]);
-        
-//         if(result === output[i]){
-//             console.log(`Test case passed`);
-//         }else{
-//             console.log(`Test case failed`);
-//         }
+//     let input = ["Maths", "English", "Malayalam"];
+//     let output = [46, 30.25, 70];
 
+//     for(let i = 0; i < input.length; i++){
+//         let result = TotalMarkOfSub(input[i]);
+
+//         if(result === output[i]){
+//             console.log("Test case passed")
+//         }else{
+//             console.log("Test case failed")
+//         }
 //     }
 // }
 
+// testCase();
+
+// version - 2
 
 
-// version -2 
+function TotalMarkOfSub(subjectName) {
+    let subTotal = {}; 
 
-function highestAverageSubject() {
-    let subjectTotals = {}; 
-    
    
     for (let i = 0; i < classObj.students.length; i++) {
         let marks = classObj.students[i].marks;
 
-      
         for (let j = 0; j < marks.length; j++) {
             let subject = marks[j].subject;
             let mark = marks[j].mark;
 
            
-            if (!(subject in subjectTotals)) {
-                subjectTotals[subject] = [0, 0];
+            if (!(subject in subTotal)) {
+                subTotal[subject] = 0; 
             }
-            subjectTotals[subject][0] += mark; 
-            subjectTotals[subject][1] += 1;   
+
+           
+            subTotal[subject] += mark;
+
         }
     }
 
-   
-    let highestAvg = 0;
-    let highestSubject = '';
+    
+    if (subjectName in subTotal) {
 
-    for (let subject in subjectTotals) {
-        let avg = subjectTotals[subject][0] / subjectTotals[subject][1];
-        if (avg > highestAvg) {
-            highestAvg = avg;
-            highestSubject = subject;
-        }
+         return subTotal[subjectName];
+    
+        // let avg =  subTotal[subjectName][0] / subTotal[subjectName][1];
+        // return avg;
+
+    } else {
+      
+        return `Not found`;
     }
-
-    return highestSubject;
 }
 
 
-// console.log( highestAverageSubject());
-
+// console.log(TotalMarkOfSub("Maths"));
+// console.log(TotalMarkOfSub("English"));
 
 function testCase(){
-    let output = ["Maths", "Computer"];
-    let result = highestAverageSubject();
-        
-    for(let i = 0; i < output.length; i++){
+    let input = ["Maths", "English", "Malayalam"];
+    let output = [184, 121, 70];
+
+    for(let i = 0; i < input.length; i++){
+        let result = TotalMarkOfSub(input[i]);
+
         if(result === output[i]){
-            console.log(`Test case passed`);
+            console.log("Test case passed")
         }else{
-            console.log(`Test case failed`);
+            console.log("Test case failed")
         }
     }
 }
 
-
-testCase()
+testCase();
