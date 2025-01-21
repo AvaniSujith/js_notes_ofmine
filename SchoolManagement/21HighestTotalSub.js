@@ -159,13 +159,13 @@ function highestTotalMark(){
     return highestSubject;
 }
 
-console.log(highestTotalMark());
+// console.log(highestTotalMark());
 
 function testCase(){
-    let output = [];
+    let output = ["English", "Maths"];
 
-    for(let i = 0; i<input.length; i++){
-        let result = highestTotalMark(input[i]);
+    for(let i = 0; i<output.length; i++){
+        let result = highestTotalMark();
 
         if(result === output[i]){
             console.log("Test case passed")
@@ -174,3 +174,4 @@ function testCase(){
         }
     }
 }
+testCase()

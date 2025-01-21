@@ -50,27 +50,52 @@ let classObj = {
 }
 
 
-// function lowestTotalMarkSub(){
-//     let students = [];
-//     let mark = [];
+function lowestTotalMarkSub(){
+    // let students = [];
+    // let mark = [];
+    let totals = [];
 
-//     for(let i = 0; i < classObj.students.length; i++){
-        
-//     }
-// }
+    for(let i = 0; i < classObj.students.length; i++){
+        let marks = classObj.students[i].marks;
 
-// function testCase(){
-//     let input = [];
-//     let output = [];
+        for(let j = 0; j < marks.length; j++){
+            let subject = marks[j].subject;
+            let mark = marks[j].mark;
 
-//     for(let i = 0; i<output; i++){
-//         let result = lowestTotalMarkSub(input[i]);
+            if(!(subject in totals)){
+                totals[subject] = 0;
+            }
 
-//         if(result === output[i]){
-//             console.log("Test case passed");
-//         }else{
-//             console.log("Test case failed");
-//         }
-    
-//     }
-// }
+            totals[subject] += mark;
+        }
+    }
+
+    let lowestMark = Infinity;
+    let lowestSubject = '';
+
+    for(let subject in totals){
+        if(totals[subject] < lowestMark){
+            lowestMark = totals[subject];
+            lowestSubject = subject;
+        }
+    }
+
+    return lowestSubject;
+}
+
+// console.log(lowestTotalMarkSub())
+
+function testCase(){
+    let output = ["English", "Maths"];
+
+    for(let i = 0; i<output.length; i++){
+        let result = lowestTotalMarkSub();
+
+        if(result === output[i]){
+            console.log("Test case passed")
+        }else{
+            console.log("Test case failed")
+        }
+    }
+}
+testCase()
