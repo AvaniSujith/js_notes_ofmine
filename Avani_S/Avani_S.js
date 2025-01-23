@@ -96,5 +96,3 @@ listDisplay(list);
 
 console.log(findElement(list, 5));
 console.log(findElement(list, 999));
-
-
