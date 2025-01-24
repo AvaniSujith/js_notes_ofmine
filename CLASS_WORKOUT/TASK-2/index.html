@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Pattern World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icon.jpg">
+</head>
+<body>
+    <div class="background">
+        <video autoplay muted loop id="background-video">
+            <source src="assets/3141210-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            Your browser does not support the video background.
+        </video>
+    </div>
+
+    <header>
+        <nav class="nav">
+            <div class="dropdown">
+                <button id="menu-btn" class="nav-btn">
+                    <i class="fa-solid fa-ellipsis-v"></i>
+                </button>
+                <div id="dropdown-content" class="dropdown-content">
+                    <a href="#" id="home-btn">
+                        <i class="fa-solid fa-home"></i> Back to Start
+                    </a>
+                    <a href="#" id="instructions-btn">
+                        <i class="fa-solid fa-info-circle"></i> Instructions
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="welcome" class="page active">
+            <div class="page-content">
+                <h1 class="title">Welcome to the World of Numbers</h1>
+                <button class="btn" id="welcome-btn">Start Exploring</button>
+            </div>
+        </div>
+
+        <div id="welcome-page" class="page">
+            <div class="page-content">
+                <h1 class="title">Number Pattern World</h1>
+                <div class="input-group">
+                    <label for="symbol-count">Select Number of Symbols:</label>
+                    <select id="symbol-count" class="form-control">
+                        <!-- Populated by JavaScript -->
+                    </select>
+                    <button id="start-btn" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="selection-page" class="page">
+            <div class="page-content">
+                <h1 class="title">Choose Your Option</h1>
+                <div class="options">
+                    <div class="option-card pattern">
+                        <button class="btn btn-outline">Patterns</button>
+                    </div>
+                    <div class="option-card sequence">
+                        <button class="btn btn-outline">Sequences</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="instructions-page" class="page">
+            <div class="page-content">
+                <h2 class="title">How to Use Number Pattern World</h2>
+                <div class="instructions-content">
+                    <ol>
+                        <li>Choose the number of symbols for your number system</li>
+                        <li>Select how many patterns you want to generate</li>
+                        <li>Explore the unique number representations!</li>
+                    </ol>
+                </div>
+                <button id="close-instructions-btn" class="btn">Close</button>
+            </div>
+        </div>
+
+        <div id="pattern-input-page" class="page">
+            <div class="page-content">
+                <h2 class="title">Pattern Generation</h2>
+                <div class="input-group">
+                    <label for="pattern-number">Obtain Pattern of:</label>
+                    <input type="number" id="pattern-number" class="form-control">
+                    <button class="btn btn-primary">Generate Pattern</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="sequence-input-page" class="page">
+            <div class="page-content">
+                <h2 class="title">Sequence Generation</h2>
+                <div class="input-group">
+                    <label for="sequence-number">Obtain Sequence of:</label>
+                    <input type="number" id="sequence-number" class="form-control">
+                    <button class="btn btn-primary">Generate Sequence</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="sequence-output-page" class="page">
+            <div class="page-content">
+                <h2 class="title">Sequence</h2>
+                <div id="pattern-output" class="pattern-grid"></div>
+                <div class="page-controls">
+                    <button id="back-btn" class="btn btn-secondary">Back to Input</button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pattern-output-page" class="page">
+
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
