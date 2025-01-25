@@ -1,0 +1,43 @@
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(assets/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.keys-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.key{
+    border: 3.5px solid black;
+    border-radius: .5rem;
+    padding: 1rem .5rem;
+    width: 5rem;
+    margin: 1rem;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+    cursor: pointer;
+}
+
+.key h2{
+    margin: 0;
+    color: #ffffff;
+}
+
+.key span{
+    font-size: .75rem;
+    color: #ffc600;
+}
+

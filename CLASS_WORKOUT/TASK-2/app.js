@@ -1,12 +1,11 @@
 const SYMBOLS = '0123456789abcdefghijklmnopqrstuvwxyz';
 
-// Utility to switch active pages
 function showPage(pageElement) {
     document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
     pageElement.classList.add('active');
 }
 
-// Convert number to specified base
+
 function convertToBase(number, base) {
     if (number === 0) return SYMBOLS[0];
     let result = '';
@@ -17,11 +16,29 @@ function convertToBase(number, base) {
     return result;
 }
 
-// Initialize the app
+
 document.addEventListener('DOMContentLoaded', () => {
     const symbolCountSelect = document.getElementById('symbol-count');
+    const menuBtn = document.getElementById('menu-btn');
+    const dropdownContent = document.getElementById('dropdown-content');
 
-    // Populate symbol count options
+ 
+    menuBtn.onclick = (event) => {
+        event.stopPropagation();
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    };
+
+ 
+    document.addEventListener('click', () => {
+        dropdownContent.style.display = 'none';
+    });
+
+    
+    dropdownContent.onclick = (event) => {
+        event.stopPropagation();
+    };
+
+   
     for (let i = 2; i <= SYMBOLS.length; i++) {
         const option = document.createElement('option');
         option.value = i;
@@ -29,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         symbolCountSelect.appendChild(option);
     }
 
-    // Navigation button handlers
+ 
     document.getElementById('welcome-btn').onclick = () => showPage(document.getElementById('welcome-page'));
     document.getElementById('start-btn').onclick = () => {
         const selectedBase = +symbolCountSelect.value;
@@ -44,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.pattern .btn').onclick = () => showPage(document.getElementById('pattern-input-page'));
     document.querySelector('.sequence .btn').onclick = () => showPage(document.getElementById('sequence-input-page'));
 
-    // Pattern input page logic
+    
     document.getElementById('pattern-input-page').querySelector('.btn').onclick = () => {
         const patternNumber = +document.getElementById('pattern-number').value;
         const outputPage = document.getElementById('pattern-output-page');
@@ -71,13 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
         showPage(outputPage);
     };
 
-    // Sequence input page logic
+    
     document.getElementById('sequence-input-page').querySelector('.btn').onclick = () => {
         const sequenceNumber = +document.getElementById('sequence-number').value;
         const outputDiv = document.getElementById('pattern-output');
         outputDiv.innerHTML = '';
 
-        const limitedSequenceNumber = Math.min(sequenceNumber, 1000); // Avoid performance issues
+        const limitedSequenceNumber = Math.min(sequenceNumber, 1000); 
 
         for (let i = 0; i < limitedSequenceNumber; i++) {
             const div = document.createElement('div');
@@ -92,9 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
         showPage(document.getElementById('sequence-output-page'));
     };
 
-    // General navigation buttons
     document.getElementById('back-btn').onclick = () => showPage(document.getElementById('selection-page'));
     document.getElementById('home-btn').onclick = () => showPage(document.getElementById('welcome-page'));
     document.getElementById('instructions-btn').onclick = () => showPage(document.getElementById('instructions-page'));
     document.getElementById('close-instructions-btn').onclick = () => showPage(document.getElementById('welcome-page'));
 });
+

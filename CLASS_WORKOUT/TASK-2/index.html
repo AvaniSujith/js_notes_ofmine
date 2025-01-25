@@ -46,9 +46,8 @@
             <div class="page-content">
                 <h1 class="title">Number Pattern World</h1>
                 <div class="input-group">
-                    <label for="symbol-count">Select Number of Symbols:</label>
+                    <label>Select Number of Symbols:</label>
                     <select id="symbol-count" class="form-control">
-                        <!-- Populated by JavaScript -->
                     </select>
                     <button id="start-btn" class="btn btn-primary">Continue</button>
                 </div>
@@ -74,9 +73,11 @@
                 <h2 class="title">How to Use Number Pattern World</h2>
                 <div class="instructions-content">
                     <ol>
+                        <!-- <li>The choosing of symbol is following the precedence 0<1<2<3....<9<a....<z </li> -->
+                        <li>The selection of symbols follows the precedence: <code>0 &lt; 1 &lt; 2 &lt; 3 ... &lt; 9 &lt; a ... &lt; z</code></li>
                         <li>Choose the number of symbols for your number system</li>
-                        <li>Select how many patterns you want to generate</li>
-                        <li>Explore the unique number representations!</li>
+                        <li>Select if you would like to generate pattern of one number or get a sequence</li>
+                        <li>Get results</li>
                     </ol>
                 </div>
                 <button id="close-instructions-btn" class="btn">Close</button>
@@ -89,7 +90,7 @@
                 <div class="input-group">
                     <label for="pattern-number">Obtain Pattern of:</label>
                     <input type="number" id="pattern-number" class="form-control">
-                    <button class="btn btn-primary">Generate Pattern</button>
+                    <button class="btn">Generate Pattern</button>
                 </div>
             </div>
         </div>
@@ -100,7 +101,7 @@
                 <div class="input-group">
                     <label for="sequence-number">Obtain Sequence of:</label>
                     <input type="number" id="sequence-number" class="form-control">
-                    <button class="btn btn-primary">Generate Sequence</button>
+                    <button class="btn">Generate Sequence</button>
                 </div>
             </div>
         </div>
@@ -110,7 +111,7 @@
                 <h2 class="title">Sequence</h2>
                 <div id="pattern-output" class="pattern-grid"></div>
                 <div class="page-controls">
-                    <button id="back-btn" class="btn btn-secondary">Back to Input</button>
+                    <button id="back-btn" class="btn">Back to Input</button>
                 </div>
             </div>
         </div>
