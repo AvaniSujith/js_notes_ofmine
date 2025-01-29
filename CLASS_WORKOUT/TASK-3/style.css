@@ -4,9 +4,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* overflow: auto; */
 }
 
-body {
+body{
     position: relative;
     display: flex;
     align-items: center;
@@ -32,7 +33,7 @@ body {
 .container {
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
-    padding: 7rem;
+    padding: 2rem;
     max-width: 800px;
     width: 90%;
     text-align: center;
@@ -40,23 +41,40 @@ body {
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
-    /* margin-top: 8rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 h1 {
     color: #2c3e50;
     margin-bottom: 2rem;
-    font-size: 2rem;
-    line-height: 1.4;
+    font-size: 1.25rem;
+    line-height: 1;
     font-weight: 600;
 }
 
-.btn {
+#continue-btn{
+    padding: .75rem 1rem;
+    border-radius: 10px;
+    border:none;
+    background-color: #2c3e50;
+    color: #fff;
+    max-width: 160px;
+    text-align: center;
+}
+
+#continue-btn:focus{
+    color: #2c3e50;
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+.selection-div .btn {
     background: linear-gradient(135deg, #2c3e50, #3498db);
     color: white;
     border: none;
-    padding: 1rem 2rem;
     border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 500;
@@ -65,6 +83,8 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 55px;
+    width: 200px;
 }
 
 .btn:hover {
@@ -75,21 +95,18 @@ h1 {
 
 .selection-div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 2rem;
+    position: static;
+    /* top: 50%; */
+    /* left: 50%; */
 }
+
 
 .shift, .shuffled {
     flex: 1;
     max-width: 200px;
-}
-
-.result-block {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #result-text {
@@ -118,7 +135,7 @@ label {
 
 input {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.3rem 1rem;
     margin-bottom: 1rem;
     border: 2px solid #e1e1e1;
     border-radius: 8px;
@@ -151,7 +168,7 @@ input:focus {
 }
 
 img {
-    width: 100%;
+    width: 50%;
     height: auto;
     border-radius: 8px;
     display: block;
@@ -164,26 +181,37 @@ img {
     font-weight: 500;
 }
 
-#back-to-selection {
-    position: absolute;
+#back-to-selection, #decrypt-btn{
+    /* position: absolute;
     bottom: .75rem;
-    left: 50%;
+    left: 50%; */
     border-radius: 12px;
     transform: translateX(-50%);
     background: #6c757d;
-    padding: 0.8rem 1.5rem;
+    /* padding: 0.25rem .75rem; */
+    width: 75px;
+    height: 28px;
     font-size: 0.9rem;
     cursor: pointer;
+    border: none;
+    color: #fff;
+}
+
+#back-to-selection:focus, 
+#decrypt-btn:focus{
+    transform: scale(1.1);
 }
 
 #encrypt-normal, #encrypt-shuffled{
     padding: .5rem;
     background-color: #34495e;
+    border: none;
     color: #fff;
     border-radius: 12px;
     text-align: center;
     cursor: pointer;
 }
+
 .instruction-icon {
     position: fixed;
     top: 20px;
@@ -291,6 +319,7 @@ img {
     display: flex;
     gap: 10px;
     margin: 5px 0;
+    overflow: auto;
 }
 
 .alphabet-grid .row span:first-child {
@@ -298,23 +327,203 @@ img {
     font-weight: bold;
 }
 
+.result-btn{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 35%;
+    bottom: 1rem;
+}
+
+.first-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 2fr) 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.ceaser-img, .soldier-msg {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    height: fit-content;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
 
 
 
+.content-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* padding: 2rem; */
+}
+
+.result-block {
+    width: 100%;
+    max-width: 600px;
+    /* min-height: 100px; */
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 12px;
+    /* margin-bottom: 2rem; */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-section {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+.bottom-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.ceaser-img, .soldier-msg {
+    position: relative;
+    width: 150px;
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dialogue-box {
+    display: none;
+    position: absolute;
+    top: -80px;
+    background: white;
+    padding: 0.35rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.caesar-dialogue {
+    right: 0;
+}
+
+.soldier-dialogue {
+    left: 0;
+}
+
+.dialogue-box::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
+.caesar-dialogue::after {
+    right: 20px;
+}
+
+.soldier-dialogue::after {
+    left: 20px;
+}
+
+.animation-line {
+    display: none;
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    transform-origin: left center;
+    animation: drawLine 1s ease-out forwards;
+}
+
+@keyframes drawLine {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+.control-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+#back-to-selection, #decrypt-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: #2c3e50;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#back-to-selection:hover, #decrypt-btn:hover {
+    transform: translateY(-2px);
+}
 
 
-@media (max-width: 768px) {
+@media screen and (min-width:700px) {
 
     .modal-content {
         margin: 20px;
         padding: 20px;
         width: calc(100% - 40px);
     }
-    
+
     .alphabet-grid {
         font-size: 12px;
     }
-    
+
     .alphabet-grid .row {
         flex-direction: column;
         gap: 5px;
@@ -324,25 +533,72 @@ img {
         padding: 1.5rem;
         margin: 1rem;
     }
-    
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        line-height: 1.4;
+        padding: 3rem;
+        margin-bottom: 0;
     }
-    
-    .ceaser-img, .soldier-msg {
-        display: none;
+
+    #continue-btn{
+        margin-bottom: 2rem;
     }
-    
+
     .selection-div {
-        flex-direction: column;
+        padding: 5rem 3rem;
+        flex-direction: row;
         align-items: center;
         gap: 1rem;
     }
-    
-    .selection-div .btn{
+
+    /* .selection-div .btn{
         padding: 5rem 8rem;
-    }
+    } */
+
     .shift, .shuffled {
         width: 100%;
+    }
+
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    
+    .container {
+        padding: 1.5rem;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .bottom-images {
+        gap: 2rem;
+    }
+    
+    
+    .dialogue-box {
+        position: static;
+        margin-top: 1rem;
+        max-width: none;
+    }
+    
+    .dialogue-box::after {
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (min-width:1400px){
+    h1{
+        font-size: 2.2rem;
+    }
+
+    #continue-btn{
+        font-size: 1.3rem;
     }
 }

@@ -164,7 +164,11 @@
 //     shuffledResultPage();
 // })
 
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
+    
     const container = document.getElementById("container");
     const continueBtn = document.getElementById("continue-btn");
 
@@ -176,99 +180,189 @@ document.addEventListener('DOMContentLoaded', () => {
         clearContainer();
         
         const resultPage = `
-            <div class="result-block">
-                <p id="result-text"></p>
-            </div>
-            <div class="ceaser-msg">
-                <label for="input">Enter the message:</label>
-                <input type="text" id="input">
-                <label for="shifting">Number of shifts:</label>
-                <input type="number" id="shifting">
-                <button id="encrypt-normal">Encrypt</button>
-            </div>
-            <div class="ceaser-img">
-                <img src="assets/vecteezy_a-painting-of-a-man-with-curly-hair_53205250.jpg" alt="ceaser">
-            </div>
-            <div class="soldier-msg">
-                <div class="soldier-img">
-                    <img src="assets/terracotta-army_984114.png" alt="soldiers">
+            <div class="content-layout">
+                <div class="result-block">
+                    <p id="result-text"></p>
+                </div>
+                <div class="input-section">
+                    <label for="input">Enter the message:</label>
+                    <input type="text" id="input">
+                    <label for="shifting">Number of shifts:</label>
+                    <input type="number" id="shifting">
+                    <button id="encrypt-normal">Encrypt</button>
+                </div>
+                <div class="bottom-images">
+                    <div class="ceaser-img">
+                        <img src="assets/vecteezy_a-painting-of-a-man-with-curly-hair_53205250.jpg" alt="ceaser">
+                        <div class="dialogue-box caesar-dialogue"></div>
+                    </div>
+                    <div class="soldier-msg">
+                        <img src="assets/terracotta-army_984114.png" alt="soldiers">
+                        <div class="dialogue-box soldier-dialogue"></div>
+                    </div>
+                </div>
+                <div class="animation-line"></div>
+                <div class="control-buttons">
+                    <button id="back-to-selection">Back</button>
+                    <button id="decrypt-btn">Decrypt</button>
                 </div>
             </div>
-            <button id="back-to-selection">Back</button>
         `;
         
         container.innerHTML = resultPage;
 
         const encryptBtn = document.getElementById("encrypt-normal");
         const backBtn = document.getElementById("back-to-selection");
+        const decryptBtn = document.getElementById("decrypt-btn");
+        let currentMessage = '';
+        let currentShift = 0;
         
         encryptBtn.addEventListener("click", () => {
             const message = document.getElementById("input").value;
             const shift = parseInt(document.getElementById("shifting").value) || 0;
+            currentMessage = message;
+            currentShift = shift;
             const result = cipherMsg(message, shift);
             document.getElementById("result-text").textContent = result;
+        });
+
+        decryptBtn.addEventListener("click", () => {
+            const encryptedText = document.getElementById("result-text").textContent;
+            if (!encryptedText) return;
+
+            const caesarDialogue = document.querySelector('.caesar-dialogue');
+            const soldierDialogue = document.querySelector('.soldier-dialogue');
+            const animationLine = document.querySelector('.animation-line');
+
+            // Show Caesar's dialogue
+            caesarDialogue.textContent = encryptedText;
+            caesarDialogue.style.display = 'block';
+
+            // Animate the line
+            const caesarBox = document.querySelector('.ceaser-img');
+            const soldierBox = document.querySelector('.soldier-msg');
+            const caesarRect = caesarBox.getBoundingClientRect();
+            const soldierRect = soldierBox.getBoundingClientRect();
+
+            animationLine.style.display = 'block';
+            animationLine.style.left = (caesarRect.right) + 'px';
+            animationLine.style.top = (caesarRect.top + caesarRect.height/2) + 'px';
+            animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+
+            // Show soldier's dialogue after delay
+            setTimeout(() => {
+                const decryptedText = cipherMsg(encryptedText, -currentShift);
+                soldierDialogue.textContent = decryptedText;
+                soldierDialogue.style.display = 'block';
+            }, 1000);
         });
 
         backBtn.addEventListener("click", createSelectionPage);
     }
 
-
-     const modal = document.getElementById("instruction-modal");
-    const instructionBtn = document.getElementById("instruction-btn");
-    const closeBtn = document.querySelector(".close-btn");
-
-    instructionBtn.addEventListener("click", () => {
-        modal.style.display = "block";
-    });
-
-    closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
-
-
     function handleShuffledCipher() {
         clearContainer();
         
         const shuffledPage = `
-            <div class="result-block">
-                <p id="result-text"></p>
-            </div>
-            <div class="ceaser-msg">
-                <label for="input">Enter the message:</label>
-                <input type="text" id="input">
-                <button id="encrypt-shuffled">Encrypt</button>
-            </div>
-            <div class="ceaser-img">
-                <img src="assets/vecteezy_a-painting-of-a-man-with-curly-hair_53205250.jpg" alt="ceaser">
-            </div>
-            <div class="soldier-msg">
-                <div class="soldier-img">
-                    <img src="assets/terracotta-army_984114.png" alt="soldiers">
+            <div class="content-layout">
+                <div class="result-block">
+                    <p id="result-text"></p>
+                </div>
+                <div class="input-section">
+                    <label for="input">Enter the message:</label>
+                    <input type="text" id="input">
+                    <button id="encrypt-shuffled">Encrypt</button>
+                </div>
+                <div class="bottom-images">
+                    <div class="ceaser-img">
+                        <img src="assets/vecteezy_a-painting-of-a-man-with-curly-hair_53205250.jpg" alt="ceaser">
+                        <div class="dialogue-box caesar-dialogue"></div>
+                    </div>
+                    <div class="soldier-msg">
+                        <img src="assets/terracotta-army_984114.png" alt="soldiers">
+                        <div class="dialogue-box soldier-dialogue"></div>
+                    </div>
+                </div>
+                <div class="animation-line"></div>
+                <div class="control-buttons">
+                    <button id="back-to-selection">Back</button>
+                    <button id="decrypt-btn">Decrypt</button>
                 </div>
             </div>
-            <button id="back-to-selection">Back</button>
         `;
         
         container.innerHTML = shuffledPage;
 
         const encryptBtn = document.getElementById("encrypt-shuffled");
         const backBtn = document.getElementById("back-to-selection");
+        const decryptBtn = document.getElementById("decrypt-btn");
+        let currentMessage = '';
         
         encryptBtn.addEventListener("click", () => {
             const message = document.getElementById("input").value;
+            currentMessage = message;
             const result = shuffledCipher(message);
             document.getElementById("result-text").textContent = result;
         });
 
+        decryptBtn.addEventListener("click", () => {
+            const encryptedText = document.getElementById("result-text").textContent;
+            if (!encryptedText) return;
+
+            const caesarDialogue = document.querySelector('.caesar-dialogue');
+            const soldierDialogue = document.querySelector('.soldier-dialogue');
+            const animationLine = document.querySelector('.animation-line');
+
+            // Show Caesar's dialogue
+            caesarDialogue.textContent = encryptedText;
+            caesarDialogue.style.display = 'block';
+
+            // Animate the line
+            const caesarBox = document.querySelector('.ceaser-img');
+            const soldierBox = document.querySelector('.soldier-msg');
+            const caesarRect = caesarBox.getBoundingClientRect();
+            const soldierRect = soldierBox.getBoundingClientRect();
+
+            animationLine.style.display = 'block';
+            animationLine.style.left = (caesarRect.right) + 'px';
+            animationLine.style.top = (caesarRect.top + caesarRect.height/2) + 'px';
+            animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+
+            // Show soldier's dialogue after delay
+            setTimeout(() => {
+                const decryptedText = shuffledDecipher(encryptedText);
+                soldierDialogue.textContent = decryptedText;
+                soldierDialogue.style.display = 'block';
+            }, 1000);
+        });
+
         backBtn.addEventListener("click", createSelectionPage);
     }
+
+    function shuffledDecipher(msg) {
+        const shuffledLowerCase = 'qazwsxcedrfvbgtyhnujiokmpl';
+        const shuffledUpperCase = 'QAZWSXCDERFVBGTHYNUJIOKMLP';
+        const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
+        const upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let result = '';
+
+        for (let i = 0; i < msg.length; i++) {
+            let char = msg[i];
+            
+            if (shuffledLowerCase.includes(char)) {
+                let index = shuffledLowerCase.indexOf(char);
+                result += lowerCaseLetters[index];
+            } else if (shuffledUpperCase.includes(char)) {
+                let index = shuffledUpperCase.indexOf(char);
+                result += upperCaseLetters[index];
+            } else {
+                result += char;
+            }
+        }
+
+        return result;
+    }
+
 
     function createSelectionPage() {
         clearContainer();
@@ -343,3 +437,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     continueBtn.addEventListener("click", createSelectionPage);
 });
+
+
+
+
+

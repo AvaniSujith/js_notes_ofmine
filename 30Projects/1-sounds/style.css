@@ -29,11 +29,24 @@ body{
     background: rgba(0,0,0,0.4);
     text-shadow: 0 0 .5rem black;
     cursor: pointer;
+    transition: all 0.07s ease;
+    color: #ffffff;
 }
 
-.key h2{
+.playing{
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}
+
+/* .key h2{
     margin: 0;
     color: #ffffff;
+} */
+
+kbd{
+    display: block;
+    font-size: 40px;
 }
 
 .key span{
