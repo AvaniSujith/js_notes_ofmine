@@ -37,4 +37,5 @@ function testFactorial(){
         }
     }
 }
+
 testFactorial();
