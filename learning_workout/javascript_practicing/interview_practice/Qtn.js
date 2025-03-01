@@ -50,7 +50,7 @@
 
 
 
-function secondLargest(arr){
+function secondLargest(arr) {
     // let sortArr = [];
     // let maxValue = arr[0];
 
@@ -99,15 +99,15 @@ function secondLargest(arr){
 
     let sortArr = [...new Set(arr.sort((a, b) => b - a))];      //********************************************************************************* */
 
-    if(sortArr.length < 2){
+    if (sortArr.length < 2) {
         return null;
-    }else{
+    } else {
         return sortArr[1];
     }
 
 }
 
-let arr  = [12, 35, 1, 10, 34, 1];
+let arr = [12, 35, 1, 10, 34, 1];
 // let arr = [10, 5, 10]
 // console.log(secondLargest(arr));
 
@@ -116,11 +116,11 @@ let arr  = [12, 35, 1, 10, 34, 1];
 // Q2 .Third largest element in an array of distinct elements
 // Given an array of n integers, the task is to find the third largest element. All the elements in the array are distinct integers. 
 
-function thirdLargest(arr){
-    let sortArr = [...new Set(arr.sort((a,b) => b - a))]
-    if(sortArr.length < 3){
+function thirdLargest(arr) {
+    let sortArr = [...new Set(arr.sort((a, b) => b - a))]
+    if (sortArr.length < 3) {
         return null;
-    }else{
+    } else {
         return sortArr[2];
     }
 }
@@ -138,10 +138,10 @@ let arrA = [19, -10, 20, 14, 2, 16, 10]
 // Given an integer array, find a maximum product of a triplet in the array.
 
 
-function productOfTriplet(arr){
+function productOfTriplet(arr) {
     // let sortArr = [...new Set(arr.sort((a,b) => b - a))];
     // let tripletArr = []
-    
+
     // let i = 0;
 
     // while(i < 3){
@@ -157,14 +157,14 @@ function productOfTriplet(arr){
     // // return tripletArr;
     // return product;
 
-    if(arr.length < 3)return null;
+    if (arr.length < 3) return null;
 
     arr.sort((a, b) => a - b);
 
     let n = arr.length
 
-    let p1 = arr[n-1] * arr[n -2] * arr[n-3];
-    let p2 = arr[0] * arr[1] * arr[n-1]
+    let p1 = arr[n - 1] * arr[n - 2] * arr[n - 3];
+    let p2 = arr[0] * arr[1] * arr[n - 1]
 
     return Math.max(p1, p2);
 
@@ -182,12 +182,12 @@ let arrB = [10, 3, 5, 6, 20]
 // Given an array arr[] consisting of only 0’s and 1’s, the task is to find the count of a maximum number of consecutive 1’s or 0’s present in the array.
 
 
-function countOfNum(arr){
+function countOfNum(arr) {
 
     // let count = 1;
 
     // for(let i = 0; i< arr.length; i++){
-    
+
     //     if(arr[i] === arr[i+1]){
     //         count++;
     //     }else{
@@ -201,10 +201,10 @@ function countOfNum(arr){
     let count = 1;
     let maxCount = 0
 
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] === arr[i - 1]){
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] === arr[i - 1]) {
             count++
-        }else{
+        } else {
             maxCount = Math.max(maxCount, count);
             count = 1;
         }
@@ -228,14 +228,14 @@ let arrC = [0, 0, 0, 0]
 // Q5. Move all zeros to end of array
 // Given an array of integers arr[], the task is to move all the zeros to the end of the array while maintaining the relative order of all non-zero elements.
 
-function sortArray(arr){
+function sortArray(arr) {
     let NonZeroArr = []
     let zeroArr = []
 
-    for(let i = 0; i<arr.length; i++){
-        if(arr[i] === 0){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0) {
             zeroArr.push(arr[i])
-        }else{
+        } else {
             NonZeroArr.push(arr[i])
         }
     }
@@ -258,7 +258,7 @@ let arrD = [1, 2, 0, 4, 3, 0, 5, 0];
 // Q6. Reverse an Array in groups of given size
 // Given an array arr[] and an integer k, the task is to reverse every subarray formed by consecutive K elements.
 
-function reverseInGroup(arr, k){
+function reverseInGroup(arr, k) {
     // if(arr.length >= k){
     //     arr.reverse();
     // }else{
@@ -269,7 +269,7 @@ function reverseInGroup(arr, k){
 
     let finalArr = [];
 
-    for(let i = 0; i< arr.length; i += k){
+    for (let i = 0; i < arr.length; i += k) {
         let part = arr.slice(i, i + k);
         part.reverse();
         finalArr.push(...part);
@@ -288,10 +288,9 @@ let arrF = [1, 2, 3, 4, 5, 6, 7, 8]
 
 // function rotate(){
 //     const sortArr = [];
-//     for(let i =0; 
+//     for(let i =0;
 //         i < arr.length;
 //         i++
 //     ){
 
 //     }
-// }

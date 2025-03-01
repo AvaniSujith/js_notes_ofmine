@@ -165,12 +165,34 @@
 // })
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
     
     const container = document.getElementById("container");
     const continueBtn = document.getElementById("continue-btn");
+    
+    // Set up instruction modal
+    const instructionBtn = document.getElementById("instruction-btn");
+    const instructionModal = document.getElementById("instruction-modal");
+    const closeBtn = document.querySelector(".close-btn");
+    
+    if(instructionBtn) {
+        instructionBtn.addEventListener("click", () => {
+            instructionModal.style.display = "block";
+        });
+    }
+    
+    if(closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            instructionModal.style.display = "none";
+        });
+    }
+    
+    // Close modal if clicked outside
+    window.addEventListener("click", (e) => {
+        if (e.target === instructionModal) {
+            instructionModal.style.display = "none";
+        }
+    });
 
     function clearContainer() {
         container.innerHTML = '';
@@ -188,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <label for="input">Enter the message:</label>
                     <input type="text" id="input">
                     <label for="shifting">Number of shifts:</label>
-                    <input type="number" id="shifting">
+                    <input type="number" id="shifting" min="1" max="25" value="3">
                     <button id="encrypt-normal">Encrypt</button>
                 </div>
                 <div class="bottom-images">
@@ -216,19 +238,40 @@ document.addEventListener('DOMContentLoaded', () => {
         const decryptBtn = document.getElementById("decrypt-btn");
         let currentMessage = '';
         let currentShift = 0;
+        let isNormalCipher = true;
         
         encryptBtn.addEventListener("click", () => {
             const message = document.getElementById("input").value;
-            const shift = parseInt(document.getElementById("shifting").value) || 0;
+            if (!message.trim()) {
+                alert("Please enter a message to encrypt");
+                return;
+            }
+            
+            const shift = parseInt(document.getElementById("shifting").value) || 3;
+            
+            // Validate shift is between 1-25
+            if (shift < 1 || shift > 25) {
+                alert("Please enter a shift value between 1 and 25");
+                return;
+            }
+            
             currentMessage = message;
             currentShift = shift;
             const result = cipherMsg(message, shift);
             document.getElementById("result-text").textContent = result;
+            
+            // Reset dialogue boxes
+            document.querySelector('.caesar-dialogue').style.display = 'none';
+            document.querySelector('.soldier-dialogue').style.display = 'none';
+            document.querySelector('.animation-line').style.display = 'none';
         });
 
         decryptBtn.addEventListener("click", () => {
             const encryptedText = document.getElementById("result-text").textContent;
-            if (!encryptedText) return;
+            if (!encryptedText) {
+                alert("Please encrypt a message first!");
+                return;
+            }
 
             const caesarDialogue = document.querySelector('.caesar-dialogue');
             const soldierDialogue = document.querySelector('.soldier-dialogue');
@@ -238,16 +281,33 @@ document.addEventListener('DOMContentLoaded', () => {
             caesarDialogue.textContent = encryptedText;
             caesarDialogue.style.display = 'block';
 
-            // Animate the line
+            // Get proper positioning for animation line
             const caesarBox = document.querySelector('.ceaser-img');
             const soldierBox = document.querySelector('.soldier-msg');
+            
+            // Get more accurate positioning using getBoundingClientRect
             const caesarRect = caesarBox.getBoundingClientRect();
             const soldierRect = soldierBox.getBoundingClientRect();
-
-            animationLine.style.display = 'block';
-            animationLine.style.left = (caesarRect.right) + 'px';
-            animationLine.style.top = (caesarRect.top + caesarRect.height/2) + 'px';
-            animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+            const containerRect = document.querySelector('.content-layout').getBoundingClientRect();
+            
+            // Calculate positions relative to container
+            const containerTop = containerRect.top;
+            const containerLeft = containerRect.left;
+            
+            // Set position based on responsive layout
+            if (window.innerWidth <= 768) {
+                // For mobile: horizontal line in the middle
+                animationLine.style.display = 'block';
+                animationLine.style.width = '80%';
+                animationLine.style.left = '10%';
+                animationLine.style.top = (caesarRect.bottom - containerTop + 20) + 'px';
+            } else {
+                // For desktop: line connecting the images
+                animationLine.style.display = 'block';
+                animationLine.style.left = (caesarRect.right - containerLeft) + 'px';
+                animationLine.style.top = (caesarRect.top + caesarRect.height/2 - containerTop) + 'px';
+                animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+            }
 
             // Show soldier's dialogue after delay
             setTimeout(() => {
@@ -297,17 +357,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const backBtn = document.getElementById("back-to-selection");
         const decryptBtn = document.getElementById("decrypt-btn");
         let currentMessage = '';
+        let isNormalCipher = false;
         
         encryptBtn.addEventListener("click", () => {
             const message = document.getElementById("input").value;
+            if (!message.trim()) {
+                alert("Please enter a message to encrypt");
+                return;
+            }
+            
             currentMessage = message;
             const result = shuffledCipher(message);
             document.getElementById("result-text").textContent = result;
+            
+            // Reset dialogue boxes
+            document.querySelector('.caesar-dialogue').style.display = 'none';
+            document.querySelector('.soldier-dialogue').style.display = 'none';
+            document.querySelector('.animation-line').style.display = 'none';
         });
 
         decryptBtn.addEventListener("click", () => {
             const encryptedText = document.getElementById("result-text").textContent;
-            if (!encryptedText) return;
+            if (!encryptedText) {
+                alert("Please encrypt a message first!");
+                return;
+            }
 
             const caesarDialogue = document.querySelector('.caesar-dialogue');
             const soldierDialogue = document.querySelector('.soldier-dialogue');
@@ -317,16 +391,33 @@ document.addEventListener('DOMContentLoaded', () => {
             caesarDialogue.textContent = encryptedText;
             caesarDialogue.style.display = 'block';
 
-            // Animate the line
+            // Get proper positioning for animation line
             const caesarBox = document.querySelector('.ceaser-img');
             const soldierBox = document.querySelector('.soldier-msg');
+            
+            // Get more accurate positioning using getBoundingClientRect
             const caesarRect = caesarBox.getBoundingClientRect();
             const soldierRect = soldierBox.getBoundingClientRect();
-
-            animationLine.style.display = 'block';
-            animationLine.style.left = (caesarRect.right) + 'px';
-            animationLine.style.top = (caesarRect.top + caesarRect.height/2) + 'px';
-            animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+            const containerRect = document.querySelector('.content-layout').getBoundingClientRect();
+            
+            // Calculate positions relative to container
+            const containerTop = containerRect.top;
+            const containerLeft = containerRect.left;
+            
+            // Set position based on responsive layout
+            if (window.innerWidth <= 768) {
+                // For mobile: horizontal line in the middle
+                animationLine.style.display = 'block';
+                animationLine.style.width = '80%';
+                animationLine.style.left = '10%';
+                animationLine.style.top = (caesarRect.bottom - containerTop + 20) + 'px';
+            } else {
+                // For desktop: line connecting the images
+                animationLine.style.display = 'block';
+                animationLine.style.left = (caesarRect.right - containerLeft) + 'px';
+                animationLine.style.top = (caesarRect.top + caesarRect.height/2 - containerTop) + 'px';
+                animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+            }
 
             // Show soldier's dialogue after delay
             setTimeout(() => {
@@ -362,7 +453,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return result;
     }
-
 
     function createSelectionPage() {
         clearContainer();
@@ -435,10 +525,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return result;
     }
 
+    // Handle window resize for animation line positioning
+    window.addEventListener('resize', () => {
+        const animationLine = document.querySelector('.animation-line');
+        if (animationLine && animationLine.style.display === 'block') {
+            const caesarBox = document.querySelector('.ceaser-img');
+            const soldierBox = document.querySelector('.soldier-msg');
+            
+            if (caesarBox && soldierBox) {
+                const caesarRect = caesarBox.getBoundingClientRect();
+                const soldierRect = soldierBox.getBoundingClientRect();
+                const containerRect = document.querySelector('.content-layout').getBoundingClientRect();
+                
+                const containerTop = containerRect.top;
+                const containerLeft = containerRect.left;
+                
+                if (window.innerWidth <= 768) {
+                    animationLine.style.width = '80%';
+                    animationLine.style.left = '10%';
+                    animationLine.style.top = (caesarRect.bottom - containerTop + 20) + 'px';
+                } else {
+                    animationLine.style.left = (caesarRect.right - containerLeft) + 'px';
+                    animationLine.style.top = (caesarRect.top + caesarRect.height/2 - containerTop) + 'px';
+                    animationLine.style.width = (soldierRect.left - caesarRect.right) + 'px';
+                }
+            }
+        }
+    });
+
     continueBtn.addEventListener("click", createSelectionPage);
 });
-
-
-
-
-
