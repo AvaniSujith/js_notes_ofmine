@@ -5,12 +5,27 @@
 // nonPrimitive datatypes - mutable[Object, array]
 
 
-// var - function scoped, redeclaarble
+// var - function scoped, redeclaarble -- hoisting -variable and functions are hoisted can be called above decalred line
 // let - block scoped, not redeclarable, but can be updated
 // const - block scoped.fixed
 
 // stack - stores local variables
+// heap - 
 
 
-//     **** CLOSURE ****
+//     **** CLOSURE ***
+
+function backPack() {
+    let notebook = "I hate notes";
+
+    function takNotesbook() {
+        console.log(notebook);
+    }
+
+    return takNotesbook;
+}
+
+
+const myBag = backPack();
+myBag();
 
