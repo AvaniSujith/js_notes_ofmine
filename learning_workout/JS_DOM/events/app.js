@@ -1,11 +1,11 @@
-// Events 
+// Events
 
 // change in state of an object - Event
 // fired to notify code of "interesting changes" that may affect code execution.
 
 
 // * mouse events (click, double click EventCounts.)
-// * keyboard event (keydown, keyup) 
+// * keyboard event (keydown, keyup)
 // * Form events (submit)
 // * print many or many more
 
@@ -16,7 +16,7 @@
 // low battery warning event . resizing the screen of page.
 
 
-// *****************************EVENT HANDLING********************************* 
+// *****************************EVENT HANDLING*********************************
 
 //  Node.event = () => {
 // function
@@ -50,12 +50,12 @@
 
 // *********************EVENT OBJECT******************
 
-// special object has details about event 
+// special object has details about event
 //  target , type , clientX, clientY
 
 // ***********************EVENT LISTENER*******************
 // *************Node.addEventListener(event, callball)
-// callback is a function used as argument 
+// callback is a function used as argument
 
 // let btn = document.querySelector('#btn');
 
@@ -98,5 +98,3 @@
 //  btn.addEventListener('click', () => {
 //     if()
 //  })
-
-
