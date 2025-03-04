@@ -294,3 +294,42 @@ let arrF = [1, 2, 3, 4, 5, 6, 7, 8]
 //     ){
 
 //     }
+
+
+function sumOfDigits(num) {
+    while (num >= 10) {
+        let sum = 0;
+        let temp = num;
+
+        while (temp > 0) {
+            sum += temp % 10;
+            temp = (temp - (temp % 10)) / 10;
+
+        }
+        num = sum
+    }
+
+    return num
+}
+
+console.log(sumOfDigits(444));
+
+
+// repeating of first letter 
+function firstLetterRepeatition(str) {
+    // return str.length;
+
+    str = str.toLowerCase();
+    let first = str[0];
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (first === str[i]) {
+            count++
+        }
+
+    }
+
+    return count
+}
+
+console.log(firstLetterRepeatition("leetcodeLove"));
