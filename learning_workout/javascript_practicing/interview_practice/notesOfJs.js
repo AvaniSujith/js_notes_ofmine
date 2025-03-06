@@ -73,3 +73,51 @@
 
 // let num = "7";
 // console.log(typeof (num));
+
+// class = template for object.
+// var a = [2,3,4,5,6]
+
+// array.pop();
+// array.push();
+// array.unshift();
+// array.shift();
+
+
+// conditionals - if else els-if
+
+// loop - makes it easy to lot of things, repeated works done on all together.
+
+// Uses of Functions :
+//   1-- when code is not immediately used
+//   2-- when code is to be reused
+//   3-- when cod eshould be run with different datas different time.
+
+// console.log("hello");
+
+// function hello() {
+//     console.log("hai")
+// }
+
+function sortArr(arr) {
+    let arr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let minIndex = i
+        for (let j = i + 1;
+            j < arr.length;
+            j++
+        ) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j
+            }
+        }
+
+        let temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp
+    }
+
+    return arr;
+}
+
+let array = [8, 5, 9, 3, 1, 4, 5];
+console.log(sortArr(array))

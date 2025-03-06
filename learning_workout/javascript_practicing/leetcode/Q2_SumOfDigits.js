@@ -1,5 +1,7 @@
 // sum of digits of a number 
 
+// version - 1
+
 // function sumOfDigits(num){
 //     let string = JSON.stringify(num);
 //     let sum = 0;
@@ -12,6 +14,8 @@
 // }
 // sumOfDigits(123)
 
+
+// version 2
 
 // function sum(num){
 //     let sumOfNum = 0;

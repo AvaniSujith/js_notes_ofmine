@@ -1,20 +1,20 @@
-function diagonal(matrix){
-    if(typeof(matrix) !== "object"){
+function diagonal(matrix) {
+    if (typeof (matrix) !== "object") {
         return "Invalid input. Input should be matrix."
     }
     let position = 0;
-    if(matrix.length === 0 || matrix.length != matrix[position].length){
+    if (matrix.length === 0 || matrix.length != matrix[position].length) {
         return "Not a diagonal matrix";
     }
-    for(let i = 0; i < matrix.length; i++){
-        for(let j = 0; j< matrix.length; j++){
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix.length; j++) {
 
-            if(typeof matrix[i][j] !== "number"){
+            if (typeof matrix[i][j] !== "number") {
                 return "Invalid matrix element. Element should be number."
             }
 
 
-            if(i !== j && matrix[i][j] !== 0){
+            if (i !== j && matrix[i][j] !== 0) {
                 // console.log("Not a diagonal matrix");
                 return "Not a diagonal matrix";
             }
@@ -46,60 +46,59 @@ function diagonal(matrix){
 
 
 
-function testDiagonal(){
+function testDiagonal() {
     const testCases = [
         {
-            input : [
+            input: [
                 [2, 3, 4],
                 [5, 6, 7],
                 [2, 0, 0]
             ],
-            output : "Not a diagonal matrix"
+            output: "Not a diagonal matrix"
         },
         {
-            input : [
+            input: [
                 [1, 0, 0],
                 [0, 2, 0],
                 [0, 0, 1]
             ],
-            output : "Is a diagonal matrix"
+            output: "Is a diagonal matrix"
         },
         {
-            input : [
+            input: [
                 [2, 0],
                 [0, 4]
             ],
-            output : "Is a diagonal matrix" 
+            output: "Is a diagonal matrix"
         },
         {
-            input : [
+            input: [
                 [2, 3, 4],
                 [1, 3, 4]
             ],
-            output : "It is diagonal matrix" 
+            output: "It is diagonal matrix"
         },
         {
-            input : 7,
-            ouput : "It is diagonal matrix" 
+            input: 7,
+            ouput: "It is diagonal matrix"
         },
         {
-            input : [
+            input: [
                 ["a", 0],
                 [0, "a"]
             ]
         }
     ];
 
-    testCases.forEach((testCase, index)=>{
+    testCases.forEach((testCase, index) => {
         let result = diagonal(testCase.input);
 
-        if(result == testCase.output){
-            console.log(`Test case ${index+1} passed`);
-        }else{
-            console.log(`Test case ${index+1} failed\n${result}`);
+        if (result == testCase.output) {
+            console.log(`Test case ${index + 1} passed`);
+        } else {
+            console.log(`Test case ${index + 1} failed\n${result}`);
         }
     });
 }
 
 testDiagonal();
-

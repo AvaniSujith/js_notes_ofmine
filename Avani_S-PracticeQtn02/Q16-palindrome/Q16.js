@@ -1,27 +1,27 @@
 // Write a program to check whether the given string is palindrome or not?
 
-function palindrome(string){
-    if(typeof(string) !== "string"){
+function palindrome(string) {
+    if (typeof (string) !== "string") {
         return "Invalid input. Input should be string."
     }
-   let arr = [];
-   let revArr = [];
-   let newString = string.toLowerCase();
+    let arr = [];
+    let revArr = [];
+    let newString = string.toLowerCase();
 
-    for(let i = 0; i < string.length; i++){
+    for (let i = 0; i < string.length; i++) {
         arr.push(newString[i]);
     }
 
-    for(let i = string.length-1; i >= 0 ; i--){
+    for (let i = string.length - 1; i >= 0; i--) {
         revArr.push(newString[i]);
     }
     // console.log(revArr);
-    
+
     // console.log(arr);
 
-    if(JSON.stringify(arr) == JSON.stringify(revArr)){
+    if (JSON.stringify(arr) == JSON.stringify(revArr)) {
         return "Is a palindrome";
-    }else{
+    } else {
         return "Not a palindrome";
     }
 }
@@ -32,17 +32,17 @@ function palindrome(string){
 
 
 
-function testPalindrome(){
+function testPalindrome() {
     let sample = ["radar", "abba", "avani", "Madam", 1234];
-    let output = ["Is a palindrome","Is a palindrome", "Is a palindrome", "Is a palindrome", "Is a palindrome"];
+    let output = ["Is a palindrome", "Is a palindrome", "Is a palindrome", "Is a palindrome", "Is a palindrome"];
 
-    for(let i = 0; i<sample.length; i++){
+    for (let i = 0; i < sample.length; i++) {
         let result = palindrome(sample[i]);
 
-        if(result == output[i]){
-            console.log(`Test case ${i+1} passed`);
-        }else{
-            console.log(`Test case ${i+1} failed\n${result}`);
+        if (result == output[i]) {
+            console.log(`Test case ${i + 1} passed`);
+        } else {
+            console.log(`Test case ${i + 1} failed\n${result}`);
         }
     }
 }

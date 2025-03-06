@@ -1,39 +1,39 @@
-function repetition(arr){
-    if(!Array.isArray(arr)){
+function repetition(arr) {
+    if (!Array.isArray(arr)) {
         return "Invalid input. Input should be an array."
     }
-    for(let i = 0; i<arr.length; i++){
-        if(typeof arr[i] !== "number"){
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] !== "number") {
             return "Invalid input. Elements should be numbers."
         }
     }
     let maxCount = 0;
     // let temp = arr[0];
     let temp = [];
-    
-    for(let i = 0; i < arr.length ; i++){
+
+    for (let i = 0; i < arr.length; i++) {
         let count = 0;
 
 
-        for(let j = 0; j < arr.length; j++){
-            
-            if(arr[i] === arr[j]){
-                count ++;
+        for (let j = 0; j < arr.length; j++) {
+
+            if (arr[i] === arr[j]) {
+                count++;
             }
         }
-        
-        if(count > maxCount){
+
+        if (count > maxCount) {
             maxCount = count;
             temp = [arr[i]];
-        }else if(count == maxCount && !temp.includes(arr[i])){
+        } else if (count == maxCount && !temp.includes(arr[i])) {
             // temp.push(i);
             temp.push(arr[i]);
         }
-    
+
     }
 
 
-    
+
 
     // console.log(maxCount);
     // console.log(temp);
@@ -48,42 +48,44 @@ function repetition(arr){
 // repetition(arr);
 
 
-function testRepetition(){
+function testRepetition() {
     const testCases = [
         {
-            input : [1,2,3,1,2,2,2,3,1],
-            output : "The most repeated value is 2 with a count of 4"
+            input: [1, 2, 3, 1, 2, 2, 2, 3, 1],
+            output: "The most repeated value is 2 with a count of 4"
         },
         {
-            input : [1,1,1,2],
+            input: [1, 1, 1, 2],
             output: "The most repeated value is 1 with a count of 3"
         },
         {
-            input : [3,4,3,3,4,4,4,1,1,1,1],
-            output : "The most repeated value is 4,1 with a count of 4"
+            input: [3, 4, 3, 3, 4, 4, 4, 1, 1, 1, 1],
+            output: "The most repeated value is 4,1 with a count of 4"
         },
         {
-            input : [2,2,0,1],
-            output : "The most repeated value is 4,1 with a count of 4"
+            input: [2, 2, 0, 1],
+            output: "The most repeated value is 4,1 with a count of 4"
         },
         {
-            input :9
+            input: 9
         },
         {
-            input : ["h",2,"h"],
-            output : "h"
+            input: ["h", 2, "h"],
+            output: "h"
         }
     ];
 
-    testCases.forEach((testCase, index)=>{
+    testCases.forEach((testCase, index) => {
         let result = repetition(testCase.input);
 
-        if(result == testCase.output){
-            console.log(`Test case ${index+1} passed`);
-        }else{
-            console.log(`Test case ${index+1} failed\n${result}`);
+        if (result == testCase.output) {
+            console.log(`Test case ${index + 1} passed`);
+        } else {
+            console.log(`Test case ${index + 1} failed\n${result}`);
         }
     });
 }
 
 testRepetition();
+
+
