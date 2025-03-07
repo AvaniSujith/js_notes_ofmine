@@ -5,11 +5,14 @@
 // nonPrimitive datatypes - mutable[Object, array]
 
 
-// var - function scoped, redeclaarble -- hoisting -variable and functions are hoisted can be called above decalred line
-// let - block scoped, not redeclarable, but can be updated
-// const - block scoped.fixed
+// var - function scoped, redeclaarble -- hoisting -variable and functions are hoisted can be called above decalred line  -----ES5
+// let - block scoped, not redeclarable, but can be updatedm                 -----ES6
+// const - block scoped.fixed                                                -----ES6
 
-// stack - stores local variables
+// ES6- doenst add to window
+// ES5 - add itself to window
+
+// stack - stores local variables  ...LIFO
 // heap - stores big variabeles.
 
 
@@ -77,10 +80,25 @@
 // class = template for object.
 // var a = [2,3,4,5,6]
 
-// array.pop();
-// array.push();
-// array.unshift();
-// array.shift();
+
+
+// ****ADD ELEMENTS INTO ARRAY****
+
+// // array.push(): -
+//      - add Elements into array
+// // array.unshift(): -
+//      - add element to front
+
+// ****REMOVING OF ELEMENT FROM ARRAY****
+
+// // array.pop(): -
+//      - remove Element.
+
+// // array.shift();
+//     - remove element from front.
+
+// Array.splice(index, numberOfElememntsToBeRemoved)
+
 
 
 // conditionals - if else els-if
@@ -98,26 +116,50 @@
 //     console.log("hai")
 // }
 
-function sortArr(arr) {
-    let arr = [];
-    for (let i = 0; i < arr.length; i++) {
-        let minIndex = i
-        for (let j = i + 1;
-            j < arr.length;
-            j++
-        ) {
-            if (arr[j] < arr[minIndex]) {
-                minIndex = j
+
+// Object :- more than one type of values should be stored in a single place
+// - blank obj
+// var a = {};
+
+// - filled obj
+// var a = {
+//     age: 23,
+//     name: "avani",
+//     place: "meenangadi"
+// }
+
+
+// console.log(a.name)
+
+
+// let language = {
+//     name: "main language",
+//     age: 33,
+//     loop: "no-loop"
+// }
+
+// console.log(language);
+
+function uniqueFirstSingleLetter(str) {
+
+    let stri = str.toLowerCase();
+
+    for (let i = 0; i < stri.length; i++) {
+        let count = 0;
+        for (let j = 0; j < stri.length; j++) {
+            if (stri[i] === stri[j]) {
+                count++;
             }
         }
-
-        let temp = arr[i];
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp
+        if (count === 1) {
+            return i;
+        }
     }
-
-    return arr;
+    return -1;
 }
 
-let array = [8, 5, 9, 3, 1, 4, 5];
-console.log(sortArr(array))
+console.log(uniqueFirstSingleLetter("leetcode"));
+console.log(uniqueFirstSingleLetter("avani"));
+console.log(uniqueFirstSingleLetter("people"));
+console.log(uniqueFirstSingleLetter("siji"));
+console.log(uniqueFirstSingleLetter("hellooo"));

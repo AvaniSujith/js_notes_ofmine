@@ -327,29 +327,71 @@ function sumOfDigits(num) {
 // Input: s = "aabb"
 // Output: -1
 
-
 // repeating of first letter 
-function firstLetterRepeatition(str) {
-    // return str.length;
+// function firstLetterRepeatition(str) {
+//     // return str.length;
 
-    str = str.toLowerCase();
-    let first = str[0];
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (first === str[i]) {
-            count++
-        }
+//     str = str.toLowerCase();
+//     let first = str[0];
+//     let count = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (first === str[i]) {
+//             count++
+//         }
 
-    }
+//     }
 
-    return count
-}
+//     return count
+// }
 
 // console.log(firstLetterRepeatition("leetcodeLove"));
 
+function firstNonRepeatingLetter(arr) {
+
+    let str = arr.toLowerCase();
+    // let str = arr.toLowerCase()
+    // for (let i = 0; i < str.length; i++) {
+    //     let value = str[i];
+    //     // let flag = false;
+    //     let index = i
+    //     for (let j = i + 1;
+    //         j < str.length;
+    //         j++
+    //     ) {
+    //         if (value === str[j]) {
+    //             index = j
+    //         }
+    //     }
+
+    // }
+
+    // return index;
+
+    for (let i = 0; i < str.length; i++) {
+        let count = 0;
+
+        for (let j = 0; j < str.length; j++) {
+            if (str[i] === str[j]) {
+                count++
+            }
+        }
+
+        if (count === 1) {
+            return i;
+        }
+    }
+
+    return -1;
+
+}
+
+console.log(firstNonRepeatingLetter("leetcodeLove"));
+console.log(firstNonRepeatingLetter("hellohowareYou"));
+console.log(firstNonRepeatingLetter("leetcode"));
+console.log(firstNonRepeatingLetter("aabb"));
+
 
 //You are given a 0-indexed integer array nums of even length and there is also an empty array arr. Alice and Bob decided to play a game where in every round Alice and Bob will do one move. The rules of the game are as follows:
-
 //Every round, first Alice will remove the minimum element from nums, and then Bob does the same.
 //Now, first Bob will append the removed element in the array arr, and then Alice does the same.
 //The game continues until nums becomes empty.
