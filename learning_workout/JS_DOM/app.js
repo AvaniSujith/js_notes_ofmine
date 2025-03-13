@@ -13,7 +13,7 @@
 
 // console.dir(window.document);
 // console.log(window.document)
- 
+
 // //objects---> nodes. DOM is a tree like structure.
 // console.log(document.body);
 // console.log(document.head);  
@@ -23,27 +23,27 @@
 // ********************************************
 
 
-    //                 DOM TREE STRUCTURE
+//                 DOM TREE STRUCTURE
 
-    //                         window  - contains all the object
-    //                           |
-    //                         document  - objects are stored as documents
-    //                           |
-    //                         html      - code of page
-    //                           |
-    //                     |            |
-    // (title, link,meta) head         body(div, script)
+//                         window  - contains all the object
+//                           |
+//                         document  - objects are stored as documents
+//                           |
+//                         html      - code of page
+//                           |
+//                     |            |
+// (title, link,meta) head         body(div, script)
 
 
 
-    // console.dir(document.body);
-    // console.log(document.body);
+// console.dir(document.body);
+// console.log(document.body);
 
-    // console.log(document.body.childNodes[1])
+// console.log(document.body.childNodes[1])
 
-    // document.body.style.backgroundColor = "green";
+// document.body.style.backgroundColor = "green";
 
-    // document.body.childNodes[1].innerText = "1234";
+// document.body.childNodes[1].innerText = "1234";
 
 
 
@@ -209,7 +209,7 @@
 
 
 //  Que. create a h2 heading element 'Hello Javascript' 
-    // Append "from Apna College students" to the text 
+// Append "from Apna College students" to the text 
 
 
 // let heading = document.querySelector('h2')
@@ -370,7 +370,6 @@
 // let para = document.getElementById('para')
 // para.remove()
 // newHeading.remove();
-
 
 
 // appendChild, removeChild 

@@ -18,9 +18,9 @@
 //     // let l = uppercase(letter);
 
 //     let letter = l.toUpperCase()
-//     if(letter === 'A' || 
-//         letter === 'E' || 
-//         letter === 'I' || 
+//     if(letter === 'A' ||
+//         letter === 'E' ||
+//         letter === 'I' ||
 //         letter === 'O' ||
 //         letter === 'U'
 //     ){
@@ -93,10 +93,3 @@
 
 // maxValue([1,4,3,2]);
 
-
-function average(arr){
-    let avg = 0;
-    let sum = 0;
-
-    for(let i = 0; i < arr.l)
-}

@@ -349,6 +349,7 @@ function sumOfDigits(num) {
 function firstNonRepeatingLetter(arr) {
 
     let str = arr.toLowerCase();
+
     // let str = arr.toLowerCase()
     // for (let i = 0; i < str.length; i++) {
     //     let value = str[i];
@@ -362,9 +363,7 @@ function firstNonRepeatingLetter(arr) {
     //             index = j
     //         }
     //     }
-
     // }
-
     // return index;
 
     for (let i = 0; i < str.length; i++) {
@@ -385,10 +384,10 @@ function firstNonRepeatingLetter(arr) {
 
 }
 
-console.log(firstNonRepeatingLetter("leetcodeLove"));
-console.log(firstNonRepeatingLetter("hellohowareYou"));
-console.log(firstNonRepeatingLetter("leetcode"));
-console.log(firstNonRepeatingLetter("aabb"));
+// console.log(firstNonRepeatingLetter("leetcodeLove"));
+// console.log(firstNonRepeatingLetter("hellohowareYou"));
+// console.log(firstNonRepeatingLetter("leetcode"));
+// console.log(firstNonRepeatingLetter("aabb"));
 
 
 //You are given a 0-indexed integer array nums of even length and there is also an empty array arr. Alice and Bob decided to play a game where in every round Alice and Bob will do one move. The rules of the game are as follows:
@@ -404,4 +403,251 @@ console.log(firstNonRepeatingLetter("aabb"));
 //Example 2:
 // Input: nums = [2,5]
 // Output: [5,2]
-//Explanation: In round one, first Alice removes 2 and then Bob removes 5. Then in arr firstly Bob appends and then Alice appends. So arr = [5,2].
+//Explanation: In round one, first Alice removes 2 and then Bob removes 5. Then in arr firstly Bob appends and then Alice appends. So arr = [5,2]
+
+// ****************
+
+// function arrSort(arr) {
+//     for (let i = 0; i < ar.length; i++) {
+
+//     }
+// }
+
+// *****************
+
+
+
+// 1. Write a function that takes a string as input and returns the string with all vowels removed.
+
+// function vowels(string) {
+//     let vowels = [];
+//     let isVowels = false
+//     let length = string.length;
+//     let str = string.toLowerCase();
+//     for (let i = 0; i < length; i++) {
+//         if (str[i] === "a") {
+//             isVowels = true;
+//             continue;
+//         }
+//         else if (str[i] === "e") {
+//             isVowels = true;
+//             continue;
+//         } else if (str[i] === "i") {
+//             isVowels = true;
+//             continue;
+//         } else if (str[i] === "o") {
+//             isVowels = true;
+//             continue;
+//         } else if (str[i] === "u") {
+//             isVowels = true;
+//             continue;
+//         }
+
+
+//         if (!isVowels) {
+//             vowels.push(str[i])
+//         }
+//     }
+
+//     return vowels;
+// }
+
+
+// console.log(vowels("avani"));
+
+
+function vowels(string) {
+    let result = [];
+    let length = string.length;
+    let str = string.toLowerCase()
+    for (let i = 0; i < length; i++) {
+        if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u") {
+            continue;
+        }
+
+        result.push(str[i]);
+    }
+
+    // return result.toString();
+    return result.join("");
+}
+
+// console.log(vowels("avani"));
+
+
+
+// Write a function that takes an array as input and returns the array with all duplicates removed. 
+
+
+function duplicatesRemoved(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let isDuplicate = false;
+        let value = arr[i];
+
+        for (let j = 0; j < newArr.length; j++) {
+            if (newArr[j] === value) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (!isDuplicate) {
+            newArr.push(value)
+        }
+    }
+
+    return newArr
+}
+
+
+
+
+// console.log(duplicatesRemoved([1, 2, 2, 3, 4, 4, 5]))
+
+
+
+// 3. Write a function that takes a number as input and returns the factorial of that number. 
+
+function factorial(num) {
+    let fact = 1;
+    for (let i = 1; i <= num; i++) {
+        fact *= i
+    }
+
+    return fact;
+}
+
+
+// console.log(factorial(8))
+
+
+// 4. Write a function that takes a string as input and returns the string with all letters reversed. 
+
+function reverseString(string) {
+    let length = string.length;
+    let reverseArr = [];
+    for (let i = length - 1; i >= 0; i--) {
+        reverseArr.push(string[i])
+    }
+
+    return reverseArr.join("");
+}
+
+// console.log(reverseString("hello"))
+
+
+// 5. Write a function that takes an object as input and returns the object with all keys and values swapped.
+
+
+function object(obj) {
+    let newObj = {}
+    // for (let i = 0; i < obj.length; i++) {
+    //     // let value = obj[key];
+    //     newObj[key] = obj[value];
+    //     newObj[value] = obj[key];
+    // }
+
+    for (let key in obj) {
+        let value = obj[key];
+        newObj[value] = key
+    }
+
+    return newObj;
+}
+
+
+// console.log(object({ a: 1, b: 2, c: 3 }));
+
+
+
+// 6. Write a function that takes a number as input and returns the number with all digits reversed. 
+
+function digitReversed(num) {
+    let str = num.toString();
+    let reverseArr = []
+
+    for (let i = str.length - 1; i >= 0; i--) {
+        reverseArr.push(str[i]);
+    }
+
+    return Number(reverseArr.join(""));
+}
+// console.log(digitReversed(456));
+
+
+// 7.Write a function that takes a string as input and returns the string with all words reversed.
+
+function wordsReversed(string) {
+    let reverse = ""
+
+    for (let i = string.length - 1; i >= 0; i--) {
+        reverse += string[i];
+    }
+
+    return reverse;
+
+
+}
+
+
+// console.log(wordsReversed("hello world how are you"));
+
+
+// 8. Write a function that takes an array as input and returns the array with all elements squared.
+
+
+
+function squaredArray(arr) {
+    let length = arr.length;
+    // let newArr = []
+
+    for (let i = 0; i < length; i++) {
+        // let value = arr[i] * arr[i]; 
+        // newArr.push(value)
+
+        arr[i] = arr[i] * arr[i];
+    }
+
+    // return newArr;
+    return arr;
+}
+
+// console.log(squaredArray([1, 2, 3]));
+
+
+// 9. find missing number
+
+// function missingNumber(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i + 1] !== arr[i] + 1) {
+//             return arr[i] + 1
+//         }
+//     }
+
+// }
+
+// console.log(missingNumber([1, 2, 3, 5, 6]));
+
+
+// function missingNumber(arr) {
+
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     let min = arr[i];
+//     //     let maxValue = arr[i];
+//     // }
+
+//     let missingArr = [];
+//     for (let i = 0; i < arr.length - 1; i++) {
+//         if (arr[i + 1] !== arr[i] + 1) {
+//             missingArr.push(arr[i] + 1);
+//         }
+//     }
+
+//     return missingArr;
+// }
+
+
+// console.log(missingNumber([1, 3, 4, 5, 6, 8]));
+
+

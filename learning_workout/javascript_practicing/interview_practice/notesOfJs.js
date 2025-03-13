@@ -12,8 +12,18 @@
 // ES6- doenst add to window
 // ES5 - add itself to window
 
-// stack - stores local variables  ...LIFO
-// heap - stores big variabeles.
+
+// Browser Context api gives 3 things
+// --window
+//  --stack - stores local variables  ...LIFO  
+//    --  variables we declare or use is stored in stack memory 
+// -- heap - stores big variabeles.
+//    --intermediate data like 1 + 2 + 3 = 3 + 3 
+//             intermediate 3 is stored in heap memory
+
+
+// **** EXECUTION CONTEXT ****
+
 
 
 //     **** CLOSURE ***
@@ -32,6 +42,28 @@
 // const myBag = backPack();
 // myBag();
 
+
+// callbacks - function passed as argument to another function, executed after some operation is complete 
+
+
+// promises stages
+//     - pending stage
+//         - resolved stage(fulfilled)
+//             - rejected
+
+
+
+// let fetchData = new Promise((resolve, reject) => {
+//     setTimeout(() => { 
+//         resolve("Date recieved");
+
+//     }, 2000);
+// });
+
+// fetchData.then(data => console.log()); 
+
+
+// Async / Await - makes handling  asynchronous code easier and more Readable. 
 
 
 // selection sort
@@ -158,8 +190,83 @@ function uniqueFirstSingleLetter(str) {
     return -1;
 }
 
-console.log(uniqueFirstSingleLetter("leetcode"));
-console.log(uniqueFirstSingleLetter("avani"));
-console.log(uniqueFirstSingleLetter("people"));
-console.log(uniqueFirstSingleLetter("siji"));
-console.log(uniqueFirstSingleLetter("hellooo"));
+// console.log(uniqueFirstSingleLetter("leetcode"));
+// console.log(uniqueFirstSingleLetter("avani"));
+// console.log(uniqueFirstSingleLetter("people"));
+// console.log(uniqueFirstSingleLetter("keokoekeok"));
+// console.log(uniqueFirstSingleLetter("popopopopol"));
+// console.log(uniqueFirstSingleLetter("opsoposposp"));
+// console.log(uniqueFirstSingleLetter("treeeeeeeeeeeeeeeeeeeeeet"));
+
+// console.log(uniqueFirstSingleLetter("siji"));
+// console.log(uniqueFirstSingleLetter("hellooo"));
+
+
+//Q You are given a 0-indexed integer array nums of even length and there is also an empty array arr. Alice and Bob decided to play a game where in every round Alice and Bob will do one move. The rules of the game are as follows:
+
+//Every round, first Alice will remove the minimum element from nums, and then Bob does the same.
+//Now, first Bob will append the removed element in the array arr, and then Alice does the same.
+//The game continues until nums becomes empty.
+//Return the resulting array arr.
+
+// function sortArr(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         let minIndex = i;
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[j] < arr[minIndex]) {
+//                 minIndex = j
+//             }
+//         }
+
+//         let temp = arr[i];
+//         arr[i] = arr[minIndex];
+//         arr[minIndex] = temp;
+
+//     }
+
+//     // return arr;
+
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     arr[i] = arr[i + 1]
+//     // }
+
+//     // return arr;
+//     for (let i = 2; i < arr.length; i + 2) {
+//         arr[i] = arr
+//     }
+// }
+
+// console.log(sortArr([5, 4, 2, 3]));
+
+// function duplicateArr(arr) {
+//     // let duplicate = [];
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     // let value = arr[i];
+//     //     let isDuplicate = true;
+//     //     for (let j = i + 1; j < arr.length; j++) {
+//     //         if (arr[i] !== arr[j]) {
+//     //             // isDuplicate = true
+//     //             isDuplicate = false;
+//     //         }
+//     //     }
+
+//     //     if (isDuplicate) {
+//     //         duplicate.push(arr[i])
+//     //     }
+//     // }
+
+//     // return duplicate;
+
+//     let duplicate = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] === arr[j]) {
+//                 duplicate.push(arr[i]);
+//             }
+//         }
+//     }
+
+//     return duplicate;
+// }
+
+// console.log(duplicateArr([1, 2, 8, 6, 4, 9, 6, 2, 5, 8])); 
