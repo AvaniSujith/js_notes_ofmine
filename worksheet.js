@@ -93,3 +93,36 @@
 
 // maxValue([1,4,3,2]);
 
+
+// async function fetchData() {
+//     try {
+//         let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//         let data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//     }
+// }
+
+// fetchData();
+
+async function fetchData() {
+    console.log("Fetching data...");
+
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+    let data = await response.json();
+
+    console.log("Data received:", data);
+}
+
+console.log("Start");
+fetchData();
+console.log("End");
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Async Task Completed");
+}, 2000);
+
+console.log("End");

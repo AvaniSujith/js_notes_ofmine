@@ -24,7 +24,47 @@
 
 // **** EXECUTION CONTEXT ****
 
+// contains all the variables, functions within the funcitons and the lexical environment
 
+
+// lexical environment - specifies the function can access what all and what Notification. (SCOPE of a function)
+
+
+
+//     ************* Copy Reference Value *************
+
+//         use the spread operator - to copy Array.so that updation in one is not affected in the other.
+
+// let a = [1, 2, 3];
+// let b = [...a];
+
+// *********** falsy and truthy ********
+
+//     false = 0 false, undefined, null, Nan, document.all
+
+
+//         ************ array.forEach(element => {
+
+//         });
+
+
+// *********** Object.for(let val in obj)
+
+
+
+// do-while loop is used when the value needed to be printed atleast once before checking the condition 
+
+
+// ********first class function**********
+
+
+// function firstClass(a) {
+//     a();
+// }
+
+// firstClass(function () {
+//     console.log("hello")
+// })
 
 //     **** CLOSURE ***
 
@@ -84,22 +124,26 @@
 //     return arr;
 // }
 
-// function duplicateValue(arr) {
-//     let duplicateArr = []
-//     for (let i = 0; i < arr.length - 1; i++) {
-//         let first = arr[i];
-//         for (let j = i + 1; j < arr.length; j++) {
-//             if (first === arr[j]) {
-//                 duplicateArr.push(arr[j]);
-//             }
-//         }
-//     }
+function duplicateValue(arr) {
+    let duplicateArr = []
+    for (let i = 0; i < arr.length - 1; i++) {
+        let first = arr[i];
+        for (let j = i + 1; j < arr.length; j++) {
+            if (first === arr[j]) {
+                duplicateArr.push(arr[j]);
+            }
+        }
+    }
 
-//     return duplicateArr;
-// }
+    return duplicateArr;
+}
 
-// let numbers = [5, 2, 9, 1, 5, 6, 8, 6, 9];
-// console.log(duplicateValue(numbers))
+let numbers = [5, 2, 9, 1, 5, 6, 8, 6, 9];
+console.log(duplicateValue(numbers));
+
+
+
+func
 // console.log(selectionSort(numbers));
 
 // let b = null;
@@ -164,6 +208,13 @@
 // console.log(a.name)
 
 
+function charCount(str) {
+    let characterCount = {};
+    for (let i = 0; i < str.length; i++) {
+
+    }
+}
+
 // let language = {
 //     name: "main language",
 //     age: 33,
@@ -189,6 +240,50 @@ function uniqueFirstSingleLetter(str) {
     }
     return -1;
 }
+
+
+
+function hasUniqueCharacters(str) {
+    let charCount = {};
+
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if (charCount[char] === 1) {
+            return false;
+        }
+
+        charCount[char] = 1;
+    }
+
+    return true;
+}
+
+
+function hasUniue(str) {
+    let charCount = {};
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if (charCount[char] === 1) {
+            return false
+        }
+
+
+        charCount[char] = 1
+    }
+
+    return true;
+
+}
+
+// Test cases
+console.log(hasUniqueCharacters("abcdef"));
+console.log(hasUniqueCharacters("hello"));
+console.log(hasUniqueCharacters("123456"));
+console.log(hasUniqueCharacters("aabbcc"));
+console.log(hasUniqueCharacters(""));
+
 
 // console.log(uniqueFirstSingleLetter("leetcode"));
 // console.log(uniqueFirstSingleLetter("avani"));
@@ -238,6 +333,22 @@ function uniqueFirstSingleLetter(str) {
 
 // console.log(sortArr([5, 4, 2, 3]));
 
+function duplicateRemoval(arr) {
+    let duplicate = [];
+    for (let i = 0; i < arr.length; i++) {
+        let value = arr[i];
+        for (let j = i + 1; j < arr.length; j++) {
+
+        }
+    }
+}
+
+
+// console.log(sortArr([1, 5, 3, 6, 2]));
+
+
+
+
 // function duplicateArr(arr) {
 //     // let duplicate = [];
 //     // for (let i = 0; i < arr.length; i++) {
@@ -270,3 +381,102 @@ function uniqueFirstSingleLetter(str) {
 // }
 
 // console.log(duplicateArr([1, 2, 8, 6, 4, 9, 6, 2, 5, 8])); 
+
+
+// **************OBJECTS************* 
+
+
+const car = {
+    name: "ertiga",
+    date: "01-10-1099",
+    number: "233"
+}
+
+function cars() {
+
+    for (let key in car) {
+        console.log(key)
+        // console.log(car[key])
+    }
+}
+
+// cars(car);
+// let newCars = car
+// newCars.name = "car";
+
+
+let newCar = { ...car };
+newCar.name = "eon";
+
+
+// console.log(newCars)
+// console.log(car);
+// console.log(newCar);
+// for (let key in car) {
+//     // console.log(key);
+//     // console.log(car[key]);
+//     console.log(`${key} = ${car[key]}`)
+// }
+
+
+// **************** ASYNCHRONOUS JS *****************
+
+// setTimeout(callback(always a function), timeout);
+
+// callback fucntion in async functions
+
+
+// javascript is single threaded - syncrhonous
+
+// main stack-- - Call stack
+//     - synchronous functions
+
+// side stack-- - Event loop
+//     - asynchronous functions
+
+
+
+// async codes are written - fetch, XMLHttpRequest, axios, promises, settimeout, setinterval
+// answers given by using - callballs, then catch, async await
+
+
+
+// promise----either resolve / reject
+
+// async function abcd() {
+//     fetch('')
+//         .then(functioon(raw){
+//             return raw.json();
+//         })
+//         .then(function (data) {
+//             console.log(data)
+//         })
+// }
+
+// abcd();
+
+
+function checkNum(num) {
+    if (num > 0) {
+        return "positive"
+    } else if (num < 0) {
+        return "negative"
+    } else {
+        return "zero"
+    }
+}
+
+
+// let checkNume = num => num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+// const checkNumber = num => num > 0 ? "Positive" : num < 0 ? "Negative" : "Zero";
+
+let maxNum = (num1, num2) => num1 > num2 ? num1 : num2;
+console.log(maxNum(2, 3));
+
+let oddOrEvenn = num => num % 2 == 0 ? "even" : "odd"
+console.log(oddOrEvenn(8));
+
+let maxOFThree = (a, b, c) => a > b && a > c ? a : b > a && b > c ? b : c
+console.log(maxOFThree(3, 9, 5));
+
+
