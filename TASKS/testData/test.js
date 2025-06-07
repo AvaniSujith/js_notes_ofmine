@@ -192,3 +192,13 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+functionreverseString(str)
+{
+          return
+        str.split(""). reverse().jo
+        in("");
+}
+
+console.log(reverseString("GreeksForGreeks"));
+
+
