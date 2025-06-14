@@ -13,6 +13,10 @@ let o3 = {
     "next":null
 }
 
+let o4 = {
+    "val" : 4,
+    "next" :null
+}
 
 // version - 1
 
