@@ -651,3 +651,10 @@ function squaredArray(arr) {
 // console.log(missingNumber([1, 3, 4, 5, 6, 8]));
 
 
+// Qtn: removal of duplicate character 
+
+function removeDuplicate(str){
+    return [...new Set(str)].join('');
+}
+
+console.log(removeDuplicate('Leetterr'))
