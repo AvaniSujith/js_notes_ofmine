@@ -630,25 +630,25 @@ function squaredArray(arr) {
 // console.log(missingNumber([1, 2, 3, 5, 6]));
 
 
-// function missingNumber(arr) {
+function missingNumber(arr) {
 
-//     // for (let i = 0; i < arr.length; i++) {
-//     //     let min = arr[i];
-//     //     let maxValue = arr[i];
-//     // }
+    // for (let i = 0; i < arr.length; i++) {
+    //     let min = arr[i];
+    //     let maxValue = arr[i];
+    // }
 
-//     let missingArr = [];
-//     for (let i = 0; i < arr.length - 1; i++) {
-//         if (arr[i + 1] !== arr[i] + 1) {
-//             missingArr.push(arr[i] + 1);
-//         }
-//     }
+    let missingArr = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i + 1] !== arr[i] + 1) {
+            missingArr.push(arr[i] + 1);
+        }
+    }
 
-//     return missingArr;
-// }
+    return missingArr;
+}
 
 
-// console.log(missingNumber([1, 3, 4, 5, 6, 8]));
+console.log(missingNumber([1, 3, 4, 5, 6, 8]));
 
 
 // Qtn: removal of duplicate character 
@@ -658,3 +658,4 @@ function removeDuplicate(str){
 }
 
 console.log(removeDuplicate('Leetterr'))
+
