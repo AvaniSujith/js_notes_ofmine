@@ -591,7 +591,7 @@ function missingNumber(arr) {
 
 console.log(missingNumber([1, 3, 4, 5, 6, 8]));
 
-// Qtn: removal of duplicate character
+
 
 function removeDuplicate(str) {
   return [...new Set(str)].join("");
@@ -603,5 +603,5 @@ function addToEnd(str) {
   let arr = str.split("");
   arr.splice(arr.length, 0, ch);
   let res = arr.join("");
-  console.log(res);
+  console.log(res);  
 }
