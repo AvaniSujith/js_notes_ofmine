@@ -417,27 +417,6 @@ function firstNonRepeatingLetter(arr) {
 
 // console.log(vowels("avani"));
 
-function vowels(string) {
-  let result = [];
-  let length = string.length;
-  let str = string.toLowerCase();
-  for (let i = 0; i < length; i++) {
-    if (
-      str[i] === "a" ||
-      str[i] === "e" ||
-      str[i] === "i" ||
-      str[i] === "o" ||
-      str[i] === "u"
-    ) {
-      continue;
-    }
-
-    result.push(str[i]);
-  }
-
-  // return result.toString();
-  return result.join("");
-}
 
 // console.log(vowels("avani"));
 
@@ -604,4 +583,26 @@ function addToEnd(str) {
   arr.splice(arr.length, 0, ch);
   let res = arr.join("");
   console.log(res);  
+}
+
+function vowels(string) {
+  let result = [];
+  let length = string.length;
+  let str = string.toLowerCase();
+  for (let i = 0; i < length; i++) {
+    if (
+      str[i] === "a" ||
+      str[i] === "e" ||
+      str[i] === "i" ||
+      str[i] === "o" ||
+      str[i] === "u"
+    ) {
+      continue;
+    }
+
+    result.push(str[i]);
+  }
+
+  // return result.toString();
+  return result.join("");
 }
