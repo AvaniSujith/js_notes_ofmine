@@ -650,3 +650,12 @@ console.log(superAob(aob, 'framework'));
 //     { victim: 'Vue.JS', count: 1 },
 //     { victim: 'JavaScript', count: 1 }
 // ]
+
+
+
+
+//  How Remove the first element from an array in JavaScript?
+
+let arr = [5, 6, 7];
+arr = arr.slice(1); 
+console.log(arr);
