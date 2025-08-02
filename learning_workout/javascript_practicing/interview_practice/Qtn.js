@@ -659,3 +659,16 @@ console.log(superAob(aob, 'framework'));
 let arr = [5, 6, 7];
 arr = arr.slice(1); 
 console.log(arr);
+
+function isPrime(num) {
+    if (num <= 1) 
+        return false;
+    for (let i = 2; i < num; i++) 
+    {
+        if (num % i === 0) 
+            return false;
+    }
+    return true;
+}
+
+console.log(isPrime(7));
