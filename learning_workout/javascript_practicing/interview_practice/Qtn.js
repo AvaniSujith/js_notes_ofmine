@@ -672,3 +672,11 @@ function isPrime(num) {
 }
 
 console.log(isPrime(7));
+
+const obj = {
+    name: "JavaScript",
+    greet: function () {
+        console.log(this.name);
+    }
+};
+obj.greet();
