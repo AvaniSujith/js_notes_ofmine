@@ -710,3 +710,18 @@ function sortArrayDesc(arr) {
 }
 
 console.log(sortArrayDesc([5, 3, 8, 1]));
+
+// Impure Function
+let numberArray = [];
+const impureAddNumber = (number) => numberArray.push(number);
+
+// Pure Function
+const pureAddNumber = (number) => (inputArray) =>
+  inputArray.concat([number]);
+
+// Usage
+console.log(impureAddNumber(6)); // returns 1
+console.log(numberArray);        // returns [6]
+
+console.log(pureAddNumber(7)(numberArray)); // returns [6, 7]
+console.log(numberArray);                   // remains [6]
