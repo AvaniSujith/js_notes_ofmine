@@ -725,3 +725,8 @@ console.log(numberArray);        // returns [6]
 
 console.log(pureAddNumber(7)(numberArray)); // returns [6, 7]
 console.log(numberArray);                   // remains [6]
+
+let str1 = "Hello";
+let str2 = "World";
+let result = str1 + str2;
+console.log(result);
